@@ -121,13 +121,13 @@
                 <form action="" method="post">
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã loại</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="ma_loai">
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên loại</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tenloai">
                     </div>
-                    <button class="btn btn-secondary btn-lg">thêm mới</button>
+                    <button name="btn" class="btn btn-secondary btn-lg">thêm mới</button>
                 </form>
                 <!-- Content Row -->
             </div>

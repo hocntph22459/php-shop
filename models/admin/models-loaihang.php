@@ -5,6 +5,7 @@ function insert_cat()
         $tenloai = $_POST['tenloai'];
         $sql = "INSERT INTO `categories`(`name`) VALUES ('$tenloai')";
         pdo_execute($sql);
+        header("location:http://localhost/da1/controller/admin/?url=loai-hang");
     }
 }
 function delete_cat()
@@ -22,14 +23,17 @@ function loadall_cat()
     $listcat = pdo_query($sql);
     return $listcat;
 }
-function loadone_cat($id)
+function loadone_cat()
 {
-    $sql = "SELECT * FROM categories WHERE id=" . $id;
-    $cat = pdo_query_one($sql);
-    return $cat;
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM categories WHERE id = $id";
+    $cateone = pdo_query_one($sql);
+    return $cateone;
 }
-function update_cat($id, $tenloai)
+function update_cat()
 {
+    $id = $_GET['id'];
+    $tenloai = $_POST['tenloai'];
     $sql = "UPDATE categories SET name='" . $tenloai . "' WHERE id=" . $id;
     pdo_execute($sql);
 }

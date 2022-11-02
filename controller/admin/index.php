@@ -23,7 +23,8 @@ switch ($url) {
         include "../admin/loaihang/add.php";
         break;
     case 'edit-loai-hang':
-
+        loadone_cat();
+        update_cat();
         include "../admin/loaihang/edit.php";
         break;
     //sản phẩm 
