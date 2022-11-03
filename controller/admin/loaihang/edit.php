@@ -126,7 +126,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên loại</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tenloai" value="<?php if(isset($cateone)){echo $cateone['name'];} ?>">
+                        <input type="text" class="form-control my-4" name="tenloai" value="<?php if(isset($cat)){echo $cat['name'];} ?>">
                     </div>
                     <button name="btn" class="btn btn-secondary btn-lg">Sửa</button>
                 </form>

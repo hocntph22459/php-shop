@@ -27,14 +27,15 @@ function loadone_cat()
 {
     $id = $_GET['id'];
     $sql = "SELECT * FROM categories WHERE id = $id";
-    $cateone = pdo_query_one($sql);
-    return $cateone;
+    $cat = pdo_query_one($sql);
+    return $cat;
 }
 function update_cat()
 {
-    $id = $_GET['id'];
-    $tenloai = $_POST['tenloai'];
-    $sql = "UPDATE categories SET name='" . $tenloai . "' WHERE id=" . $id;
-    pdo_execute($sql);
+    if (isset($_POST['btn'])) {
+        $id = $_GET['id'];
+        $tenloai = $_POST['tenloai'];
+        $sql = "UPDATE categories SET name='" . $tenloai . "' WHERE id=" . $id;
+        pdo_execute($sql);
+    }
 }
-
