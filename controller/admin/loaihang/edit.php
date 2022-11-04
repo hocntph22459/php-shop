@@ -122,7 +122,7 @@
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã loại</label>
                         <input type="text" name="id" hidden>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id">
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" >
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên loại</label>

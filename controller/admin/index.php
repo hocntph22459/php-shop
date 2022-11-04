@@ -1,5 +1,7 @@
-<?php
+<?php  ob_start(); 
+
 include "../../models/admin/models-loaihang.php";
+include "../../models/admin/models-sanpham.php";
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 // echo $url;
@@ -29,8 +31,48 @@ switch ($url) {
         break;
     //sản phẩm 
     case 'san-pham':
+        $listsanpham = loadall_sanpham();
         include "../admin/sanpham/list.php";
         break;
+    case 'delete-san-pham':
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            delete_sanpham($id);
+            $listsanpham = loadall_sanpham();
+            header("location:../../controller/admin/index.php?url=san-pham");
+        }
+    case 'add-san-pham': 
+        $listsanpham = loadall_sanpham();
+        $listcat = loadall_cat();
+        include "../admin/sanpham/add.php";
+        if (isset($_POST['btn'])) {
+            $tensp = $_POST['tensp'];
+            $giasp = $_POST['giasp'];
+            $anhsp = $_FILES['anhsp']['name'];
+            $motasp = $_POST['motasp'];
+            $loaisp = $_POST['loaisp'];
+            move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
+            insert_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp);
+            header("location:../../controller/admin/index.php?url=san-pham");
+        }
+        break;
+    case 'update-san-pham':
+        $id = $_GET['id'];
+        $sanpham = loadone_sanpham($id);
+        $listcat = loadall_cat();
+        include "../admin/sanpham/edit.php";
+        if (isset($_POST['btn'])) {
+            $tensp = $_POST['tensp'];
+            $giasp = $_POST['giasp'];
+            $anhsp = $_FILES['anhsp']['name'];
+            $motasp = $_POST['motasp'];
+            $loaisp = $_POST['loaisp'];
+            move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
+            update_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp,$id);
+            header("location:../../controller/admin/index.php?url=san-pham");
+        }
+        break;
+    // khách hàng
     case 'khach-hang':
         include "../admin/khachhang/list.php";
         break;
