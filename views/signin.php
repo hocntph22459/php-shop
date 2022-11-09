@@ -60,10 +60,6 @@
                 <h2 class="text-center">ĐĂNG KÝ THÀNH VIÊN</h2>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
-                <!-- <div class="mb-3 mt-3">
-                    <label for="" class="form-label">Mã khách hàng</label>
-                    <input type="text" class="form-control my-4" id="email" placeholder="auto" name="maloai">
-                </div> -->
                 <div class="mb-3">
                     <label for="" class="form-label">Tên khách hàng</label> <br>
                     <?php if (isset($name_err)) : ?>
@@ -85,9 +81,9 @@
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">mật khẩu</label> <br>
                     
-                    <?php if (isset($kitumatkhau_err)) : ?>
+                    <?php if (isset($matkhau_err)) : ?>
                         <span style="color:red">
-                            <?= $kitumatkhau_err ?>
+                            <?= $matkhau_err ?>
                         </span>
                     <?php endif ?>
                     <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhau">

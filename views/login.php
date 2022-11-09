@@ -21,7 +21,6 @@
         margin: 64px;
         text-align: center;
     }
-
     form {
         border: solid 1px black;
         padding: 24px;
@@ -37,7 +36,7 @@
         <form action="" method="post">
             <!-- bắt lỗi đăng nhập -->
             <?php if (isset($error)) : ?>
-                <div class="error">
+                <div class="error" style="text-align: center; color: red;">
                     <?= $error ?>
                 </div>
             <?php endif ?>
@@ -56,8 +55,8 @@
             </div>
             <button type="submit" class="btn btn-primary" name="btn">Đăng Nhập</button>
             <ul class="">
-                <li><a href="http://localhost/duanmau/?url=quenmk">quên mật khẩu</a></li>
-                <li><a href="http://localhost/duanmau/?url=signin">đăng kí thành viên</a></li>
+                <li><a href="#">quên mật khẩu</a></li>
+                <li><a href="http://localhost/da1/?url=signin-khach-hang">đăng kí thành viên</a></li>
             </ul>
         </form>
     </div>
