@@ -65,32 +65,58 @@
                     <input type="text" class="form-control my-4" id="email" placeholder="auto" name="maloai">
                 </div> -->
                 <div class="mb-3">
-                    <label for="" class="form-label">Tên khách hàng</label>
-                    <input type="text" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="hoten">
+                    <label for="" class="form-label">Tên khách hàng</label> <br>
                     <?php if (isset($name_err)) : ?>
                         <span style="color:red">
                             <?= $name_err ?>
                         </span>
                     <?php endif ?>
+                    <input type="text" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="hoten">
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">email</label>
+                    <label for="" class="form-label">email</label> <br>
+                    <?php if (isset($email_err)) : ?>
+                        <span style="color:red">
+                            <?= $email_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="email" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="email">
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="" class="form-label">mật khẩu</label>
+                    <label for="" class="form-label">mật khẩu</label> <br>
+                    
+                    <?php if (isset($kitumatkhau_err)) : ?>
+                        <span style="color:red">
+                            <?= $kitumatkhau_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhau">
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="" class="form-label">nhập lại mật khẩu</label>
+                    <label for="" class="form-label">nhập lại mật khẩu</label> <br>
+                    <?php if (isset($rmatkhau_err)) : ?>
+                        <span style="color:red">
+                            <?= $rmatkhau_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="password" class="form-control my-4" id="rmatkhau" placeholder="Nhập lại mật khẩu" name="rmatkhau">
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Số điện thoại</label>
+                    <label for="" class="form-label">Số điện thoại</label> <br>
+                    <?php if (isset($phone_err)) : ?>
+                        <span style="color:red">
+                            <?= $phone_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="text" class="form-control my-4" id="phone" placeholder="Nhập số điện thoại" name="phone">
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Địa chỉ</label>
+                    <label for="" class="form-label">Địa chỉ</label> <br>
+                    <?php if (isset($diachi_err)) : ?>
+                        <span style="color:red">
+                            <?= $diachi_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="text" class="form-control my-4" id="diachi" placeholder="Nhập địa chỉ" name="diachi">
                 </div>
                 <button class="btn btn-success" name="btn" id="bt">Đăng ký</button>
