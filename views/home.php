@@ -1,5 +1,5 @@
 <?php
-    // include "views/header.php";
+    include "views/header.php";
 ?>
 <main>
     <div class="slider">

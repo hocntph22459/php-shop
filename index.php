@@ -6,8 +6,8 @@ include "./models/client/models-form.php";
 
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
-
-include "./views/header.php";
+// nên include vào file. file nào cần thì include
+// include "./views/header.php";
 
 $url = isset($_GET['url']) ? $_GET['url'] : '';
 // echo $url;
@@ -20,10 +20,9 @@ switch ($url) {
         break;
         // san pham
     case 'san-pham':
-        if(isset($_POST['OK']) && ($_POST['OK'])){
+        if (isset($_POST['OK']) && ($_POST['OK'])) {
             $search = $_POST['search'];
-        }
-        else{
+        } else {
             $search = "";
         }
         $listsp = loadall_sanpham($search);
@@ -36,6 +35,9 @@ switch ($url) {
         //  đăng ký
     case 'signin-khach-hang':
         validate_signin();
+        break;
+    case 'cart':
+        include "./views/cart.php";
         break;
     default:
         echo "<h2> 404 not found !!! </h2>";
