@@ -23,9 +23,8 @@ function loadall_cat()
     $listcat = pdo_query($sql);
     return $listcat;
 }
-function loadone_cat()
+function loadone_cat($id)
 {
-    $id = $_GET['id'];
     $sql = "SELECT * FROM categories WHERE id = $id";
     $cat = pdo_query_one($sql);
     return $cat;
