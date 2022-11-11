@@ -19,7 +19,7 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-light">
+        <!-- <nav class="navbar navbar-expand-lg bg-light">
             <a class="navbar-brand" href="http://localhost/da1/?url=home"><img src="./views/src/image/logo/logo2.PNG" alt="" width="120px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,9 +54,9 @@
                     <button class="btn btn-outline-success" type="submit">Tìm</button>
                 </form>
             </div>
-        </nav>
+        </nav> -->
         <div class="panel panel-primary">
-            <div class="panel-heading">
+            <div class="panel-heading"> <br>
                 <h2 class="text-center">ĐĂNG KÝ THÀNH VIÊN</h2>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
