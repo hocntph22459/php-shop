@@ -14,6 +14,9 @@ switch ($url) {
         $listspt10 = load_sanpham_top10();
         include "./views/home.php";
         break;
+        // san pham
+    case 'san-pham';
+        
         //  đăng nhập
     case 'login-khach-hang':
         login_khachhang();
