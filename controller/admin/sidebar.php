@@ -35,6 +35,16 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=color">
+            <i class="fas fa-fw fa-table"></i>
+            <span>MÀU SẢN PHẨM</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=size">
+            <i class="fas fa-fw fa-table"></i>
+            <span>KÍCH CỠ SẢN PHẨM</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="http://localhost/da1/controller/admin/?url=san-pham">
             <i class="fas fa-fw fa-table"></i>
             <span>SẢN PHẨM</span></a>

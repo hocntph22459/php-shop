@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Trang chủ admin</title>
+    <title>thêm mới loại hàng</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -114,7 +114,22 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-                
+                <div class="tile">
+                    <h3>Sửa kích cỡ</h3>
+                    <a class="" href="http://localhost/da1/controller/admin/?url=size">quay lại danh sách</a>
+                </div>
+                <form action="" method="post">
+                    <div class="mb-3 mt-3">
+                        <label for="" class="form-label">Mã kích cỡ</label>
+                        <input type="text" name="id" hidden>
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Kích cỡ</label>
+                        <input type="text" class="form-control my-4" name="kichco" value="<?php if(isset($size)){echo $size['size'];} ?>" >
+                    </div>
+                    <button name="btn" class="btn btn-secondary btn-lg">Sửa</button>
+                </form>
                 <!-- Content Row -->
             </div>
         </div>

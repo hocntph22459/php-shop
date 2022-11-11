@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Trang chủ admin</title>
+    <title>danh sách loại hàng</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -114,7 +114,27 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-                
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">id màu</th>
+                            <th scope="col">màu</th>
+                            <th scope="col"><a href="http://localhost/da1/controller/admin/?url=add-color">thêm mới</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($listcolor as $list) : ?>
+                            <tr>
+                                <th scope="row"><?= $list['id'] ?></th>
+                                <td><?= $list['color'] ?></td>
+                                <td>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-color&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=edit-color&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
                 <!-- Content Row -->
             </div>
         </div>

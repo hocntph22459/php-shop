@@ -115,7 +115,7 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="tile">
-                    <h3>thêm loại hàng</h3>
+                    <h3>thêm sản phẩm</h3>
                     <a class="" href="http://localhost/da1/controller/admin/?url=san-pham">quay lại danh sách</a>
                 </div>
                 <form action="http://localhost/da1/controller/admin/?url=add-san-pham" method="post" enctype="multipart/form-data" >
@@ -144,6 +144,22 @@
                         <select name="loaisp" id="">
                         <?php foreach ($listcat as $list) : ?>
                             <option value="<?=$list['id']?>"><?=$list['name']?></option>
+                        <?php endforeach?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Màu</label>
+                        <select name="mau" id="">
+                        <?php foreach ($listcolor as $color) : ?>
+                            <option value="<?=$color['id']?>"><?=$color['color']?></option>
+                        <?php endforeach?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Loại sản phẩm</label>
+                        <select name="kichco" id="">
+                        <?php foreach ($listsize as $size) : ?>
+                            <option value="<?=$size['id']?>"><?=$size['size']?></option>
                         <?php endforeach?>
                         </select>
                     </div>
