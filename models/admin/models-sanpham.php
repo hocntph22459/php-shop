@@ -10,11 +10,35 @@ function delete_sanpham($id)
     pdo_execute($sql);
     
 }
-function loadall_sanpham()
+function load_sanpham_top10 ()
 {
     $sql = "SELECT*FROM products ORDER BY id DESC";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
+}
+function load_sanpham_new()
+{
+    $sql = "SELECT*FROM products ORDER BY id DESC";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+function load_sanpham_sell()
+{
+    $sql = "SELECT*FROM products ORDER BY id DESC";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham($search){
+    $sql ="select * from products where 1";
+    if($search!=""){
+        $sql.=" and name like '%".$search."%'";
+    }
+    // if($iddm>0){
+    //     $sql.=" and category_id like '%".$iddm."%'"; 
+    // }
+    $sql.=  " order by id desc";
+    $listsp = pdo_query($sql);
+    return $listsp;
 }
 function loadone_sanpham($id)
 {

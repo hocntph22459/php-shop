@@ -33,18 +33,18 @@ switch ($url) {
         break;
     //sản phẩm 
     case 'san-pham':
-        $listsanpham = loadall_sanpham();
+        $listsanpham = loadall_sanpham($search);
         include "../admin/sanpham/list.php";
         break;
     case 'delete-san-pham':
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             delete_sanpham($id);
-            $listsanpham = loadall_sanpham();
+            $listsanpham = loadall_sanpham($search);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
     case 'add-san-pham': 
-        $listsanpham = loadall_sanpham();
+        $listsanpham = loadall_sanpham($search);
         $listcat = loadall_cat();
         include "../admin/sanpham/add.php";
         if (isset($_POST['btn'])) {
