@@ -45,7 +45,7 @@
               <a class="nav-link" href="#">Liên hệ</a>
             </li>
           </ul>
-          <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=sanpham" method="post">
+          <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
             <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
             <button class="btn btn-outline-success" type="submit" name="OK">Search</button>
           </form>

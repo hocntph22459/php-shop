@@ -40,6 +40,11 @@ function loadall_sanpham($search){
     $listsp = pdo_query($sql);
     return $listsp;
 }
+function loadall_sanpham_admin(){
+    $sql = "SELECT*FROM products ORDER BY id DESC";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
 function loadone_sanpham($id)
 {
     $sql = "SELECT * FROM products WHERE id =" .$id;
