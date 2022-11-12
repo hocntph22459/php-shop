@@ -115,7 +115,7 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="tile">
-                    <h3>thêm sản phẩm</h3>
+                    <h3>thêm loại hàng</h3>
                     <a class="" href="http://localhost/da1/controller/admin/?url=san-pham">quay lại danh sách</a>
                 </div>
                 <form action="http://localhost/da1/controller/admin/?url=add-san-pham" method="post" enctype="multipart/form-data" >

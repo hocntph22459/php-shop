@@ -151,6 +151,7 @@
                                     echo "<option value=".$list['id'].">".$list['name']."</option>";
                                 }    
                             ?>
+                            <option value="<?=$list['id']?>"><?=$list['name']?></option>
                         <?php endforeach?>
                         </select>
                     </div>

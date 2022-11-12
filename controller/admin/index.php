@@ -3,8 +3,6 @@
 include "../../models/admin/models-loaihang.php";
 include "../../models/admin/models-sanpham.php";
 include "../../models/admin/models-khachhang.php";
-include "../../models/admin/models-mau.php";
-include "../../models/admin/models-kichco.php";
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -114,8 +112,6 @@ switch ($url) {
     case 'add-san-pham':
         $listsanpham = loadall_sanpham_admin();
         $listcat = loadall_cat();
-        $listcolor = loadall_color();
-        $listsize = loadall_size();
         include "../admin/sanpham/add.php";
         if (isset($_POST['btn'])) {
             $tensp = $_POST['tensp'];
@@ -132,8 +128,6 @@ switch ($url) {
         $id = $_GET['id'];
         $sanpham = loadone_sanpham($id);
         $listcat = loadall_cat();
-        $listcolor = loadall_color();
-        $listsize = loadall_size();
         include "../admin/sanpham/edit.php";
         if (isset($_POST['btn'])) {
             $tensp = $_POST['tensp'];
