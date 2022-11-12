@@ -119,6 +119,7 @@
                         <tr>
                             <th scope="col">id kích cỡ</th>
                             <th scope="col">kích cỡ</th>
+                            <th scope="col">giá tăng</th>
                             <th scope="col"><a href="http://localhost/da1/controller/admin/?url=add-size">thêm mới</a></th>
                         </tr>
                     </thead>
@@ -127,6 +128,7 @@
                             <tr>
                                 <th scope="row"><?= $list['id'] ?></th>
                                 <td><?= $list['size'] ?></td>
+                                <td><?= $list['price'] ?>%</td>
                                 <td>
                                     <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-size&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                     <a href="http://localhost/da1/controller/admin/?url=edit-size&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>

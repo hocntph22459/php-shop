@@ -147,22 +147,7 @@
                         <?php endforeach?>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Màu</label>
-                        <select name="mau" id="">
-                        <?php foreach ($listcolor as $color) : ?>
-                            <option value="<?=$color['id']?>"><?=$color['color']?></option>
-                        <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Loại sản phẩm</label>
-                        <select name="kichco" id="">
-                        <?php foreach ($listsize as $size) : ?>
-                            <option value="<?=$size['id']?>"><?=$size['size']?></option>
-                        <?php endforeach?>
-                        </select>
-                    </div>
+                    
                     <button name="btn" class="btn btn-secondary btn-lg" >thêm mới</button>
                 </form>
                 <!-- Content Row -->
