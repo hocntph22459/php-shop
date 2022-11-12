@@ -39,8 +39,13 @@ switch ($url) {
     case 'signin-khach-hang':
         validate_signin();
         break;
+        // cart
     case 'cart':
         include "./views/cart.php";
+        break;
+        // contact
+    case 'contact':
+        include "./views/contact.php";
         break;
     default:
         echo "<h2> 404 not found !!! </h2>";
