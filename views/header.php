@@ -39,7 +39,7 @@
               </ul>
             </li> 
             <li class="nav-item">
-              <a class="nav-link" href="#">Giới thiệu</a>
+              <a class="nav-link" href="http://localhost/da1/?url=contact">Giới thiệu</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Liên hệ</a>
