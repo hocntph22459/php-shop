@@ -52,7 +52,7 @@
           <form class="form-inline">
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
-            <button class="btn btn-outline-success" type="button">Cập nhật tài khoản</button>
+            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
           </form>
         </div>
       </div>

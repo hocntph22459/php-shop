@@ -1,5 +1,5 @@
 <?php
-session_start();
+// insert đăng ký
 function insert_users()
 {
     if (isset($_POST['btn'])) {
@@ -10,8 +10,10 @@ function insert_users()
         $diachi = $_POST['diachi'];
         $sql = "insert into users(name,email,password,phone,address) values ('$name','$email','$matkhau','$phone','$diachi')";
         pdo_execute($sql);
+        header("location:http://localhost/da1/?url=login-khach-hang");
     }
 }
+// validate form đăng ký
 function validate_signin()
 {
     if (isset($_POST['btn'])) {
@@ -49,6 +51,7 @@ function validate_signin()
     include "./views/signin.php";
 }
 
+// khách hàng đăng nhập
 function login_khachhang()
 {
     if (isset($_POST['btn'])) {
@@ -76,4 +79,34 @@ function login_khachhang()
         }
     }
     include "./views/login.php";
+}
+
+// đăng nhập vào quản lý admin
+function login_admin()
+{
+    if (isset($_POST['btn'])) {
+        $email = $_POST['email'];
+        $matkhau = $_POST['matkhau'];
+
+        $sql = "select * from users where role = 1";
+
+        $user = pdo_query_one($sql);
+
+
+        //KIỂM TRA user
+        if ($user) {
+            //kiểm tra matkhau
+            if ($user['password'] == $matkhau) {
+                $_SESSION['email'] = $user['email'];
+
+                header("location:http://localhost/da1/controller/admin/?url=home");
+                exit;
+            } else {
+                $error = "tài khoản hoặc mật khẩu không chính xác";
+            }
+        } else {
+            $error = "tài khoản hoặc mật khẩu không chính xác";
+        }
+    }
+    include "./views/login-admin.php";
 }

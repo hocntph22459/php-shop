@@ -47,6 +47,10 @@ switch ($url) {
     case 'contact':
         include "./views/contact.php";
         break;
+        // login admin
+    case 'login-admin':
+        login_admin();
+        break;
     default:
         echo "<h2> 404 not found !!! </h2>";
 }
