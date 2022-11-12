@@ -151,28 +151,6 @@
                             <option value="<?=$list['id']?>"><?=$list['name']?></option>
                         <?php endforeach?>
                         </select>
-                        <label for="" class="form-label">Màu sản phẩm</label>
-                        <select name="mau" id="">
-                        <?php foreach ($listcolor as $color) : ?>
-                            <?php
-                                if($sanpham['color_id'] == $color['id']){
-                                    echo "<option value=".$color['id']." selected>".$color['color']."</option>";
-                                }    
-                            ?>
-                            <option value="<?=$color['id']?>"><?=$color['color']?></option>
-                        <?php endforeach?>
-                        </select>
-                        <label for="" class="form-label">Kích cỡ sản phẩm</label>
-                        <select name="kichco" id="">
-                        <?php foreach ($listsize as $size) : ?>
-                            <?php
-                                if($sanpham['size_id'] == $size['id']){
-                                    echo "<option value=".$size['id']." selected>".$size['size']."</option>";
-                                }    
-                            ?>
-                            <option value="<?=$size['id']?>"><?=$size['size']?></option>
-                        <?php endforeach?>
-                        </select>
                     </div>
                     <button name="btn" class="btn btn-secondary btn-lg" >Sửa</button>
                 </form>
