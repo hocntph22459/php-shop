@@ -129,13 +129,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($listsanpham as $sp) : ?>
+                        <?php foreach ($name_category as $sp) : ?>
                             <tr>
                                 <th scope="row"><?= $sp['id'] ?></th>
                                 <td><?= $sp['name'] ?></td>
                                 <td><?= $sp['price'] ?></td>
                                 <td class="img1"><img src="../../views/src/image/products/<?= $sp['image'] ?>" alt=""></td>
-                                <td><?= $sp['category_id'] ?></td>
+                                <td><?= $sp['name_category'] ?></td>
                                 <td>
                                     <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-san-pham&id=<?= $sp['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                     <a href="http://localhost/da1/controller/admin/?url=update-san-pham&id=<?= $sp['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>

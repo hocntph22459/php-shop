@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>thêm mới loại hàng</title>
+    <title>danh sách loại hàng</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -114,42 +114,29 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-                <div class="tile">
-                    <h3>thêm loại hàng</h3>
-                    <a class="" href="http://localhost/da1/controller/admin/?url=san-pham">quay lại danh sách</a>
-                </div>
-                <form action="http://localhost/da1/controller/admin/?url=add-san-pham" method="post" enctype="multipart/form-data" >
-                    <div class="mb-3 mt-3">
-                        <label for="" class="form-label">Mã sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Tên sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tensp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Ảnh sản phẩm</label>
-                        <input type="file" class="form-control my-4" placeholder="Nhập ảnh" name="anhsp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Giá sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập giá" name="giasp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Mô tả sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Loại sản phẩm</label>
-                        <select name="loaisp" id="">
-                        <?php foreach ($listcat as $list) : ?>
-                            <option value="<?=$list['id']?>"><?=$list['name']?></option>
-                        <?php endforeach?>
-                        </select>
-                    </div>
-                    
-                    <button name="btn" class="btn btn-secondary btn-lg" >thêm mới</button>
-                </form>
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">id kích cỡ</th>
+                            <th scope="col">kích cỡ</th>
+                            <th scope="col">giá tăng</th>
+                            <th scope="col"><a href="http://localhost/da1/controller/admin/?url=add-size">thêm mới</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($listsize as $list) : ?>
+                            <tr>
+                                <th scope="row"><?= $list['id'] ?></th>
+                                <td><?= $list['size'] ?></td>
+                                <td><?= $list['price'] ?>%</td>
+                                <td>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-size&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=edit-size&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
                 <!-- Content Row -->
             </div>
         </div>

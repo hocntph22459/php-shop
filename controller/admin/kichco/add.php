@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -115,40 +115,23 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="tile">
-                    <h3>thêm loại hàng</h3>
-                    <a class="" href="http://localhost/da1/controller/admin/?url=san-pham">quay lại danh sách</a>
+                    <h3>thêm màu</h3>
+                    <a class="" href="http://localhost/da1/controller/admin/?url=size">quay lại danh sách</a>
                 </div>
-                <form action="http://localhost/da1/controller/admin/?url=add-san-pham" method="post" enctype="multipart/form-data" >
+                <form action="" method="post">
                     <div class="mb-3 mt-3">
-                        <label for="" class="form-label">Mã sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" readonly>
+                        <label for="" class="form-label">Mã kích cỡ</label>
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Tên sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tensp">
+                        <label for="" class="form-label">Kích cỡ</label>
+                        <input type="text" class="form-control my-4" placeholder="Nhập tên" name="kichco">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Ảnh sản phẩm</label>
-                        <input type="file" class="form-control my-4" placeholder="Nhập ảnh" name="anhsp">
+                        <label for="" class="form-label">Giá tăng</label>
+                        <input type="text" class="form-control my-4" placeholder="Nhập giá" name="price">
                     </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Giá sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập giá" name="giasp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Mô tả sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Loại sản phẩm</label>
-                        <select name="loaisp" id="">
-                        <?php foreach ($listcat as $list) : ?>
-                            <option value="<?=$list['id']?>"><?=$list['name']?></option>
-                        <?php endforeach?>
-                        </select>
-                    </div>
-                    
-                    <button name="btn" class="btn btn-secondary btn-lg" >thêm mới</button>
+                    <button name="btn" class="btn btn-secondary btn-lg">thêm mới</button>
                 </form>
                 <!-- Content Row -->
             </div>

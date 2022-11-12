@@ -57,8 +57,16 @@ function update_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp,$id)
         $sql = "UPDATE products SET name='".$tensp."', image='".$anhsp."', price='".$giasp."', description='".$motasp."', category_id='".$loaisp."' WHERE id=" . $id;
     }
     else{
-        $sql = "UPDATE products SET name='".$tensp."',  price='".$giasp."', description='".$motasp."', category_id='".$loaisp."' WHERE id=" . $id;
+        $sql = "UPDATE products SET name='".$tensp."',  price='".$giasp."', description='".$motasp."', category_id='".$loaisp."'  WHERE id=" . $id;
+        // var_dump($sql);
+        // die;
     }
     pdo_execute($sql);
 }
+function load_category_sanpham(){
+    $sql = "select categories.name as name_category , products.* from products join categories on  categories.id = products.category_id";
+    $name_category = pdo_query($sql); 
+    return $name_category;
+}
+
 

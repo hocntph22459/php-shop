@@ -146,6 +146,9 @@
                             <?php
                                 if($sanpham['category_id'] == $list['id']){
                                     echo "<option value=".$list['id']." selected>".$list['name']."</option>";
+                                }
+                                else{
+                                    echo "<option value=".$list['id'].">".$list['name']."</option>";
                                 }    
                             ?>
                             <option value="<?=$list['id']?>"><?=$list['name']?></option>
