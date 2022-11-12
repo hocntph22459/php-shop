@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "./models/connect.php";
 include "./models/admin/models-sanpham.php";
 include "./models/admin/models-loaihang.php";
@@ -16,6 +17,8 @@ switch ($url) {
         // trang chủ
     case 'home':
         $listspt10 = load_sanpham_top10();
+        $listspnew = load_sanpham_new();
+        $listspsell = load_sanpham_sell();
         include "./views/home.php";
         break;
         // san pham

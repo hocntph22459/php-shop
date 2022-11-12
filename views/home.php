@@ -57,44 +57,47 @@
             </div>
             <div class="box">
                 <div class="boxtitle">
-                    <h3>Quần Áo</h3>
+                    <h3>Sản phẩm mới</h3>
                 </div>
                 <div class="box_product center">
+                <?php foreach($listspnew as $spn) :?>
                     <div class="products">
                         <div class="product_item">
                             <div class="product_img">
-                                <img src="image/products/pro1.jpeg" alt="">
+                                <img src="./views/src/image/products/<?=$spn['image']?>" alt="">
                                 <!-- <div class="product_button">
                                     <button><a href=""><i class="fa-sharp fa-solid fa-cart-plus fa-3x"></i></a></button>
                                     <button><a href=""><i class="fa-solid fa-eye fa-3x"></i></a></button>
                                 </div> -->
                             </div>
-                            <div class="product_name"><h3>Sản phẩm 1</h3></div>
-                            <div class="product_price"><del>150</del>120</div>
+                            <div class="product_name"><h3><?=$spn['name']?></h3></div>
+                            <div class="product_price"><?=$spn['price']?></div>
                         </div>
                     </div>
-             
-                </div>
+                <?php endforeach?>
+                </div>               
             </div>
             <div class="box">
                 <div class="boxtitle">
-                    <h3>Combo</h3>
+                    <h3>Sản phẩm giảm giá</h3>
                 </div>
                 <div class="box_product center">
+                <?php foreach($listspsell as $sps) :?>
                     <div class="products">
                         <div class="product_item">
                             <div class="product_img">
-                                <img src="image/products/pro1.jpeg" alt="">
-                                <div class="product_button">
+                                <img src="./views/src/image/products/<?=$sps['image']?>" alt="">
+                                <!-- <div class="product_button">
                                     <button><a href=""><i class="fa-sharp fa-solid fa-cart-plus fa-3x"></i></a></button>
                                     <button><a href=""><i class="fa-solid fa-eye fa-3x"></i></a></button>
-                                </div>
+                                </div> -->
                             </div>
-                            <div class="product_name"><h3>Sản phẩm 1</h3></div>
-                            <div class="product_price"><del>150</del>120</div>
+                            <div class="product_name"><h3><?=$sps['name']?></h3></div>
+                            <div class="product_price"><?=$sps['price']?></div>
                         </div>
                     </div>
-                </div>
+                <?php endforeach?>
+                </div>               
             </div>
             <div class="post">
                 <div class="boxtitle">
