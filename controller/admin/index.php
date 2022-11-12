@@ -3,6 +3,8 @@
 include "../../models/admin/models-loaihang.php";
 include "../../models/admin/models-sanpham.php";
 include "../../models/admin/models-khachhang.php";
+include "../../models/admin/models-mau.php";
+include "../../models/admin/models-kichco.php";
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
