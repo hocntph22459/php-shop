@@ -127,6 +127,10 @@
                         <label for="" class="form-label">Kích cỡ</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập tên" name="kichco">
                     </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Giá tăng</label>
+                        <input type="text" class="form-control my-4" placeholder="Nhập giá" name="price">
+                    </div>
                     <button name="btn" class="btn btn-secondary btn-lg">thêm mới</button>
                 </form>
                 <!-- Content Row -->

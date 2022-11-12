@@ -128,6 +128,10 @@
                         <label for="" class="form-label">Kích cỡ</label>
                         <input type="text" class="form-control my-4" name="kichco" value="<?php if(isset($size)){echo $size['size'];} ?>" >
                     </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Giá tăng</label>
+                        <input type="text" class="form-control my-4" name="price" value="<?php if(isset($size)){echo $size['price'];} ?>" >
+                    </div>
                     <button name="btn" class="btn btn-secondary btn-lg">Sửa</button>
                 </form>
                 <!-- Content Row -->

@@ -1,7 +1,7 @@
 -<?php
-function insert_size($kichco)
+function insert_size($kichco,$price)
 {
-    $sql = "INSERT INTO `size_products`(`size`) VALUES ('$kichco')";
+    $sql = "INSERT INTO `size_products`(`size`,`price`) VALUES ('$kichco','$price')";
     pdo_execute($sql);
 }
 function delete_size($id)
@@ -22,8 +22,8 @@ function loadone_size($id)
     $size = pdo_query_one($sql);
     return $size;
 }
-function update_size($id,$kichco)
+function update_size($id,$kichco,$price)
 {
-    $sql = "UPDATE size_products SET size='" . $kichco . "' WHERE id=" . $id;
+    $sql = "UPDATE size_products SET size='" . $kichco . "',price='" . $price . "' WHERE id=" . $id;
     pdo_execute($sql);
 }

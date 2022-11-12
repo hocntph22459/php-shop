@@ -83,7 +83,8 @@ switch ($url) {
     case 'add-size':
         if (isset($_POST['btn'])) {
             $kichco = $_POST['kichco'];
-            insert_size($kichco);
+            $price = $_POST['price'];
+            insert_size($kichco,$price);
             header("location:http://localhost/da1/controller/admin/?url=size");
         }
         include "../admin/kichco/add.php";
@@ -94,7 +95,8 @@ switch ($url) {
         include "../admin/kichco/edit.php";
         if (isset($_POST['btn'])) {
             $kichco = $_POST['kichco'];
-            update_size($id,$kichco);
+            $price = $_POST['price'];
+            update_size($id,$kichco,$price);
             header("location:../../controller/admin/index.php?url=size");
         }
         break;
