@@ -43,6 +43,10 @@ switch ($url) {
     case 'cart':
         include "./views/cart.php";
         break;
+        // thanh toán
+    case 'checkout-cart':
+        include "./views/checkout.php";
+        break;
         // contact
     case 'contact':
         include "./views/contact.php";
