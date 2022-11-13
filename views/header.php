@@ -29,12 +29,12 @@
               <a class="nav-link active" aria-current="page" href="http://localhost/da1/?url=home">Trang chủ</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="http://localhost/da1/?url=san-pham" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Sản phẩm
               </a>
               <ul class="dropdown-menu">
                 <?php foreach($listdm as $dm):?>
-                  <li><a class="dropdown-item" href="#"><?=$dm['name']?></a></li>
+                  <li><a class="dropdown-item" href="http://localhost/da1/?url=san-pham&iddm=<?=$dm['id']?>"><?=$dm['name']?></a></li>
                 <?php endforeach?>
               </ul>
             </li> 

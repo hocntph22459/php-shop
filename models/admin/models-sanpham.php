@@ -33,9 +33,16 @@ function loadall_sanpham($search){
     if($search!=""){
         $sql.=" and name like '%".$search."%'";
     }
-    // if($iddm>0){
-    //     $sql.=" and category_id like '%".$iddm."%'"; 
-    // }
+    $sql.=  " order by id desc";
+    $listsp = pdo_query($sql);
+    return $listsp;
+}
+// đang sửa nha
+function loadall_sanpham_danhmuc($iddm){
+    $sql ="select * from products where 1";
+    if($iddm>0){
+        $sql.=" and category_id like '%".$iddm."%'"; 
+    }
     $sql.=  " order by id desc";
     $listsp = pdo_query($sql);
     return $listsp;
