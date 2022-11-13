@@ -29,14 +29,9 @@
               <a class="nav-link active" aria-current="page" href="http://localhost/da1/?url=home">Trang chủ</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://localhost/da1/?url=san-pham" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link " href="http://localhost/da1/?url=san-pham" >
                 Sản phẩm
               </a>
-              <ul class="dropdown-menu">
-                <?php foreach($listdm as $dm):?>
-                  <li><a class="dropdown-item" href="http://localhost/da1/?url=san-pham&iddm=<?=$dm['id']?>"><?=$dm['name']?></a></li>
-                <?php endforeach?>
-              </ul>
             </li> 
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/da1/?url=contact">Giới thiệu</a>
@@ -47,6 +42,12 @@
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
             <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
+            <select class="form-select" aria-label="Default select example" style="width: 70px; margin-right:10px ;" name="id">  
+              <option value="0" selected>All</option>
+              <?php foreach($listdm as $dm):?>
+                <option value="<?=$dm['id']?>"><?=$dm['name']?></option>
+              <?php endforeach?>
+            </select>
             <button class="btn btn-outline-success" type="submit" name="OK">Search</button>
           </form>
           <form class="form-inline">

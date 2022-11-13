@@ -23,24 +23,7 @@ switch ($url) {
         break;
         // san pham ddang sua nha 
     case 'san-pham':
-        if(isset($_GET['iddm']) && $_GET['iddm']>0){
-            $iddm = $_GET['iddm'];
-            $listspdm = loadall_sanpham_danhmuc($iddm);
-            include "./views/sanpham.php";
-        }
-        else{
-            include "./views/sanpham.php";
-            $listsp = loadall_sanpham_admin();
-        }
-        if (isset($_POST['OK']) && ($_POST['OK'])) {
-            $search = $_POST['search'];
-            $listsp = loadall_sanpham($search);
-            include "./views/sanpham.php";
-        } else {
-            $search = "";
-            $listsp = loadall_sanpham($search);
-            include "./views/sanpham.php";
-        }
+        
         // $listsp = loadall_sanpham($search);
         // include "./views/sanpham.php";
         break;

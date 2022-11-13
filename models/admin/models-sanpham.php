@@ -28,10 +28,13 @@ function load_sanpham_sell()
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function loadall_sanpham($search){
+function loadAll_sanpham($seach , $id){
     $sql ="select * from products where 1";
-    if($search!=""){
-        $sql.=" and name like '%".$search."%'";
+    if($seach!=""){
+        $sql.=" and name like '%".$seach."%'";
+    }
+    if($id>0){
+        $sql.=" and category_id like '%".$id."%'"; 
     }
     $sql.=  " order by id desc";
     $listsp = pdo_query($sql);
@@ -44,7 +47,7 @@ function loadall_sanpham_danhmuc($iddm){
         $sql.=" and category_id like '%".$iddm."%'"; 
     }
     $sql.=  " order by id desc";
-    $listsp = pdo_query($sql);
+    $listsp = pdo_query($sql); 
     return $listsp;
 }
 function loadall_sanpham_admin(){
