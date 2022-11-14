@@ -140,6 +140,14 @@
                         <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp">
                     </div>
                     <div class="mb-3">
+                        <label for="" class="form-label">Ngày nhập sản phẩm</label>
+                        <input type="date" class="form-control my-4" placeholder="Ngày nhập sản phẩm" name="ngaynhap">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Giá giảm sản phẩm</label>
+                        <input type="number" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="giamgia">
+                    </div>
+                    <div class="mb-3">
                         <label for="" class="form-label">Loại sản phẩm</label>
                         <select name="loaisp" id="">
                         <?php foreach ($listcat as $list) : ?>

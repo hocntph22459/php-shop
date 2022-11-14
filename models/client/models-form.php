@@ -62,7 +62,6 @@ function login_khachhang()
 
         $user = pdo_query_one($sql);
 
-
         //KIỂM TRA user
         if ($user) {
             //kiểm tra matkhau

@@ -11,7 +11,7 @@ $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 // echo $url;
 switch ($url) {
     case '':
-        // trang chủ
+        // trang chủ  
     case 'home':
         include "./home.php";
         break;
@@ -123,8 +123,10 @@ switch ($url) {
             $anhsp = $_FILES['anhsp']['name'];
             $motasp = $_POST['motasp'];
             $loaisp = $_POST['loaisp'];
+            $ngaynhap = $_POST['ngaynhap'];
+            $giamgia = $_POST['giamgia'];
             move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
-            insert_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp);
+            insert_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
         break;
@@ -139,8 +141,10 @@ switch ($url) {
             $anhsp = $_FILES['anhsp']['name'];
             $motasp = $_POST['motasp'];
             $loaisp = $_POST['loaisp'];
+            $ngaynhap = $_POST['ngaynhap'];
+            $giamgia = $_POST['giamgia'];
             move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
-            update_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp,$id);
+            update_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$id);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
         break;
