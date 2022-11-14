@@ -1,3 +1,10 @@
+<?php
+//kiểm tra đăng nhập
+if (!isset($_SESSION['email'])) {
+    header("location:http://localhost/da1/?url=login-admin");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

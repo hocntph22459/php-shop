@@ -79,7 +79,15 @@ function login_khachhang()
     }
     include "./views/login.php";
 }
-
+// check login
+// function checklogin_admin()
+// {
+//     //kiểm tra đăng nhập
+//     if (!isset($_SESSION['user'])) {
+//         header("location:http://localhost/da1/?url=login-admin");
+//         exit;
+//     }
+// }
 // đăng nhập vào quản lý admin
 function login_admin()
 {
@@ -87,20 +95,26 @@ function login_admin()
         $email = $_POST['email'];
         $matkhau = $_POST['matkhau'];
 
-        $sql = "select * from users where role = 1";
-
+        $sql = "select * from users where email='$email'";
         $user = pdo_query_one($sql);
+        var_dump($user);
 
 
         //KIỂM TRA user
         if ($user) {
             //kiểm tra matkhau
-            if ($user['password'] == $matkhau) {
-                $_SESSION['email'] = $user['email'];
-
-                header("location:http://localhost/da1/controller/admin/?url=home");
-                exit;
-            } else {
+            if ($user['password'] == $matkhau){
+                if ($user['role'] == 1) {
+                    $_SESSION['user'] = $user;
+   
+                    header("location:http://localhost/da1/controller/admin/?url=home");
+                    exit;
+                } else {
+                    $_SESSION['user'] = $user;
+                    header("location:http://localhost/da1/?url=home");
+                    exit;
+                }
+            }  else {
                 $error = "tài khoản hoặc mật khẩu không chính xác";
             }
         } else {
