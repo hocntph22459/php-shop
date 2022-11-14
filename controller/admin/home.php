@@ -1,9 +1,7 @@
 <?php
 //kiểm tra đăng nhập
-if (!isset($_SESSION['email'])) {
-    header("location:http://localhost/da1/?url=login-admin");
-    exit;
-}
+include "../../models/client/models-form.php";
+checklogin_admin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
