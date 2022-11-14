@@ -147,10 +147,10 @@
                     <div class="card mb-4 mb-lg-0">
                         <div class="card-body">
                             <p><strong>Chúng tôi đồng ý</strong></p>
-                            <img class="me-2" width="45px" src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg" alt="Visa" />
-                            <img class="me-2" width="45px" src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg" alt="American Express" />
-                            <img class="me-2" width="45px" src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg" alt="Mastercard" />
-                            <img class="me-2" width="45px" src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp" alt="PayPal acceptance mark" />
+                            <img class="me-2" width="45px" src="./views/src/image/cart/visa.png" alt="Visa" />
+                            <img class="me-2" width="45px" src="./views/src/image/cart/emegica.png" alt="American Express" />
+                            <img class="me-2" width="45px" src="./views/src/image/cart/the-mastercard.png" alt="Mastercard" />
+                            <img class="me-2" width="45px" src="./views/src/image/cart/paypal.png" alt="PayPal acceptance mark" />
                         </div>
                     </div>
                 </div>
