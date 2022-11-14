@@ -28,13 +28,13 @@ function load_sanpham_sell()
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function loadAll_sanpham($seach , $id){
+function loadAll_sanpham($seach , $iddm){
     $sql ="select * from products where 1";
     if($seach!=""){
         $sql.=" and name like '%".$seach."%'";
     }
-    if($id>0){
-        $sql.=" and category_id like '%".$id."%'"; 
+    if($iddm>0){
+        $sql.=" and category_id like '%".$iddm."%'"; 
     }
     $sql.=  " order by id desc";
     $listsp = pdo_query($sql);

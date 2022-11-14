@@ -23,9 +23,20 @@ switch ($url) {
         break;
         // san pham ddang sua nha 
     case 'san-pham':
-        
-        // $listsp = loadall_sanpham($search);
-        // include "./views/sanpham.php";
+        if(isset($_POST['search']) && $_POST['search']!= ''){
+            $search = $_POST['search'];      
+        }
+        else{
+            $search="";
+        }
+        if(isset($_POST['iddm']) && $_POST['iddm']> 0){
+            $iddm = $_POST['iddm'];      
+        }
+        else{
+            $iddm=0;
+        }
+        $listsp = loadall_sanpham($search,$iddm);
+        include "./views/sanpham.php";
         break;
         //  đăng nhập
     case 'login-khach-hang':

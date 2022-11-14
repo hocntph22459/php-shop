@@ -42,7 +42,7 @@
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
             <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
-            <select class="form-select" aria-label="Default select example" style="width: 70px; margin-right:10px ;" name="id">  
+            <select class="form-select" aria-label="Default select example" style="width: 70px; margin-right:10px ;" name="iddm">  
               <option value="0" selected>All</option>
               <?php foreach($listdm as $dm):?>
                 <option value="<?=$dm['id']?>"><?=$dm['name']?></option>
