@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
+    <title>quên mật khẩu</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="./views/src/css/index/style.css">
     <link rel="stylesheet" href="./views/src/css/index/layout.css">
@@ -18,22 +16,40 @@
     <!-- css bootrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
+<style>
+    h1 {
+        margin: 64px;
+        text-align: center;
+    }
+    form {
+        border: solid 1px black;
+        padding: 24px;
+        border-radius: 10px;
+    }
+</style>
 
 <body>
     <div class="container">
+        <div class="tile">
+            <h1>QUÊN MẬT KHẨU</h1>
+        </div>
         <form action="" method="post">
-            <div class="mb-3">
-                <h4>nhập email đăng ký</h4>
+            <!-- bắt lỗi đăng nhập -->
+            <?php if (isset($error)) : ?>
+                <div class="error" style="text-align: center; color: red;">
+                    <?= $error ?>
+                </div>
+            <?php endif ?>
+            <div class="mb-3 mt-3">
+                <label for="email" class="form-label">Tên đăng nhập</label>
                 <input type="email" class="form-control my-4" placeholder="Nhập email" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Số điện thoại</label>
                 <input type="text" class="form-control my-4" placeholder="Nhập số điện thoại" name="phone">
             </div>
-            <div style="color: red;">
-                <?php if (isset($error)) {
-                    echo $error;
-                } ?>
-            </div>
             <button type="submit" class="btn btn-primary" name="btn">quên mật khẩu</button>
-        </form> <br>
+        </form>
         <?php if (isset($pw)) {
             echo "<div> mật khẩu của bạn là :  $pw </div>";
         } ?>
