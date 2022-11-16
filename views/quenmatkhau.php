@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>quên mật khẩu</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="./views/src/css/index/style.css">
     <link rel="stylesheet" href="./views/src/css/index/layout.css">
@@ -31,7 +31,7 @@
 <body>
     <div class="container">
         <div class="tile">
-            <h1>Đăng nhập</h1>
+            <h1>QUÊN MẬT KHẨU</h1>
         </div>
         <form action="" method="post">
             <!-- bắt lỗi đăng nhập -->
@@ -45,20 +45,14 @@
                 <input type="email" class="form-control my-4" placeholder="Nhập email" name="email">
             </div>
             <div class="mb-3">
-                <label for="pwd" class="form-label">Mật khẩu</label>
-                <input type="password" class="form-control my-4" placeholder="Nhập PassWord" name="matkhau">
+                <label for="pwd" class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control my-4" placeholder="Nhập số điện thoại" name="phone">
             </div>
-            <div class="form-check mb-3">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> ghi nhớ tài khoản
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary" name="btn">Đăng Nhập</button>
-            <ul class="">
-                <li><a href="http://localhost/da1/?url=quen-mat-khau">quên mật khẩu</a></li>
-                <li><a href="http://localhost/da1/?url=signin-khach-hang">đăng kí thành viên</a></li>
-            </ul>
+            <button type="submit" class="btn btn-primary" name="btn">quên mật khẩu</button>
         </form>
+        <?php if (isset($pw)) {
+            echo "<div> mật khẩu của bạn là :  $pw </div>";
+        } ?>
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

@@ -1,6 +1,6 @@
 <?php
 // insert đăng ký
-function insert_users()
+function dangky_khachhang()
 {
     if (isset($_POST['btn'])) {
         $name = $_POST['hoten'];
@@ -45,7 +45,7 @@ function validate_signin()
         if ($diachi == '') {
             $diachi_err = "vui lòng nhập địa chỉ";
         } else {
-            insert_users();
+            dangky_khachhang();
         }
     }
     include "./views/signin.php";
@@ -61,6 +61,7 @@ function login_khachhang()
         $sql = "select * from users where email = '$email'";
 
         $user = pdo_query_one($sql);
+
 
         //KIỂM TRA user
         if ($user) {
@@ -79,16 +80,16 @@ function login_khachhang()
     }
     include "./views/login.php";
 }
-// check login
-// function checklogin_admin()
-// {
-//     //kiểm tra đăng nhập
-//     if (!isset($_SESSION['user'])) {
-//         header("location:http://localhost/da1/?url=login-admin");
-//         exit;
-//     }
-// }
-// đăng nhập vào quản lý admin
+//check login
+function checklogin_admin()
+{
+    //kiểm tra đăng nhập
+    if (!isset($_SESSION['user'])) {
+        header("location:http://localhost/da1/?url=login-admin");
+        exit;
+    }
+}
+//đăng nhập vào quản lý admin
 function login_admin()
 {
     if (isset($_POST['btn'])) {
@@ -97,24 +98,22 @@ function login_admin()
 
         $sql = "select * from users where email='$email'";
         $user = pdo_query_one($sql);
-        var_dump($user);
-
 
         //KIỂM TRA user
         if ($user) {
             //kiểm tra matkhau
-            if ($user['password'] == $matkhau){
+            if ($user['password'] == $matkhau) {
                 if ($user['role'] == 1) {
-                    $_SESSION['user'] = $user;
-   
+                    $_SESSION['user'] = $user['email'];
+
                     header("location:http://localhost/da1/controller/admin/?url=home");
                     exit;
                 } else {
-                    $_SESSION['user'] = $user;
+                    $_SESSION['user'] = $user['email'];
                     header("location:http://localhost/da1/?url=home");
                     exit;
                 }
-            }  else {
+            } else {
                 $error = "tài khoản hoặc mật khẩu không chính xác";
             }
         } else {
@@ -122,4 +121,32 @@ function login_admin()
         }
     }
     include "./views/login-admin.php";
+}
+
+
+// quên mật khẩu
+
+
+function quen_mat_khau()
+{
+    if (isset($_POST['btn'])) {
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $sql = "select * from users where email = '$email' AND phone = $phone";
+
+        $sql = "select * from users where email='$email'";
+        $user = pdo_query_one($sql);
+        //KIỂM TRA user
+        if ($user) {
+            //kiểm tra password
+            if ($user['email'] == $email && $user['phone'] == $phone) {
+                $pw = $user['password'];
+            } else {
+                $error = "email hoặc sdt của bạn không chính xác";
+            }
+        } else {
+            $error = "email hoặc sdt của bạn không chính xác";
+        }
+    }
+    include "./views/quenmatkhau.php";
 }

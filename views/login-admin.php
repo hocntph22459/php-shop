@@ -54,10 +54,6 @@
                 </label>
             </div>
             <button type="submit" class="btn btn-primary" name="btn">Đăng Nhập</button>
-            <ul class="">
-                <li><a href="#">quên mật khẩu</a></li>
-                <li><a href="http://localhost/da1/?url=signin-khach-hang">đăng kí thành viên</a></li>
-            </ul>
         </form>
     </div>
     <!-- JavaScript Bundle with Popper -->

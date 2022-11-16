@@ -62,6 +62,10 @@ switch ($url) {
     case 'login-admin':
         login_admin();
         break;
+        // quêm mật khẩu
+    case 'quen-mat-khau':
+        quen_mat_khau();
+        break;
     default:
         echo "<h2> 404 not found !!! </h2>";
 }
