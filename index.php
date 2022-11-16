@@ -66,6 +66,9 @@ switch ($url) {
     case 'quen-mat-khau':
         quen_mat_khau();
         break;
+        case 'san-pham-yeu-thich':
+            include "./views/product-tym.php";
+            break;
     default:
         echo "<h2> 404 not found !!! </h2>";
 }
