@@ -49,6 +49,9 @@
                                     <p>Size:
                                         <!-- list dữ liệu-->
                                     </p>
+                                    <p>giá tiền:
+                                        <!-- list dữ liệu-->
+                                    </p>
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa">
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -105,7 +108,9 @@
                                     <p><strong>Red hoodie</strong></p>
                                     <p>Color: red</p>
                                     <p>Size: M</p>
-
+                                    <p>giá tiền:
+                                        <!-- list dữ liệu-->
+                                    </p>
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
                                         <i class="fas fa-trash"></i>
                                     </button>

@@ -4,7 +4,7 @@ include "./models/connect.php";
 include "./models/admin/models-sanpham.php";
 include "./models/admin/models-loaihang.php";
 include "./models/client/models-form.php";
-
+include "./models/client/models-cart.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
 // nên include vào file. file nào cần thì include
@@ -52,6 +52,7 @@ switch ($url) {
         break;
         // thanh toán
     case 'checkout-cart':
+        thanhtoan();
         include "./views/checkout.php";
         break;
         // contact
