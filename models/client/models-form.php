@@ -150,3 +150,17 @@ function quen_mat_khau()
     }
     include "./views/quenmatkhau.php";
 }
+
+
+// đổi mật khẩu
+function doimatkhau()
+{
+    if (isset($_POST['btn'])) {
+        $id = $_GET['id'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $sql = "UPDATE `users` SET `password`='$password' WHERE id = $id";
+        pdo_execute($sql);
+    }
+    include "./views/update-user.php";
+}
