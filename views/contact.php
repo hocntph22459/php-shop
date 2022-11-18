@@ -16,17 +16,21 @@
                               <form action="/action_page.php">
                                 <div class="form-group">
                                     <input type="text" class="form-control"  placeholder="Họ tên*">
+                                    <br>
                                   </div>
                                   <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Email*">
+                                    <br>
                                   </div>
                                   <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Tiêu đề">
+                                    <br>
                                   </div>
                                 <div class="form-group">
                                   <label for="comment">Nội dung góp ý:</label>
                                   <textarea class="form-control" rows="5"  name="text"></textarea>
                                 </div>
+                                <br>
                                 <button type="submit" class="btn btn-primary">Gửi</button>
                               </form>
                         </div>
