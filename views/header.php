@@ -34,10 +34,10 @@
               </a>
             </li> 
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/da1/?url=contact">Giới thiệu</a>
+              <a class="nav-link" href="http://localhost/da1/?url=introduce">Giới thiệu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Liên hệ</a>
+              <a class="nav-link" href="http://localhost/da1/?url=contact">Liên hệ</a>
             </li>
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
