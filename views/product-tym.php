@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>giỏ hàng</title>
+    <title>sản phẩm yêu thích</title>
     <link rel="stylesheet" href="./views/src/css/client/cart/cart.css">
 
     <!-- Font Awesome -->
@@ -23,8 +23,7 @@
                 <div class="col-md-8">
                     <div class="card mb-4">
                         <div class="card-header py-3">
-                            <a href="http://localhost/da1/?url=san-pham">tiếp tục mua sắm</a>
-                            <h3 class="mb-0">sản phẩm</h3>
+                            <h5 class="mb-0">sản phẩm yêu thích</h5>
                         </div>
                         <div class="card-body">
                             <!-- Single item -->
@@ -46,18 +45,74 @@
                                     <p>màu xắc:
                                         <!-- list dữ liệu-->
                                     </p>
-                                    <p>Size:
-                                        <!-- list dữ liệu-->
-                                    </p>
-                                    <p>giá tiền:
-                                        <!-- list dữ liệu-->
+                                    <p>Size: <select name="" id="">
+                                            <option value="">m</option>
+                                            <option value="">l</option>
+                                        </select><!-- list dữ liệu-->
                                     </p>
                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa">
                                         <i class="fas fa-trash"></i>
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="yêu thích">
+                                    <!-- <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="yêu thích">
                                         <i class="fas fa-heart"></i>
+                                    </button> -->
+                                    <!-- Data -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Quantity -->
+                                    <div class="d-flex mb-4" style="max-width: 300px">
+                                        <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+
+                                        <div class="form-outline">
+                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                                            <label class="form-label" for="form1">Số lượng</label>
+                                        </div>
+
+                                        <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Quantity -->
+                                    <!-- Price -->
+                                    <p class="text-start text-md-center">
+                                        <strong>$17.99</strong>
+                                    </p>
+                                    <!-- Price -->
+                                    <button type="submit" class="btn btn-primary" name="btn">MUA NGAY</button>
+                                </div>
+                            </div>
+                            <!-- Single item -->
+                            <hr class="my-4" />
+                            <!-- Single item -->
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp" class="w-100" />
+                                        <a href="#!">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
+                                </div>
+                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Data -->
+                                    <p><strong>Red hoodie</strong></p>
+                                    <p>Color: red</p>
+                                    <p>Size: <select name="" id="">
+                                            <option value="">m</option>
+                                            <option value="">l</option>
+                                        </select><!-- list dữ liệu-->
+                                    </p>
+                                    <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa">
+                                        <i class="fas fa-trash"></i>
                                     </button>
+                                    <!-- <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
+                                        <i class="fas fa-heart"></i>
+                                    </button> -->
                                     <!-- Data -->
                                 </div>
 
@@ -84,65 +139,7 @@
                                         <strong>$17.99</strong>
                                     </p>
                                     <!-- Price -->
-                                </div>
-                            </div>
-                            <!-- Single item -->
-
-                            <hr class="my-4" />
-
-                            <!-- Single item -->
-                            <div class="row">
-                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                    <!-- Image -->
-                                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp" class="w-100" />
-                                        <a href="#!">
-                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                        </a>
-                                    </div>
-                                    <!-- Image -->
-                                </div>
-
-                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                    <!-- Data -->
-                                    <p><strong>Red hoodie</strong></p>
-                                    <p>Color: red</p>
-                                    <p>Size: M</p>
-                                    <p>giá tiền:
-                                        <!-- list dữ liệu-->
-                                    </p>
-                                    <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <!-- Data -->
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                    <!-- Quantity -->
-                                    <div class="d-flex mb-4" style="max-width: 300px">
-                                        <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-
-                                        <div class="form-outline">
-                                            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                                            <label class="form-label" for="form1">Quantity</label>
-                                        </div>
-
-                                        <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
-                                    <!-- Quantity -->
-
-                                    <!-- Price -->
-                                    <p class="text-start text-md-center">
-                                        <strong>$17.99</strong>
-                                    </p>
-                                    <!-- Price -->
+                                    <button type="submit" class="btn btn-primary" name="btn">MUA NGAY</button>
                                 </div>
                             </div>
                             <!-- Single item -->
@@ -161,31 +158,6 @@
                             <img class="me-2" width="45px" src="./views/src/image/cart/emegica.png" alt="American Express" />
                             <img class="me-2" width="45px" src="./views/src/image/cart/the-mastercard.png" alt="Mastercard" />
                             <img class="me-2" width="45px" src="./views/src/image/cart/paypal.png" alt="PayPal acceptance mark" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-header py-3">
-                            <h5 class="mb-0">Tóm tắt</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                    sản phẩm
-                                    <span>$53.98</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                                    <div>
-                                        <strong>Tổng cộng</strong>
-                                        <strong>
-                                            <p class="mb-0">(bao gồm VAT)</p>
-                                        </strong>
-                                    </div>
-                                    <span><strong>$53.98</strong></span>
-                                </li>
-                            </ul>
-                            <a href="http://localhost/da1/?url=checkout-cart" class="btn btn-primary btn-lg btn-block">ĐI ĐẾN THANH TOÁN</a>
                         </div>
                     </div>
                 </div>

@@ -82,10 +82,6 @@
                                 <input type="text" class="form-control" name="kh_ten" id="kh_ten" >
                             </div>
                             <div class="col-md-12">
-                                <label for="kh_gioitinh">Giới tính</label>
-                                <input type="text" class="form-control" name="kh_gioitinh" id="kh_gioitinh" >
-                            </div>
-                            <div class="col-md-12">
                                 <label for="kh_diachi">Địa chỉ</label>
                                 <input type="text" class="form-control" name="kh_diachi" id="kh_diachi" >
                             </div>
@@ -93,22 +89,12 @@
                                 <label for="kh_dienthoai">Điện thoại</label>
                                 <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" >
                             </div>
-                            <div class="col-md-12">
-                                <label for="kh_email">Email</label>
-                                <input type="text" class="form-control" name="kh_email" id="kh_email" >
-                            </div>
-                            <div class="col-md-12">
-                                <label for="kh_ngaysinh">Ngày sinh</label>
-                                <input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh" >
-                            </div>
-                            <div class="col-md-12">
-                                <label for="kh_cmnd">CMND</label>
-                                <input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd" >
-                            </div>
+                            <!-- <div class="col-md-12">
+                                <label for="kh_gioitinh">Giới tính</label>
+                                <input type="text" class="form-control" name="kh_gioitinh" id="kh_gioitinh" >
+                            </div> -->
                         </div>
-
                         <h4 class="mb-3">Hình thức thanh toán</h4>
-
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
                                 <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required="" value="1">
@@ -124,7 +110,7 @@
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang">Đặt
+                        <button onclick="alert('Đặt hàng thành công')" class="btn btn-primary btn-lg btn-block" type="submit" name="btn">Đặt
                             hàng</button>
                     </div>
                 </div>

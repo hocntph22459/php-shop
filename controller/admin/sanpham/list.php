@@ -139,7 +139,7 @@
                                 <td>
                                     <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-san-pham&id=<?= $sp['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                     <a href="http://localhost/da1/controller/admin/?url=update-san-pham&id=<?= $sp['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
-                                    <a href="http://localhost/da1/controller/admin/?url=update-san-pham&id=<?= $sp['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=update-san-pham&id=<?= $sp['id'] ?>"><img src="../../views/src/image/admin/eye-fill.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
