@@ -6,6 +6,9 @@ include "../../models/admin/models-khachhang.php";
 include "../../models/admin/models-mau.php";
 include "../../models/admin/models-kichco.php";
 
+
+include "../../models/admin/models-binhluuan.php";
+
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 // echo $url;
@@ -160,8 +163,9 @@ switch ($url) {
             $listusers = loadall_users();
             header("location:../../controller/admin/index.php?url=khach-hang");
         }
-        ///Bình luận
+       ///Bình luận
     case 'binh-luan':
+        $listbinhluan = loadall_binhluan(0);
         include "../admin/binhluan/list.php";
         break;
     case 'thong-ke':

@@ -1,8 +1,3 @@
-<?php
-//kiểm tra đăng nhập
-// include "../../models/client/models-form.php";
-// checklogin_admin();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Trang trủ admin</title>
+    <title>Danh sách đơn hàng</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,8 +23,11 @@
     table {
         width: 1280px;
     }
+    .img1 img{
+        width: 100px;
+        height: 100px;
+    }
 </style>
-
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -110,7 +108,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" >
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -119,7 +117,41 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-                
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID </th>
+                            <th scope="col">Tên Người Đặt </th>
+                            <th scope="col">Địa chỉ</th> 
+                            <th scope="col">Số điện thoại</th>
+                            <th scope="col">Tổng Tiền</th>
+                            <th scope="col">Ngày Mua hàng</th>
+                            <th scope="col">Trạng Thái</th>
+                            <th scope="col">Phương Thức Thanh Toán</th>
+                            <th scope="col"><a href="http://localhost/da1/controller/admin/?url=add-hoa-don">thêm mới</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($name_bill as $bill) : ?>
+                            <tr>
+                                <th scope="row"><?= $bill['id'] ?></th>
+                                <td><?= $bill['name_order'] ?></td>
+                                <td><?= $bill['address'] ?></td>
+                                <td><?= $bill['phone'] ?></td>
+                                <td><?= $bill['total'] ?></td>
+                                <td><?= $bill['date_purchase'] ?></td>
+                                <td><?= $bill['status'] ?></td>
+                                <td class="img1"><img src="../../views/src/image/products/<?= $bill['image'] ?>" alt=""></td>
+                                <td><?= $bill['name_category'] ?></td>
+                                <td>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
                 <!-- Content Row -->
             </div>
         </div>
