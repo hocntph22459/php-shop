@@ -5,6 +5,8 @@ include "./models/admin/models-sanpham.php";
 include "./models/admin/models-loaihang.php";
 include "./models/client/models-form.php";
 include "./models/client/models-cart.php";
+include "./models/admin/models-mau.php";
+include "./models/admin/models-kichco.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
 // nên include vào file. file nào cần thì include
@@ -16,13 +18,15 @@ switch ($url) {
     case '':
         // trang chủ
     case 'home':
-        $listspt10 = load_sanpham_top10();
+        $name_category = load_category_sanpham();
+        $listsptop = load_sanpham_top();
         $listspnew = load_sanpham_new();
         $listspsell = load_sanpham_sell();
         include "./views/home.php";
         break;
         // san pham ddang sua nha 
     case 'san-pham':
+        $name_category = load_category_sanpham();
         if (isset($_POST['search']) && $_POST['search'] != '') {
             $search = $_POST['search'];
         } else {
@@ -35,6 +39,15 @@ switch ($url) {
         }
         $listsp = loadall_sanpham($search, $iddm);
         include "./views/sanpham.php";
+        break;
+        // san pham chi tiet
+    case 'san-pham-ct':
+        $id = $_GET['id'];
+        $name_category = load_category_sanpham();
+        $listcolor = loadall_color();
+        $listsize = loadall_size();
+        $spct = loadone_sanpham($id);
+        include "./views/sanphamct.php";
         break;
         //  đăng nhập
     case 'login-khach-hang':

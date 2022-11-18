@@ -1,344 +1,56 @@
-* {
-    padding: 0;
-    margin: 0 auto;
-    box-sizing: border-box;
-    font-family: 'Roboto';
-}
-
-body {
-    background-color: antiquewhite;
-    position: relative;
-}
-
-.container {
-    width: 1200px;
-    background-color: white;
-}
-/* icon home */
-.icon_cart{
-    position:fixed;
-    bottom: 10px;
-    right: 20px;
-}
-.icon_user{
-    position:fixed;
-    bottom: 80px;
-    right: 20px;
-}
-.icon_cart:before{
-    content: "";
-    width: 100px;
-    position: fixed;
-    bottom: 30px;
-    right: 45px;
-}
-.icon_cart:hover::before{
-    content: "Giỏ hàng";
-}
-.icon_user:before{
-    content: "";
-    width: 100px;
-    position: fixed;
-    bottom: 100px;
-    right: 50px;
-}
-.icon_user:hover::before{
-    content: "Tài khoản";
-}
-a{
-    color: black;
-}
-.icon_home button{
-    border-radius: 50%;
-    width: 58px;
-    height: 59px;
-    background-color: antiquewhite;
-}
-.icon_home button:hover{
-    background-color: white;
-}
-/* header */
-header {
-    height: 80px;
-
-    display: grid;
-    grid-template-columns: 15% 20% 65%;
-}
-
-.logo img {
-    width: 90%;
-    margin-left: 10px;
-    margin-top: 5px;
-}
-/* search */
-.search{
-    margin: 25px 5px;
-}
-.form_search{
-    border: 2px solid black;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.form_search input{
-    width: 200px;
-    height: 30px;
-    border: none;
-    outline: none;
-    padding: 12px 15px;
-}
-.form_search button{
-    border: none;
-    background-color: white;
-    margin-left: 5px;
-}
-
-/* main-menu */
-.main_menu ul{
-    display: flex;
-    list-style: none;
-    justify-content: center;
-}
-.main_menu li{
-    padding: 18px 17px;
-}
-.main_menu ul li a{
-    display: block;
-    padding: 15px 0;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-}
-.main_menu ul li a::after{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    content: "";
-    height: 5px;
-    width: 0px;
-    background-color: coral;
-    transition: all 0.3s ease-in-out;
-}
-.main_menu ul li a:hover::after{
-    width: 100%;
-}
-.sub_menu{
-    display: none;
-}
-.sub_menu1{
-    display: none;
-}
-.main_menu ul li:hover .sub_menu{
-    display: block;
-    position: absolute;
-    background: white;
-    height: 350px;
-    width: 500px;
-    left: 56%;
-    transform: translate(-50%);
-
-}
-.main_menu ul li:hover .sub_menu1{
-    display: block;
-    position: absolute;
-    background: white;
-    height: 420px;
-    width: 120px;
-    left: 58%;
-    transform: translate(-50%);
-
-}
-.sub_menu2 ul {
-    display: inline-block;
-}
-.sub_menu3 ul {
-    display: inline-block;
-}
-.sub_menu2 ul li a{
-    font-weight: normal;
-    text-transform: capitalize;
-}
-.title_sub_menu{
-    font-weight: bold;
-    text-transform: uppercase;
-}
-.sub_menu3 ul li a{
-    font-weight: normal;
-    text-transform: capitalize;
-}
-
-/* main */
-
-/* slide show */
-.slide_show img{
-    width: 100%;
-}
-/* title */
-.boxtitle h3{
-    font-size: 30px;
-    position: absolute;
-    left: 40%;
-    bottom: 35%;
-    z-index: 99;
-}
-.boxtitle{
-    position: relative;
-    height: 100px;
-}
-.boxtitle::after{
-    content: "";
-    border-bottom: 2px solid black;
-    position: absolute;
-    width: 100%;
-    bottom: 50%;
-    z-index: 0;
-}
-
-
-/* products */  
-.product_item{
-    width: 300px;
-    height: 300px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 20px;
-    position: relative;
-}
-.product_item .product_img img{
-    width: 300px;
-    height: 300px;
-    border-radius: 5px;
-}
-.product_item .product_name{
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
     text-align: center;
-    padding: 10px 0;
-}
-.product_item .product_price{
+    font-family: arial;
+    margin-top: 20px;
+    margin-bottom: 20px  ;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
     text-align: center;
-    padding-bottom: 10px;
-}
-del{
-    color: gray;
-    padding-right: 15px;
-}
-.product_button{
-    display: none;
-    position: absolute;
-    background-color: black;
-    width: 230px;
-    left: 0;
-    right: 0;
-}
-.product_item:hover .product_button{
-    display: flex;
-    left: 50%;
-    bottom: 20%;
-    transform: translate(-50% , -50%);
-    animation: hover_icon 1s ease-in-out;
-}
-.product_item:hover img{
-    animation: hover_img 1s both;
-}
-.product_item:hover{
-    border: 1px solid black;
-}
-@keyframes hover_icon{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-@keyframes hover_img{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.1);
-    }
-}
-.product_button button{
-    margin: 0 30px;
-    background-color: black;
-}
-.product_button a{
-    color: white;    
-}
-/* post */
-.post_content{
-    display: grid;
-    grid-template-columns: 40% 60%;
-}
-.post_banner img{
+    cursor: pointer;
     width: 100%;
-    height: 252px;
-    margin-left: 10px;
-}
-.post_item{
-    display: flex;
-}
-.post_item .post_img img{
-    width: 100%;
-    margin-right: 35px;
-}
-.post_text{
-    padding: 0 30px 10px 10px;
-}
-.post_time{
-    padding-top: 20px;
-    color: darkgrey;
-}
-/* footer */
-.footer_main{
-    height: 60px;
-    background-color: black;
-}
-.footer_main ul{
-    display: flex;
-    justify-content: center;
-}
-.footer_main ul li{
+    font-size: 18px;
+  }
+  .card p button a{
     color: white;
-    list-style: none;
-    padding-top: 15px ;
-}
-.footer_main ul li i {
-    padding-right: 10px;
-}
-.sub_footer{
-    display: flex;
-    height: 120px;
-}
-.sub_footer ul{
-    list-style: none;
-}.footer_icon ul{
-    display: flex;
-}
-.footer_icon{
-    padding-top: 40px;
-}
-.footer2{
-    padding-top: 30px;
-}
-.footer_info{
-    padding-top: 30px;
-}
-/* chi tiet san pham */
-.product_detail{
-    display: flex;
-}
-.detail_img img{
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-.detail_name{
-    font-weight: bold;
-    padding-bottom: 20px;
-    font-size: 20px;
-}
-
-
+    text-decoration: none;
+  }
+  .card button:hover {
+    opacity: 0.7;
+  }
+  .card img{
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .card h3 a{
+    color: #000;
+    text-decoration: none;
+  }
+  h2{
+    margin: 50px;
+  }
+  .card:hover{
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.5);
+  }
+  button a{
+    color: #000;
+    text-decoration: none;
+  }
+  button a:hover{
+    text-decoration: none;
+    color: #000;
+  }
+  

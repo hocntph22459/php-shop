@@ -10,21 +10,21 @@ function delete_sanpham($id)
     pdo_execute($sql);
     
 }
-function load_sanpham_top10 ()
+function load_sanpham_top ()
 {
-    $sql ="select * from products where 1 order by view desc limit 0,10";
+    $sql ="select * from products where 1 order by view desc limit 0,4";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
 function load_sanpham_new()
 {
-    $sql = "SELECT*FROM products ORDER BY id DESC limit 0,6";
+    $sql = "SELECT*FROM products ORDER BY id DESC limit 0,4";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
 function load_sanpham_sell()
 {
-    $sql = "select * from products where 1 order by sell desc limit 0,6";
+    $sql = "select * from products where 1 order by sell desc limit 0,4";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }

@@ -2,40 +2,24 @@
     include "views/header.php";
 ?>
 <main>
-<div class="danhsachsanpham py-5 bg-light">
-            <div class="container">
-                <div class="row">
-                <?php foreach($listsp as $sp) :?>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <a href="#">
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="300"
-                                    src="./views/src/image/products/<?=$sp['image']?>">
-                            </a>
-                            <div class="card-body">
-                                <a href="#">
-                                    <h5><?=$sp['name']?></h5>
-                                </a>
-                                <h6>Điện thoại</h6>
-                                <p class="card-text">CPU: Dual-core 1 GHz</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a class="btn btn-sm btn-outline-secondary"
-                                            href="#">Xem chi tiết</a>
-                                        <a class="btn btn-sm btn-outline-secondary"
-                                            href="#">Thêm vào giỏ hàng</a>
-                                    </div>
-                                    <small class="text-muted text-right">
-                                        <s><?=$sp['price']?></s>
-                                        <b><?=$sp['price']?></b>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach?>
-                </div>
+<div class="container">
+        <!-- san pham noi bat -->
+        <h2 class="text-center">Tất cả sản phẩm</h2>
+        <div class="row">
+        <?php foreach ($name_category as $sp_cate) : ?>
+        <?php foreach($listsp as $sp) :?>
+            <?php if($sp_cate['id'] == $sp['id']):?>
+            <div class="card">
+                <img src="./views/src/image/products/<?=$sp['image']?>" alt="Denim Jeans" style="width:100%; margin: auto;">
+                <h3><a href=""><?=$sp['name']?></a></h3>
+                <p class="price"><?=$sp['price']?></p>
+                <p><td><?= $sp_cate['name_category'] ?></td></p>
+                <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>
+            <?php endif?>
+        <?php endforeach?>
+        <?php endforeach?>
         </div>
 </main>
 <?php
