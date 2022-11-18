@@ -57,6 +57,10 @@ switch ($url) {
     case 'contact':
         include "./views/contact.php";
         break;
+        // introduce
+    case 'introduce':
+        include "./views/introduce.php";
+        break;
         // login admin
     case 'login-admin':
         login_admin();

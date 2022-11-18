@@ -1,4 +1,7 @@
 
+<?php
+    include "views/header.php";
+?>
 <main>
             <div class="product_detail">
                 <div class="detail_img"><img src="image/products/pro1.jpeg" alt=""></div>
