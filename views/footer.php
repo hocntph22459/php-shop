@@ -1,4 +1,4 @@
-<footer>
+<!-- <footer>
             <div class="footer_main">
                 <ul>
                     <li> <i class="fa-solid fa-square-check fa-2x"></i><span>BẢO HÀNH TRỌN ĐỜI TRÊN TOÀN QUỐC</span></li>
@@ -30,38 +30,19 @@
                     </ul>
                 </div>
             </div>
-        </footer>
+        </footer> -->
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js" integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="views/src/main.js"></script>
-<script type="text/javascript">
-    $('.center').slick({
-  centerMode: true,
-  centerPadding: '60px',
-  slidesToShow: 4,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 700,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 2
-      }
-    }
-  ]
-});
-</script>
+<script src="views/src/main.js"></script> -->
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popperjs/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom script - Các file js do mình tự viết -->
+    <script src="assets/js/app.js"></script>
 </html>
