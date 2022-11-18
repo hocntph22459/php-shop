@@ -1,7 +1,7 @@
 <?php
 //kiểm tra đăng nhập
-include "../../models/client/models-form.php";
-checklogin_admin();
+// include "../../models/client/models-form.php";
+// checklogin_admin();
 ?>
 <!DOCTYPE html>
 <html lang="en">

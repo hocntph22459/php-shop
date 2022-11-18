@@ -1,21 +1,24 @@
-<?php  ob_start(); 
+<?php ob_start();
 
 include "../../models/admin/models-loaihang.php";
 include "../../models/admin/models-sanpham.php";
 include "../../models/admin/models-khachhang.php";
-include "../../models/admin/models-binhluan.php";
+include "../../models/admin/models-mau.php";
+include "../../models/admin/models-kichco.php";
 
+
+include "../../models/admin/models-binhluuan.php";
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 // echo $url;
 switch ($url) {
     case '':
-    // trang chủ
+        // trang chủ  
     case 'home':
         include "./home.php";
         break;
-    // loại hàng
+        // loại hàng
     case 'loai-hang':
         $listcat = loadall_cat();
         include "../admin/loaihang/list.php";
@@ -29,24 +32,92 @@ switch ($url) {
         include "../admin/loaihang/add.php";
         break;
     case 'edit-loai-hang':
-        loadone_cat();
+        $id = $_GET['id'];
+        $catone = loadone_cat($id);
         update_cat();
         include "../admin/loaihang/edit.php";
         break;
+    //màu sản phẩm
+    case 'color':
+        $listcolor = loadall_color();
+        include "../admin/mau/list.php";
+        break;
+    case 'delete-color':
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            delete_color($id);
+            $listcolor = loadall_color();
+            header("location:http://localhost/da1/controller/admin/?url=color");
+        }
+        include "../admin/mau/delete.php";
+        break;
+    case 'add-color':
+        if (isset($_POST['btn'])) {
+            $mau = $_POST['mau'];
+            insert_color($mau);
+            header("location:http://localhost/da1/controller/admin/?url=color");
+        }
+        include "../admin/mau/add.php";
+        break;
+    case 'edit-color':
+        $id = $_GET['id'];
+        $color = loadone_color($id);
+        include "../admin/mau/edit.php";
+        if (isset($_POST['btn'])) {
+            $mau = $_POST['mau'];
+            update_color($id,$mau);
+            header("location:../../controller/admin/index.php?url=color");
+        }
+        break;
+    // kích cỡ sản phẩm
+    case 'size':
+        $listsize = loadall_size();
+        include "../admin/kichco/list.php";
+        break;
+    case 'delete-size':
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            delete_size($id);
+            $listsize = loadall_size();
+            header("location:http://localhost/da1/controller/admin/?url=size");
+        }
+        include "../admin/kichco/delete.php";
+        break;
+    case 'add-size':
+        if (isset($_POST['btn'])) {
+            $kichco = $_POST['kichco'];
+            $price = $_POST['price'];
+            insert_size($kichco,$price);
+            header("location:http://localhost/da1/controller/admin/?url=size");
+        }
+        include "../admin/kichco/add.php";
+        break;
+    case 'edit-size':
+        $id = $_GET['id'];
+        $size = loadone_size($id);
+        include "../admin/kichco/edit.php";
+        if (isset($_POST['btn'])) {
+            $kichco = $_POST['kichco'];
+            $price = $_POST['price'];
+            update_size($id,$kichco,$price);
+            header("location:../../controller/admin/index.php?url=size");
+        }
+        break;
     //sản phẩm 
     case 'san-pham':
-        $listsanpham = loadall_sanpham($search);
+        $name_category = load_category_sanpham();
+        $listsanpham = loadall_sanpham_admin();
         include "../admin/sanpham/list.php";
         break;
     case 'delete-san-pham':
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             delete_sanpham($id);
-            $listsanpham = loadall_sanpham($search);
+            $listsanpham = loadall_sanpham_admin();
             header("location:../../controller/admin/index.php?url=san-pham");
         }
-    case 'add-san-pham': 
-        $listsanpham = loadall_sanpham($search);
+    case 'add-san-pham':
+        $listsanpham = loadall_sanpham_admin();
         $listcat = loadall_cat();
         include "../admin/sanpham/add.php";
         if (isset($_POST['btn'])) {
@@ -55,8 +126,10 @@ switch ($url) {
             $anhsp = $_FILES['anhsp']['name'];
             $motasp = $_POST['motasp'];
             $loaisp = $_POST['loaisp'];
+            $ngaynhap = $_POST['ngaynhap'];
+            $giamgia = $_POST['giamgia'];
             move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
-            insert_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp);
+            insert_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
         break;
@@ -71,13 +144,15 @@ switch ($url) {
             $anhsp = $_FILES['anhsp']['name'];
             $motasp = $_POST['motasp'];
             $loaisp = $_POST['loaisp'];
+            $ngaynhap = $_POST['ngaynhap'];
+            $giamgia = $_POST['giamgia'];
             move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
-            update_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp,$id);
+            update_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$id);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
         break;
-    // khách hàng
-     case 'khach-hang':
+        // khách hàng
+    case 'khach-hang':
         $listusers = loadall_users();
         include "../admin/khachhang/list.php";
         break;
@@ -88,38 +163,7 @@ switch ($url) {
             $listusers = loadall_users();
             header("location:../../controller/admin/index.php?url=khach-hang");
         }
-    // case 'add-san-pham': 
-    //     $listsanpham = loadall_sanpham();
-    //     $listcat = loadall_cat();
-    //     include "../admin/sanpham/add.php";
-    //     if (isset($_POST['btn'])) {
-    //         $tensp = $_POST['tensp'];
-    //         $giasp = $_POST['giasp'];
-    //         $anhsp = $_FILES['anhsp']['name'];
-    //         $motasp = $_POST['motasp'];
-    //         $loaisp = $_POST['loaisp'];
-    //         move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
-    //         insert_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp);
-    //         header("location:../../controller/admin/index.php?url=san-pham");
-    //     }
-    //     break;
-    // case 'update-san-pham':
-    //     $id = $_GET['id'];
-    //     $sanpham = loadone_sanpham($id);
-    //     $listcat = loadall_cat();
-    //     include "../admin/sanpham/edit.php";
-    //     if (isset($_POST['btn'])) {
-    //         $tensp = $_POST['tensp'];
-    //         $giasp = $_POST['giasp'];
-    //         $anhsp = $_FILES['anhsp']['name'];
-    //         $motasp = $_POST['motasp'];
-    //         $loaisp = $_POST['loaisp'];
-    //         move_uploaded_file($_FILES["anhsp"]["tmp_name"],"../../views/src/image/products/".$_FILES["anhsp"]["name"]);
-    //         update_sanpham($tensp,$anhsp,$giasp,$motasp,$loaisp,$id);
-    //         header("location:../../controller/admin/index.php?url=san-pham");
-    //     }
-    //     break;
-    ///Bình luận
+       ///Bình luận
     case 'binh-luan':
         $listbinhluan = loadall_binhluan(0);
         include "../admin/binhluan/list.php";
