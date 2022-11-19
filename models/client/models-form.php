@@ -84,10 +84,10 @@ function login_khachhang()
 function checklogin_admin()
 {
     //kiểm tra đăng nhập
-    if (!isset($_SESSION['user'])) {
-        header("location:http://localhost/da1/?url=login-admin");
-        exit;
-    }
+    // if (!isset($_SESSION['user'])) {
+    //     header("location:http://localhost/da1/?url=login-admin");
+    //     exit;
+    // }
 }
 //đăng nhập vào quản lý admin
 function login_admin()
@@ -163,4 +163,15 @@ function doimatkhau()
         pdo_execute($sql);
     }
     include "./views/update-user.php";
+}
+
+
+
+// đăng xuất
+
+function logout()
+{
+    session_destroy();
+    header("location:http://localhost/da1/?url=home");
+    exit;
 }

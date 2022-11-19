@@ -62,12 +62,12 @@
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau&id=<?=$id?>">đổi mật khẩu</a></button>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
+            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
+            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
+            <button class="btn btn-outline-success" type="button"><a href="">Đơn hàng của tôi</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
           </form>
           <?php endif ?>
-          <button type="button" class="btn btn-secondary">Cart</button>
         </div>
       </div>
     </nav>

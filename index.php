@@ -90,6 +90,10 @@ switch ($url) {
     case 'doi-mat-khau':
         doimatkhau();
         break;
+           // đăng xuất khách hàng
+    case 'logout-khach-hang':
+        logout();
+        break;
     default:
         echo "<h2> 404 not found !!! </h2>";
 }

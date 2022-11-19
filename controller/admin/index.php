@@ -6,6 +6,7 @@ include "../../models/admin/models-khachhang.php";
 include "../../models/admin/models-mau.php";
 include "../../models/admin/models-kichco.php";
 include "../../models/admin/models-binhluan.php";
+include "../../models/client/models-form.php";
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -14,6 +15,7 @@ switch ($url) {
     case '':
         // trang chủ  
     case 'home':
+        checklogin_admin();
         include "./home.php";
         break;
         // loại hàng
