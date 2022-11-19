@@ -7,6 +7,7 @@ include "./models/client/models-form.php";
 include "./models/client/models-cart.php";
 include "./models/admin/models-mau.php";
 include "./models/admin/models-kichco.php";
+include "./models/admin/models-binhluan.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
 // nên include vào file. file nào cần thì include

@@ -6,6 +6,7 @@ include "../../models/admin/models-khachhang.php";
 include "../../models/admin/models-mau.php";
 include "../../models/admin/models-kichco.php";
 include "../../models/admin/models-binhluan.php";
+include "../../models/admin/models-thongke.php";
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -163,6 +164,7 @@ switch ($url) {
         }
        ///Bình luận
     case 'binh-luan':
+        
         $items = load_binhluan_by_products($id);
         include "../admin/binhluan/list.php";
         break;

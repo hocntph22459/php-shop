@@ -68,7 +68,7 @@ function login_khachhang()
             //kiểm tra matkhau
             if ($user['password'] == $matkhau) {
                 $_SESSION['email'] = $user['email'];
-
+                $_SESSION['id'] = $user;
                 header("location:http://localhost/da1/?url=home");
                 exit;
             } else {

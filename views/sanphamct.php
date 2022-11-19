@@ -1,10 +1,27 @@
 <?php include "./views/header.php"; ?>
+
 <!--Important link from https://bootsnipp.com/snippets/XqvZr-->
 <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 <link href="./views/src/css/sanphamct.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+
+<?php
+if(isset($_POST['comment_submit'])){
+    
+    $idkh = $_SESSION['id']['id'];
+    $idsp = $_GET['id'];
+    $contents = $_POST['contents'];
+    if(isset($_POST['contents'])&& !empty($_POST['contents'])){  
+        insert_binhluan($contents,$idsp,$idkh);
+      
+    }
+    // die;
+}
+$comment_list1 = load_binhluan_by_users($id);
+
+?>
 
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -17,14 +34,14 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="./views/src/image/products/<?= $spct['image'] ?>" alt="">
+                <img src="./views/src/image/products/<?= $spct['image'] ?>" alt="" style="border-radius: 40px;">
             </div>
             <div class="col-md-6">
                 <div class="product-dtl">
                     <div class="product-info">
-                        <div class="product-name"><?= $spct['name'] ?></div>
+                        <div class="product-name" style="text-transform: capitalize;"><?= $spct['name'] ?></div>
                         <div class="reviews-counter">
-                            <div class="rate">
+                            <div class="rate" style="margin: 10px 0">
                                 <input type="radio" id="star5" name="rate" value="5" checked />
                                 <label for="star5" title="text">5 stars</label>
                                 <input type="radio" id="star4" name="rate" value="4" checked />
@@ -66,7 +83,7 @@
                     <div class="product-count">
                         <label for="quantity">Quantity</label>
                         <form action="#" class="display-flex">
-                            <input type="number" name="quantity" value="1" class="qty" min="0">
+                            <input type="number" name="quantity" value="1" class="qty" min="0" style="border-radius: 10px; width: 100px;">
                         </form>
                         <button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button>
                     </div>
@@ -86,14 +103,38 @@
                 <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                     <?= $spct['description'] ?>
                 </div>
-                <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                <div class="tab-pane fade " id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div class="review-heading">Bình luận</div>
-                    <p class="mb-20">There are no reviews yet.</p>
-                    <?php if(isset($_SESSION['email'])):?>
-                        <form class="review-form">
+                    <p class="mb-20">
+                        <?php 
+                        foreach ($comment_list1 as $bl) { extract($bl); ?>
+                            <ul>
+                              <li class="">
+                                <p> <i><b>
+                          
+                                      <?=$name_person_comment;
+                                 
+                                      ?>
+                          
+                                    </b></i>
+                                </p>
+                          
+                                <div class="d-flex justify-content-between w-75">
+                                  <p><?= $contents ?></p>
+                                  <p><?= $date_comment?></p>
+                                </div>
+                              </li>
+                            </ul>
+                          
+                          <?php }
+                        ?>
+                    </p>
+                    
+                    <?php if(isset($_SESSION['id'])):?>
+                        <form class="review-form" action="" method="post">
                             <div class="form-group">
-                                <label>Your rating</label>
-                                <div class="reviews-counter">
+                                <!-- <label>Your rating</label> -->
+                                <!-- <div class="reviews-counter">
                                     <div class="rate">
                                         <input type="radio" id="star5" name="rate" value="5" />
                                         <label for="star5" title="text">5 stars</label>
@@ -106,7 +147,7 @@
                                         <input type="radio" id="star1" name="rate" value="1" />
                                         <label for="star1" title="text">1 star</label>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group">
                                 <label>Your message</label>
@@ -115,16 +156,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="" class="form-control" placeholder="Name*">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="" class="form-control" placeholder="Email Id*">
+                                    
+                                        <input type="text" name="" class="form-control" value="<?=$_SESSION['id']['name']?>" readonly>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-success" name="comment">Gửi</button>
+                            <button class="btn btn-success" name="comment_submit">Gửi</button>
                         </form>
                     <?php else :?>
                         <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập để được bình luận</a></button>
@@ -138,4 +175,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <?php include "./views/footer.php"; ?>
