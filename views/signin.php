@@ -19,42 +19,6 @@
 
 <body>
     <div class="container">
-        <!-- <nav class="navbar navbar-expand-lg bg-light">
-            <a class="navbar-brand" href="http://localhost/da1/?url=home"><img src="./views/src/image/logo/logo2.PNG" alt="" width="120px"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://localhost/da1/?url=home">Trang Trủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/da1/?url=contact">Giới Thiệu</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Liên hệ
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.facebook.com/hoclnh">facebook</a></li>
-                            <li><a class="dropdown-item" href="">zalo</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="">telegram</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Hỏi Đáp</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Tìm</button>
-                </form>
-            </div>
-        </nav> -->
         <div class="panel panel-primary">
             <div class="panel-heading"> <br>
                 <h2 class="text-center">ĐĂNG KÝ THÀNH VIÊN</h2>

@@ -88,7 +88,7 @@ switch ($url) {
         break;
         // đổi mật khẩu
     case 'doi-mat-khau':
-        doimatkhau();
+        validate_doi_mat_khau();
         break;
            // đăng xuất khách hàng
     case 'logout-khach-hang':

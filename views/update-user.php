@@ -26,21 +26,41 @@
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="" class="form-label">email</label> <br>
+                    <?php if (isset($email_err)) : ?>
+                        <span style="color:red">
+                            <?= $email_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="email" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="email">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">mật khẩu</label> <br>
-                    <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhau">
+                    <?php if (isset($matkhaucu_err)) : ?>
+                        <span style="color:red">
+                            <?= $matkhaucu_err ?>
+                        </span>
+                    <?php endif ?>
+                    <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhaucu">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">mật khẩu mới</label> <br>
+                    <?php if (isset($matkhau_err)) : ?>
+                        <span style="color:red">
+                            <?= $matkhau_err ?>
+                        </span>
+                    <?php endif ?>
                     <input type="password" class="form-control my-4" id="rmatkhau" placeholder="Nhập lại mật khẩu" name="password">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">nhập lại mật khẩu mới</label> <br>
-                    <input type="password" class="form-control my-4" id="rmatkhau" placeholder="Nhập lại mật khẩu" name="">
+                    <?php if (isset($rmatkhau_err)) : ?>
+                        <span style="color:red">
+                            <?= $rmatkhau_err ?>
+                        </span>
+                    <?php endif ?>
+                    <input type="password" class="form-control my-4" id="rmatkhau" placeholder="Nhập lại mật khẩu" name="rpassword">
                 </div>
-                <button class="btn btn-success" name="btn" id="bt">ĐỔI</button>
+                <button onclick="alert('thành công')" class="btn btn-success" name="btn" id="bt">ĐỔI</button>
             </form>
         </div>
     </div>
