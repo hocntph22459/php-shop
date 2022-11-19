@@ -22,7 +22,7 @@
     }
     function load_binhluan_by_products($id){
         $sql = "select b.*,h.name from comments b join products h on h.id=b.product_id
-        where b.product_id='.$id.' ORDER BY date_comment";
+        where b.product_id='$id' ORDER BY date_comment";
         return pdo_query($sql);
     }
     function load_binhluan_by_users($id)

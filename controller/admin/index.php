@@ -166,9 +166,13 @@ switch ($url) {
         }
        ///Bình luận
     case 'binh-luan':
-        
-        $items = load_binhluan_by_products($id);
+        $items = thong_ke_binh_luan();
         include "../admin/binhluan/list.php";
+        break;
+    case 'binh-luan-ct':
+        $id = $_GET['id'];
+        $binhluanct = load_binhluan_by_products($id);
+        include "../admin/binhluan/detail.php";
         break;
     case 'thong-ke':
         include "../admin/thong-ke/list.php";
