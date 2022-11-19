@@ -110,7 +110,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Your message</label>
-                                <textarea class="form-control" rows="10"></textarea>
+                                <textarea class="form-control" rows="10" name="contents"></textarea>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="round-black-btn">Submit Review</button>
+                            <button class="btn btn-success" name="comment">Gửi</button>
                         </form>
                     <?php else :?>
                         <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập để được bình luận</a></button>
