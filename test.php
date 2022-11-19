@@ -16,7 +16,7 @@ function login_khachhang()
             if ($user['password'] == $matkhau) {
                 $_SESSION['user'] = $user;
                 // $_SESSION['user']['email'] = $user['email'];
-                // $_SESSION['user']['role'] = $user['role'];
+                // $_SESSION['user']['role'] = $user['role'];  
                 echo "<pre>";
                 var_dump($_SESSION['user']['email']);
                 die;
