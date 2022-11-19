@@ -11,6 +11,7 @@ function dangky_khachhang()
         $sql = "insert into users(name,email,password,phone,address) values ('$name','$email','$matkhau','$phone','$diachi')";
         pdo_execute($sql);
         header("location:http://localhost/da1/?url=login-khach-hang");
+        exit;
     }
 }
 // validate form đăng ký
@@ -84,10 +85,10 @@ function login_khachhang()
 function checklogin_admin()
 {
     //kiểm tra đăng nhập
-    if (!isset($_SESSION['user'])) {
-        header("location:http://localhost/da1/?url=login-admin");
-        exit;
-    }
+    // if (!isset($_SESSION['user'])) {
+    //     header("location:http://localhost/da1/?url=login-admin");
+    //     exit;
+    // }
 }
 //đăng nhập vào quản lý admin
 function login_admin()
@@ -161,6 +162,45 @@ function doimatkhau()
         $password = $_POST['password'];
         $sql = "UPDATE `users` SET `password`='$password' WHERE id = $id";
         pdo_execute($sql);
+        header("location:http://localhost/da1/?url=login-khach-hang");
+        exit;
+    }
+}
+
+
+// validate form đổi mật khẩu
+function validate_doi_mat_khau()
+{
+    if (isset($_POST['btn'])) {
+        $email = $_POST['email'];
+        $matkhaucu = $_POST['matkhaucu'];
+        $password = $_POST['password'];
+        $rpassword = $_POST['rpassword'];
+
+        if ($email == '') {
+            $email_err = "vui lòng nhập email";
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $email_err = "nhập đúng định dạng";
+        }
+        if ($matkhaucu == '') {
+            $matkhaucu_err = "vui lòng nhập mật khẩu";
+        } else if ($password < 6) {
+            $matkhau_err = "mật khẩu phải trên 6 kí tự";
+        }
+        if ($rpassword != $password) {
+            $rmatkhau_err = "mật khẩu phải trùng nhau";
+        } else {
+            doimatkhau();
+        }
     }
     include "./views/update-user.php";
+}
+
+// đăng xuất
+
+function logout()
+{
+    session_destroy();
+    header("location:http://localhost/da1/?url=home");
+    exit;
 }
