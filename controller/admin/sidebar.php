@@ -63,12 +63,25 @@
             <span>BÌNH LUẬN</span></a>
     </li>
      <!-- Nav Item -->
+     <!-- Nav Item -->
+     <li class="nav-item">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=don-hang">
+            <i class="fas fa-fw fa-table"></i>
+            <span>ĐƠN HÀNG</span></a>
+    </li>
+     <!-- Nav Item --> 
      <li class="nav-item">
         <a class="nav-link" href="http://localhost/da1/controller/admin/?url=thong-ke">
             <i class="fas fa-fw fa-table"></i>
             <span>THỐNG KÊ</span></a>
     </li>
-
+     <!-- Nav Item -->
+     <li class="nav-item">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=gop-y">
+            <i class="fas fa-fw fa-table"></i>
+            <span>GÓP Ý</span></a>
+    </li>
+     <!-- Nav Item -->
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

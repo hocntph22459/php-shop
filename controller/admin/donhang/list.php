@@ -72,7 +72,7 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -113,7 +113,7 @@
                                     Logout
                                 </a>
                             </div>
-                        </li>
+</li>
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
@@ -128,11 +128,10 @@
                             <th scope="col">Ngày Mua hàng</th>
                             <th scope="col">Trạng Thái</th>
                             <th scope="col">Phương Thức Thanh Toán</th>
-                            <th scope="col"><a href="http://localhost/da1/controller/admin/?url=add-hoa-don">thêm mới</a></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($name_bill as $bill) : ?>
+                        <?php foreach ($listbill as $bill) : ?>
                             <tr>
                                 <th scope="row"><?= $bill['id'] ?></th>
                                 <td><?= $bill['name_order'] ?></td>
@@ -141,12 +140,10 @@
                                 <td><?= $bill['total'] ?></td>
                                 <td><?= $bill['date_purchase'] ?></td>
                                 <td><?= $bill['status'] ?></td>
-                                <td class="img1"><img src="../../views/src/image/products/<?= $bill['image'] ?>" alt=""></td>
-                                <td><?= $bill['name_category'] ?></td>
+                                <td><?= $bill['method_payment_id'] ?></td>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
-                                    <a href="http://localhost/da1/controller/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
-                                    <a href="http://localhost/da1/controller/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-don-hang&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=edit-don-hang&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

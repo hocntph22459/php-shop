@@ -8,6 +8,7 @@ include "../../models/admin/models-kichco.php";
 include "../../models/admin/models-binhluan.php";
 include "../../models/admin/models-thongke.php";
 include "../../models/client/models-form.php";
+include "../../models/admin/models-donhang.php";
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -183,6 +184,53 @@ switch ($url) {
         // include "../admin/binhluan/detail.php";
         header("location:../../controller/admin/index.php?url=binh-luan-ct&id=".$id);
         break;
+    // Đơn Hàng
+    case 'don-hang':
+        $listbill = loadall_bill(0);
+        include "../admin/donhang/list.php";
+        break;
+    case 'delete-don-hang':
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                delete_bill($id);
+                $listbill = loadall_bill($id);
+                header("location:../../controller/admin/index.php?url=don-hang");
+        }    
+    case 'update-don-hang':
+        $id = $_GET['id'];
+        include "../admin/donhang/edit.php";
+        if (isset($_POST['btn'])) {
+            $name_order = $_POST['name_order'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
+            $total = $_POST['total'];
+            $date_purchase = $_POST['date_purchase'];
+            $status = $_POST['status'];
+            $method_payment_id = $_POST['method_payment_id '];
+
+            update_bill($id,$name_order,$address,$phone,$total,$date_purchase,$status,$method_payment_id);
+            header("location:../../controller/admin/index.php?url=don-hang");
+        }
+        break;
+    case 'edit-don-hang':
+        $id = $_GET['id'];
+        $bill = loadone_bill($id);
+        include "../admin/donhang/edit.php";
+        if (isset($_POST['btn'])) {
+            $name_order = $_POST['name_order'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
+            $total = $_POST['total'];
+            $date_purchase = $_POST['date_purchase'];
+            $status = $_POST['status'];
+            $method_payment_id = $_POST['method_payment_id'];
+            update_bill($id,$name_order,$address,$phone,$total,$date_purchase,$status,$method_payment_id);
+            header("location:../../controller/admin/index.php?url=don-hang");
+        }
+        break;    
+
+
+
     case 'thong-ke':
         include "../admin/thong-ke/list.php";
         break;
