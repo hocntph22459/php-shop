@@ -21,7 +21,7 @@
         return pdo_query_value($sql) > 0;
     }
     function load_binhluan_by_products($id){
-        $sql = "select b.*,h.name from comments b join products h on h.id=b.product_id
+        $sql = "select b.*,h.name from(SELECT c.*,d.name as user_name FROM comments c join users d on c.user_id = d.id) b join products h on h.id=b.product_id 
         where b.product_id='$id' ORDER BY date_comment";
         return pdo_query($sql);
     }

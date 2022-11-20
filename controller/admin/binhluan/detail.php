@@ -128,9 +128,9 @@
                             <tr>
                                 <th scope="row"><?= $value['contents'] ?></th>
                                 <th scope="row"><?= $value['date_comment'] ?></th>
-                                <th scope="row"><?= $value['user_id'] ?></th>
+                                <th scope="row"><?= $value['user_name'] ?></th>
                                 <td>      
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-binh-luan&id=<?= $value['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-binh-luan&id_bl=<?=$value['id']?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

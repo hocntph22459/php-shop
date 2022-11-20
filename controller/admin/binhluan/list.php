@@ -125,15 +125,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($items as $value) : ?>
+                        <?php foreach ($items as $value1) : ?>
                             <tr>
-                                <th scope="row"><?= $value['name'] ?></th>
-                                <th scope="row"><?= $value['so_luong'] ?></th>
-                                <th scope="row"><?= $value['moi_nhat'] ?></th>
-                                <th scope="row"><?= $value['cu_nhat'] ?></th>
+                                <th scope="row"><?= $value1['name'] ?></th>
+                                <th scope="row"><?= $value1['so_luong'] ?></th>
+                                <th scope="row"><?= $value1['moi_nhat'] ?></th>
+                                <th scope="row"><?= $value1['cu_nhat'] ?></th>
                                 <td>
                                     
-                                    <a href="http://localhost/da1/controller/admin/?url=binh-luan-ct&id=<?= $value['id'] ?>"><img src="../../views/src/image/admin/eye-fill.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=binh-luan-ct&id=<?= $value1['id'] ?>"><img src="../../views/src/image/admin/eye-fill.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

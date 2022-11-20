@@ -10,6 +10,10 @@ function delete_sanpham($id)
     pdo_execute($sql);
     
 }
+function delete_binhluan_sp($id){
+    $sql = "DELETE FROM comments WHERE product_id=$id";
+    pdo_execute($sql);
+}
 function load_sanpham_top ()
 {
     $sql ="select * from products where 1 order by view desc limit 0,4";

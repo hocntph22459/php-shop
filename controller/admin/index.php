@@ -113,6 +113,7 @@ switch ($url) {
     case 'delete-san-pham':
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
+            delete_binhluan_sp($id);
             delete_sanpham($id);
             $listsanpham = loadall_sanpham_admin();
             header("location:../../controller/admin/index.php?url=san-pham");
@@ -173,6 +174,14 @@ switch ($url) {
         $id = $_GET['id'];
         $binhluanct = load_binhluan_by_products($id);
         include "../admin/binhluan/detail.php";
+        break;
+    case 'delete-binh-luan':
+        $id_bl = $_GET['id_bl'];
+        $id = $_GET['id'];
+        delete_binhluan($id_bl);
+        $binhluanct = load_binhluan_by_products($id);
+        // include "../admin/binhluan/detail.php";
+        header("location:../../controller/admin/index.php?url=binh-luan-ct&id=".$id);
         break;
     case 'thong-ke':
         include "../admin/thong-ke/list.php";
