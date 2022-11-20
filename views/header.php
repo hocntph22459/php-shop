@@ -13,8 +13,6 @@
     
   </head>
 <body class="p-3 m-0 border-0 bd-example">
-  <!-- Example Code -->
-  <!-- <div class="container"> -->
   <header>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
@@ -63,7 +61,7 @@
           <?php if (isset($_SESSION['email'])) : ?>
             <form class="form-inline">
             <button class="btn btn-outline-success" type="button"><a href="">Đơn hàng của tôi</a></button>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau&id=<?= 1?>">đổi mật khẩu</a></button>
+            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
           </form>

@@ -25,21 +25,13 @@
             </div>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
+                    <label for="" class="form-label">name</label> <br>
+                    <input type="text" class="form-control my-4" id="id" placeholder="Nhập name của bạn" name="name">
                     <label for="" class="form-label">email</label> <br>
-                    <?php if (isset($email_err)) : ?>
-                        <span style="color:red">
-                            <?= $email_err ?>
-                        </span>
-                    <?php endif ?>
                     <input type="email" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="email">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">mật khẩu</label> <br>
-                    <?php if (isset($matkhaucu_err)) : ?>
-                        <span style="color:red">
-                            <?= $matkhaucu_err ?>
-                        </span>
-                    <?php endif ?>
                     <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhaucu">
                 </div>
                 <div class="mb-3 mt-3">

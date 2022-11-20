@@ -84,11 +84,12 @@ function login_khachhang()
 //check login
 function checklogin_admin()
 {
-    //kiểm tra đăng nhập
-    // if (!isset($_SESSION['user'])) {
-    //     header("location:http://localhost/da1/?url=login-admin");
-    //     exit;
-    // }
+    // kiểm tra đăng nhập
+
+    if (!isset($_SESSION['email'])) {
+        header("location:http://localhost/da1/?url=login-admin");
+        exit;
+    }
 }
 //đăng nhập vào quản lý admin
 function login_admin()
@@ -105,12 +106,11 @@ function login_admin()
             //kiểm tra matkhau
             if ($user['password'] == $matkhau) {
                 if ($user['role'] == 1) {
-                    $_SESSION['user'] = $user['email'];
-
+                    $_SESSION['email'] = $user['email'];
                     header("location:http://localhost/da1/controller/admin/?url=home");
                     exit;
                 } else {
-                    $_SESSION['user'] = $user['email'];
+                    $_SESSION['email'] = $user['email'];
                     header("location:http://localhost/da1/?url=home");
                     exit;
                 }
@@ -124,10 +124,7 @@ function login_admin()
     include "./views/login-admin.php";
 }
 
-
 // quên mật khẩu
-
-
 function quen_mat_khau()
 {
     if (isset($_POST['btn'])) {
@@ -152,21 +149,19 @@ function quen_mat_khau()
     include "./views/quenmatkhau.php";
 }
 
-
 // đổi mật khẩu
 function doimatkhau()
 {
     if (isset($_POST['btn'])) {
-        $id = $_GET['id'];
+        $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $sql = "UPDATE `users` SET `password`='$password' WHERE id = $id";
+        $sql = "UPDATE `users` SET `password`='$password' WHERE name = '$name'";
         pdo_execute($sql);
         header("location:http://localhost/da1/?url=login-khach-hang");
         exit;
     }
 }
-
 
 // validate form đổi mật khẩu
 function validate_doi_mat_khau()
@@ -176,15 +171,7 @@ function validate_doi_mat_khau()
         $matkhaucu = $_POST['matkhaucu'];
         $password = $_POST['password'];
         $rpassword = $_POST['rpassword'];
-
-        if ($email == '') {
-            $email_err = "vui lòng nhập email";
-        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $email_err = "nhập đúng định dạng";
-        }
-        if ($matkhaucu == '') {
-            $matkhaucu_err = "vui lòng nhập mật khẩu";
-        } else if ($password < 6) {
+        if ($password < '6') {
             $matkhau_err = "mật khẩu phải trên 6 kí tự";
         }
         if ($rpassword != $password) {
@@ -195,9 +182,7 @@ function validate_doi_mat_khau()
     }
     include "./views/update-user.php";
 }
-
 // đăng xuất
-
 function logout()
 {
     session_destroy();
