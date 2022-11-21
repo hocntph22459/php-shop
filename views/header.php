@@ -55,7 +55,6 @@
             <form class="form-inline">
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
           </form>
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>
@@ -63,7 +62,9 @@
             <button class="btn btn-outline-success" type="button"><a href="">Đơn hàng của tôi</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
+            <?php if($_SESSION['id']['role']==1 ):?>
             <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
+            <?php endif;?>
           </form>
           <?php endif ?>
         </div>

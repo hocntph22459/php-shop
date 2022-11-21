@@ -188,7 +188,7 @@ switch ($url) {
         delete_binhluan($id_bl);
         $binhluanct = load_binhluan_by_products($id);
         // include "../admin/binhluan/detail.php";
-        header("location:../../controller/admin/index.php?url=binh-luan-ct&id=" . $id);
+        header("location:../../controller/admin/index.php?url=binh-luan");
         break;
         // Đơn Hàng
     case 'don-hang':

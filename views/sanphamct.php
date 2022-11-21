@@ -131,7 +131,7 @@ $comment_list1 = load_binhluan_by_users($id);
                     </p>
                     
                     <?php if(isset($_SESSION['id'])):?>
-                        <form class="review-form" action="" method="post">
+                        <form class="review-form" action="" method="post" id="">
                             <div class="form-group">
                                 <!-- <label>Your rating</label> -->
                                 <!-- <div class="reviews-counter">
