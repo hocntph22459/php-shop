@@ -17,6 +17,14 @@ function delete_cat()
         header("location:http://localhost/da1/controller/admin/?url=loai-hang");
     }
 }
+function delete_loaihang_sp(){
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "DELETE FROM  products WHERE category_id=" . $id;
+        pdo_execute($sql);
+        header("location:http://localhost/da1/controller/admin/?url=delete-loai-hang");
+    }
+}
 function loadall_cat()
 {
     $sql = "SELECT*FROM categories ORDER BY id DESC";

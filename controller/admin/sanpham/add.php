@@ -137,7 +137,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Mô tả sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp">
+                        <!-- <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp"> -->
+                        <textarea name="motasp" class="form-control my-4" cols="20" rows="7" placeholder="Nhập mô tả"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Ngày nhập sản phẩm</label>

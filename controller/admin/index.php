@@ -32,6 +32,7 @@ switch ($url) {
         include "../admin/loaihang/list.php";
         break;
     case 'delete-loai-hang':
+        // delete_loaihang_sp();
         delete_cat();
         include "../admin/loaihang/delete.php";
         break;

@@ -128,7 +128,7 @@
                                 <th scope="row"><?= $list['id'] ?></th>
                                 <td><?= $list['name'] ?></td>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-loai-hang&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a onclick="return confirm('bạn có chắc xóa danh mục và các sản phẩm liên quan tới nó?')" href="http://localhost/da1/controller/admin/?url=delete-loai-hang&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                     <a href="http://localhost/da1/controller/admin/?url=edit-loai-hang&id=<?= $list['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
                                 </td>
                             </tr>
