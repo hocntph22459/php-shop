@@ -9,6 +9,8 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
     <link rel="stylesheet" href="./views/src/css/client.css">
+    <!-- css footer -->
+    <link rel="stylesheet" href="./views/src/css/client/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> 
     
   </head>
