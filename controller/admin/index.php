@@ -8,7 +8,9 @@ include "../../models/admin/models-kichco.php";
 include "../../models/admin/models-binhluan.php";
 include "../../models/admin/models-thongke.php";
 include "../../models/client/models-form.php";
-include "../../models/admin/models-donhang.php";
+include "../../models/admin/models-hoadon.php";
+include "../../models/admin/models-gopy.php";
+
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
@@ -197,21 +199,21 @@ switch ($url) {
         // include "../admin/binhluan/detail.php";
         header("location:../../controller/admin/index.php?url=binh-luan");
         break;
-        // Đơn Hàng
-    case 'don-hang':
+        //Hóa Đơn 
+    case 'hoa-don':
         $listbill = loadall_bill(0);
-        include "../admin/donhang/list.php";
+        include "../admin/hoadon/list.php";
         break;
-    case 'delete-don-hang':
+    case 'delete-hoa-don':
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             delete_bill($id);
             $listbill = loadall_bill($id);
-            header("location:../../controller/admin/index.php?url=don-hang");
+            header("location:../../controller/admin/index.php?url=hoa-don");
         }
-    case 'update-don-hang':
+    case 'update-hoa-don':
         $id = $_GET['id'];
-        include "../admin/donhang/edit.php";
+        include "../admin/hoadon/edit.php";
         if (isset($_POST['btn'])) {
             $name_order = $_POST['name_order'];
             $address = $_POST['address'];
@@ -222,13 +224,13 @@ switch ($url) {
             $method_payment_id = $_POST['method_payment_id '];
 
             update_bill($id, $name_order, $address, $phone, $total, $date_purchase, $status, $method_payment_id);
-            header("location:../../controller/admin/index.php?url=don-hang");
+            header("location:../../controller/admin/index.php?url=hoa-don");
         }
         break;
-    case 'edit-don-hang':
+    case 'edit-hoa-don':
         $id = $_GET['id'];
         $bill = loadone_bill($id);
-        include "../admin/donhang/edit.php";
+        include "../admin/hoadon/edit.php";
         if (isset($_POST['btn'])) {
             $name_order = $_POST['name_order'];
             $address = $_POST['address'];
@@ -238,7 +240,7 @@ switch ($url) {
             $status = $_POST['status'];
             $method_payment_id = $_POST['method_payment_id'];
             update_bill($id, $name_order, $address, $phone, $total, $date_purchase, $status, $method_payment_id);
-            header("location:../../controller/admin/index.php?url=don-hang");
+            header("location:../../controller/admin/index.php?url=hoa-don");
         }
         break;
 
@@ -246,6 +248,19 @@ switch ($url) {
     case 'thong-ke':
         include "../admin/thong-ke/list.php";
         break;
+
+        // Góp ý
+    case 'gop-y':
+        $listcontact = loadall_gopy(0);
+        include "../admin/gopy/list.php";
+        break;
+    case 'delete-gop-y':
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            delete_gopy($id);
+            $listcontact = loadall_gopy($id);
+            header("location:../../controller/admin/index.php?url=gop-y");
+        }
     default:
         echo "<h2> 404 not found !!! </h2>";
         break;

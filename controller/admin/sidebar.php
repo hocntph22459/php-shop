@@ -65,9 +65,9 @@
      <!-- Nav Item -->
      <!-- Nav Item -->
      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=don-hang">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=hoa-don">
             <i class="fas fa-fw fa-table"></i>
-            <span>ĐƠN HÀNG</span></a>
+            <span>HÓA ĐƠN</span></a>
     </li>
      <!-- Nav Item --> 
      <li class="nav-item">

@@ -12,7 +12,10 @@
     <!-- css footer -->
     <link rel="stylesheet" href="./views/src/css/client/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> 
-    
+    <!-- css contact -->
+    <link rel="stylesheet" href="./views/src/css/client/style1.css">
+    <link rel="stylesheet" href="./views/src/css/client/font-awesome.min.css">
+    <link rel="stylesheet" href="./views/src/css/client/responsive.css">
   </head>
 <body class="p-3 m-0 border-0 bd-example">
   <header>

@@ -1,44 +1,60 @@
 <?php
     include "views/header.php";
 ?>
-<div class="jumbotron text-center">
-  <h1>My First Bootstrap Page</h1>
-</div>
-     <!--  -->
-            <div class="row">
-                        <div class="col-sm-4">
-                          <h5>CÔNG TY TNHH TM DV TT01</h3>
-                          <p>Địa chỉ: Số 6 Phan Chu Trinh, Quận 10, TP.HCM</p>
-                          <p>Điện thoại: 0123.456.789</p>
-                          <p>Mail: contact@demo.com</p>
-                        </div>
-                        <div class="col-sm-4">
-                              <form action="/action_page.php">
-                                <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="Họ tên*">
-                                    <br>
-                                  </div>
-                                  <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Email*">
-                                    <br>
-                                  </div>
-                                  <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Tiêu đề">
-                                    <br>
-                                  </div>
-                                <div class="form-group">
-                                  <label for="comment">Nội dung góp ý:</label>
-                                  <textarea class="form-control" rows="5"  name="text"></textarea>
-                                </div>
-                                <br>
-                                <button type="submit" class="btn btn-primary">Gửi</button>
-                              </form>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=285&amp;height=300&amp;hl=en&amp;q=Tòa nhà FPT Polytechnic, P. Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà Nội&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://formatjson.org/">format json</a></div><style>.mapouter{position:relative;text-align:right;width:285px;height:300px;}.gmap_canvas {overflow:hidden;background:none!important;width:285px;height:300px;}.gmap_iframe {width:285px!important;height:300px!important;}</style></div>
-                        </div>  
-                <!--  -->
+<!-- contact section -->
+<?php
+if(isset($_POST['contact_submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $tieude = $_POST['tieude'];
+    $noidung = $_POST['noidung'];
+    if(isset($_POST['name'])&& !empty($_POST['contact'])){  
+      insert_gopy($name,$tieude,$mota,$email);      
+    }
+    // die;
+}
+?>
+<section class="contact_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+              Liên hệ chúng tôi
+              </h2>
             </div>
+            <form action="">
+              <div>
+                <input type="text" placeholder="Họ Tên" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" placeholder="Tiêu đề " />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Nội dung góp ý" />
+              </div>
+              <div class="d-flex ">
+                <button type="submit"  type="submit" name="contact_submit">
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="./views/src/image/contact/contact-img.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
 
 <?php 
     include "footer.php";

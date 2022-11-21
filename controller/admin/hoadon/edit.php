@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sửa Đơn Hàng</title>
+    <title>Sửa Hóa Đơn</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -115,8 +115,8 @@
                 </nav>
                 <!-- End of Topbar -->
 <div class="tile">
-                    <h3>sửa sản phẩm</h3>
-                    <a class="" href="http://localhost/da1/controller/admin/?url=don-hang">quay lại danh sách</a>
+                    <h3>Sửa Hóa Đơn</h3>
+                    <a class="" href="http://localhost/da1/controller/admin/?url=hoa-don">quay lại danh sách</a>
                 </div>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-3 mt-3">

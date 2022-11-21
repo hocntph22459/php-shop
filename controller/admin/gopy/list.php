@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Danh sách đơn hàng</title>
+    <title>Danh sách Hóa Đơn</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -121,29 +121,22 @@
                     <thead>
                         <tr>
                             <th scope="col">ID </th>
-                            <th scope="col">Tên Người Đặt </th>
-                            <th scope="col">Địa chỉ</th> 
-                            <th scope="col">Số điện thoại</th>
-                            <th scope="col">Tổng Tiền</th>
-                            <th scope="col">Ngày Mua hàng</th>
-                            <th scope="col">Trạng Thái</th>
-                            <th scope="col">Phương Thức Thanh Toán</th>
+                            <th scope="col">Họ Tên</th>
+                            <th scope="col">Tiêu đề</th> 
+                            <th scope="col">Mô tả</th>
+                            <th scope="col">Email</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($listbill as $bill) : ?>
+                        <?php foreach ($listcontact as $contact) : ?>
                             <tr>
-                                <th scope="row"><?= $bill['id'] ?></th>
-                                <td><?= $bill['name_order'] ?></td>
-                                <td><?= $bill['address'] ?></td>
-                                <td><?= $bill['phone'] ?></td>
-                                <td><?= $bill['total'] ?></td>
-                                <td><?= $bill['date_purchase'] ?></td>
-                                <td><?= $bill['status'] ?></td>
-                                <td><?= $bill['method_payment_id'] ?></td>
+                                <th scope="row"><?= $contact['id'] ?></th>
+                                <td><?= $contact['name'] ?></td>
+                                <td><?= $contact['tieude'] ?></td>
+                                <td><?= $contact['mota'] ?></td>
+                                <td><?= $contact['email'] ?></td>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-don-hang&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
-                                    <a href="http://localhost/da1/controller/admin/?url=edit-don-hang&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-gop-y&id=<?= $contact['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
