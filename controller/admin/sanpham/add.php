@@ -156,7 +156,18 @@
                         <?php endforeach?>
                         </select>
                     </div>
-                    
+                    <div class="mb-3">
+                        <label for="" class="form-label">Màu sản phẩm</label>
+                        <input type="text" class="form-control my-4" placeholder="Màu sản phẩm" name="mau">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Kích cỡ sản phẩm</label>
+                        <input type="text" class="form-control my-4" placeholder="kích cỡ sản phẩm" name="kichco">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Số lượng sản phẩm</label>
+                        <input type="number" class="form-control my-4" placeholder="Số lượng sản phẩm" name="soluong">
+                    </div>
                     <button name="btn" class="btn btn-secondary btn-lg" >thêm mới</button>
                 </form>
                 <!-- Content Row -->

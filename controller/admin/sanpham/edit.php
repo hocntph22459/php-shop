@@ -163,6 +163,18 @@
                         <?php endforeach?>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Màu sản phẩm</label>
+                        <input type="text" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="mau" value="<?=$sanpham['color']?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Kích cỡ sản phẩm</label>
+                        <input type="text" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="kichco" value="<?=$sanpham['size']?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Số lượng sản phẩm</label>
+                        <input type="number" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="soluong" value="<?=$sanpham['quantity']?>">
+                    </div>
                     <button name="btn" class="btn btn-secondary btn-lg" >Sửa</button>
                 </form>
                 <!-- Content Row -->

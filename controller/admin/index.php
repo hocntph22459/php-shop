@@ -138,8 +138,11 @@ switch ($url) {
             $loaisp = $_POST['loaisp'];
             $ngaynhap = $_POST['ngaynhap'];
             $giamgia = $_POST['giamgia'];
+            $mau = $_POST['mau'];
+            $kichco = $_POST['kichco'];
+            $soluong = $_POST['soluong'];
             move_uploaded_file($_FILES["anhsp"]["tmp_name"], "../../views/src/image/products/" . $_FILES["anhsp"]["name"]);
-            insert_sanpham($tensp, $anhsp, $giasp, $motasp, $ngaynhap, $giamgia, $loaisp);
+            insert_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$mau,$kichco,$soluong);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
         break;
@@ -156,8 +159,11 @@ switch ($url) {
             $loaisp = $_POST['loaisp'];
             $ngaynhap = $_POST['ngaynhap'];
             $giamgia = $_POST['giamgia'];
+            $mau = $_POST['mau'];
+            $kichco = $_POST['kichco'];
+            $soluong = $_POST['soluong'];
             move_uploaded_file($_FILES["anhsp"]["tmp_name"], "../../views/src/image/products/" . $_FILES["anhsp"]["name"]);
-            update_sanpham($tensp, $anhsp, $giasp, $motasp, $ngaynhap, $giamgia, $loaisp, $id);
+            update_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$mau,$kichco,$soluong,$id);
             header("location:../../controller/admin/index.php?url=san-pham");
         }
         break;

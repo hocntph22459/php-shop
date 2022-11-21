@@ -26,9 +26,7 @@
               <a class="nav-link active" aria-current="page" href="http://localhost/da1/?url=home">Trang chủ</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link " href="http://localhost/da1/?url=san-pham">
-                Sản phẩm
-              </a>
+              <a class="nav-link " href="http://localhost/da1/?url=san-pham">Sản phẩm</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/da1/?url=introduce">Giới thiệu</a>

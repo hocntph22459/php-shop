@@ -1,7 +1,7 @@
 <?php
-function insert_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp)
+function insert_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$mau,$kichco,$soluong)
 {
-    $sql = "INSERT INTO `products`(`name`,`image`,price,`description`,`date_add`,sell,category_id) VALUES ('$tensp','$anhsp','$giasp','$motasp','$ngaynhap','$giamgia','$loaisp')";
+    $sql = "INSERT INTO `products`(`name`,`image`,price,`description`,`date_add`,sell,category_id,color,size,quantity) VALUES ('$tensp','$anhsp','$giasp','$motasp','$ngaynhap','$giamgia','$loaisp','$mau','$kichco','$soluong')";
     pdo_execute($sql);
 }
 function delete_sanpham($id)
@@ -65,13 +65,13 @@ function loadone_sanpham($id)
     $sanphamone = pdo_query_one($sql);
     return $sanphamone;
 }
-function update_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$id)
+function update_sanpham($tensp,$anhsp,$giasp,$motasp,$ngaynhap,$giamgia,$loaisp,$mau,$kichco,$soluong,$id)
 {
     if($anhsp){
-        $sql = "UPDATE products SET name='".$tensp."', image='".$anhsp."', price='".$giasp."', description='".$motasp."', date_add='".$ngaynhap."' , sell='".$giamgia."', category_id='".$loaisp."' WHERE id=" . $id;
+        $sql = "UPDATE products SET name='".$tensp."', image='".$anhsp."', price='".$giasp."', description='".$motasp."', date_add='".$ngaynhap."' , sell='".$giamgia."', category_id='".$loaisp."', color='".$mau."', size='".$kichco."', quantity='".$soluong."' WHERE id=" . $id;
     }
     else{
-        $sql = "UPDATE products SET name='".$tensp."',  price='".$giasp."', description='".$motasp."', date_add='".$ngaynhap."' , sell='".$giamgia."', category_id='".$loaisp."'  WHERE id=" . $id;
+        $sql = "UPDATE products SET name='".$tensp."',  price='".$giasp."', description='".$motasp."', date_add='".$ngaynhap."' , sell='".$giamgia."', category_id='".$loaisp."', color='".$mau."', size='".$kichco."', quantity='".$soluong."'  WHERE id=" . $id;
         // var_dump($sql);
         // die;
     }

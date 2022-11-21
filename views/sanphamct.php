@@ -64,26 +64,18 @@ $comment_list1 = load_binhluan_by_users($id);
                     <p><?= $spct['description'] ?></p>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="size">Size</label>
-                            <select id="size" name="size" class="form-control">
-                                <?php foreach ($listsize as $size) : ?>
-                                    <option value="<?= $size['id'] ?>"><?= $size['size'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
+                            <label for="size">Size</label>  
+                            <input type="text" name="kichco" value="<?=$spct['size']?>" class="qty" style="border-radius: 10px; width: 100px;" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="color">Color</label>
-                            <select id="color" name="color" class="form-control">
-                                <?php foreach ($listcolor as $color) : ?>
-                                    <option value="<?= $color['id'] ?>"><?= $color['color'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
+                            <input type="text" name="mau" value="<?=$spct['color']?>" class="qty" style="border-radius: 10px; width: 100px;" readonly>
                         </div>
                     </div>
                     <div class="product-count">
                         <label for="quantity">Quantity</label>
                         <form action="#" class="display-flex">
-                            <input type="number" name="quantity" value="1" class="qty" min="0" style="border-radius: 10px; width: 100px;">
+                            <input type="number" name="quantity" value="1" class="qty" min="0" max="<?=$spct['quantity']?>" style="border-radius: 10px; width: 100px;">
                         </form>
                         <button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button>
                     </div>
