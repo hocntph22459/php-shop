@@ -1,11 +1,45 @@
 <?php
-// function add_gio_hang($tensp, $anhsp, $giasp, $motasp, $ngaynhap, $giamgia, $loaisp)
+// load giỏ hàng
+function loadall_cart(){
+    $sql = "SELECT * FROM `cart` ORDER BY id DESC";
+    $cart = pdo_query($sql);
+    return $cart;
+    
+}
+
+// function add_gio_hang()
 // {
-//     $sql = "INSERT INTO `products`(`name`,`image`,price,`description`,`date_add`,sell,category_id) VALUES ('$tensp','$anhsp','$giasp','$motasp','$ngaynhap','$giamgia','$loaisp')";
+//     $sql = "INSERT INTO `cart`(`name`,`image`,price,`description`,`date_add`,sell,category_id) VALUES ('','','','','','','','')";
 //     pdo_execute($sql);
 // }
 
+// sản phẩm yêu thích
 
+
+
+// update giỏ hàng
+// function update_cart()
+// {
+//     if (isset($_POST['btn'])) {
+//         $id = $_GET['id'];
+//         $soluong = $_POST['soluong'];
+//         $sql = "UPDATE `cart` SET`soluong`='$soluong' WHERE id = $id;";
+//         pdo_execute($sql);
+//         header("location:http://localhost/da1/?url=cart");
+//         exit;
+//     }
+// }
+
+// xóa giỏ hàng
+function delete_cart(){
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $sql = "DELETE FROM  cart WHERE id=" . $id;
+        pdo_execute($sql);
+        header("location:http://localhost/da1/?url=cart");
+        exit;
+    }
+}
 // thanh toán checkout
 function thanhtoan()
 {
@@ -19,3 +53,9 @@ function thanhtoan()
         pdo_execute($sql);
     }
 }
+
+
+
+
+
+?>

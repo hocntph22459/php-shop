@@ -60,7 +60,12 @@ switch ($url) {
         break;
         // cart
     case 'cart':
+        $cart = loadall_cart();
         include "./views/cart.php";
+        break;
+        // xóa cart
+    case 'delete-cart':
+        delete_cart();
         break;
         // thanh toán
     case 'checkout-cart':
@@ -91,7 +96,7 @@ switch ($url) {
     case 'doi-mat-khau':
         validate_doi_mat_khau();
         break;
-           // đăng xuất khách hàng
+        // đăng xuất khách hàng
     case 'logout-khach-hang':
         logout();
         break;
