@@ -1,9 +1,14 @@
 <?php
 // load giỏ hàng
 function loadall_cart(){
-    $sql = "SELECT * FROM `cart` ORDER BY id DESC";
-    $cart = pdo_query($sql);
-    return $cart;
+    if(isset($_SESSION['email'])){
+        $sql = "SELECT * FROM `cart` ORDER BY id DESC";
+        $cart = pdo_query($sql);
+        return $cart;
+    }else{
+        header("location:http://localhost/da1?url=login-khach-hang");
+        exit;
+    }
     
 }
 

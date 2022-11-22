@@ -42,7 +42,13 @@ include "views/header.php";
                 <h3><a href=""><?=$sp['name']?></a></h3>
                 <p class="price"><?=$sp['price']?></p>
                 <p><td><?= $sp_cate['name_category'] ?></td></p>
-                <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
+                <?php if (!isset($_SESSION['email'])) : ?>
+                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                <?php endif ?>
+                <?php if (isset($_SESSION['email'])) : ?>
+                    <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <?php endif ?>
                 <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>
             <?php endif?>
@@ -60,7 +66,13 @@ include "views/header.php";
                 <h3><a href=""><?=$sp['name']?></a></h3>
                 <p class="price"><?=$sp['price']?></p>
                 <p><td><?= $sp_cate['name_category'] ?></td></p>
-                <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
+                <?php if (!isset($_SESSION['email'])) : ?>
+                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                <?php endif ?>
+                <?php if (isset($_SESSION['email'])) : ?>
+                    <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <?php endif ?>
                 <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>
             <?php endif?>
@@ -77,8 +89,14 @@ include "views/header.php";
                 <img src="./views/src/image/products/<?=$sp['image']?>" alt="Denim Jeans" style="width:100%; margin: auto;">
                 <h3><a href=""><?=$sp['name']?></a></h3>
                 <p class="price"><?=$sp['price']?></p>
-                <p><td><?= $sp_cate['name_category'] ?></td></p>
-                <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <p><td><?= $sp_cate['name_category'] ?></td></p>   
+                <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
+                <?php if (!isset($_SESSION['email'])) : ?>
+                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                <?php endif ?>
+                <?php if (isset($_SESSION['email'])) : ?>
+                    <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                <?php endif ?>
                 <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>
             <?php endif?>
