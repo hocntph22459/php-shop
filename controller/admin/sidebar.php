@@ -62,6 +62,11 @@
             <i class="fas fa-fw fa-table"></i>
             <span>BÌNH LUẬN</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=bai-viet">
+            <i class="fas fa-fw fa-table"></i>
+            <span>BÀI VIẾT</span></a>
+    </li>
      <!-- Nav Item -->
      <!-- Nav Item -->
      <li class="nav-item">

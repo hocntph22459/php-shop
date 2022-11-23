@@ -50,6 +50,14 @@ switch ($url) {
         $spct = loadone_sanpham($id);
         include "./views/sanphamct.php";
         break;
+        // bài viết
+    case 'bai-viet':
+        include "./views/post.php";
+        break;
+        // bai viet chi tiet
+    case 'bai-viet-ct':
+        include "./views/detail_post.php";
+        break;
         //  đăng nhập
     case 'login-khach-hang':
         login_khachhang();

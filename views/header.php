@@ -42,6 +42,9 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/da1/?url=contact">Chính sách</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost/da1/?url=bai-viet">Bài viết</a>
+            </li>
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
             <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">

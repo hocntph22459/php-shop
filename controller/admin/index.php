@@ -10,6 +10,7 @@ include "../../models/admin/models-thongke.php";
 include "../../models/client/models-form.php";
 include "../../models/admin/models-hoadon.php";
 include "../../models/admin/models-gopy.php";
+include "../../models/admin/models-baiviet.php";
 
 
 include "../../models/connect.php";
@@ -243,7 +244,31 @@ switch ($url) {
             header("location:../../controller/admin/index.php?url=hoa-don");
         }
         break;
-
+        // bài viet
+    case 'bai-viet':
+        $listpost = load_all_post();
+        include "../admin/baiviet/list.php";
+        break;
+    case 'add-bai-viet':
+        include "../admin/baiviet/add.php";
+        if (isset($_POST['btn'])) {
+            $tieude = $_POST['tieude'];
+            $noidung = $_POST['noidung'];
+            insert_post($tieude,$noidung);
+            header("location:../../controller/admin/index.php?url=bai-viet");
+        }
+        break;
+    case 'update-bai-viet':
+        $id = $_GET['id'];
+        $postone = load_one_post($id);
+        include "../admin/baiviet/edit.php";
+        if (isset($_POST['btn'])) {
+            $tieude = $_POST['tieude'];
+            $noidung = $_POST['noidung'];
+            update_post($id,$tieude,$noidung);
+            header("location:../../controller/admin/index.php?url=bai-viet");
+        }
+        break;
         // thống kê
     case 'thong-ke':
         include "../admin/thongke/list.php";
