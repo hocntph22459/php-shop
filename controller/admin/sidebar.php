@@ -14,9 +14,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=thong-ke">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>DANH MỤC QUẢN LÝ</span></a>
+            <span>Dashboard</span></a>
     </li>
 
     <!-- Divider -->
@@ -69,13 +69,7 @@
             <i class="fas fa-fw fa-table"></i>
             <span>HÓA ĐƠN</span></a>
     </li>
-     <!-- Nav Item --> 
-     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/da1/controller/admin/?url=thong-ke">
-            <i class="fas fa-fw fa-table"></i>
-            <span>THỐNG KÊ</span></a>
-    </li>
-     <!-- Nav Item -->
+     
      <li class="nav-item">
         <a class="nav-link" href="http://localhost/da1/controller/admin/?url=gop-y">
             <i class="fas fa-fw fa-table"></i>

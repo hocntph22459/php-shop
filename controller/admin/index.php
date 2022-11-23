@@ -246,7 +246,7 @@ switch ($url) {
 
         // thống kê
     case 'thong-ke':
-        include "../admin/thong-ke/list.php";
+        include "../admin/thongke/list.php";
         break;
 
         // Góp ý
