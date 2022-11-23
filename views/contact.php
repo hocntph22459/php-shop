@@ -1,18 +1,23 @@
 <?php
     include "views/header.php";
-?>
+    ?>
 <!-- contact section -->
 <?php
-if(isset($_POST['contact_submit'])){
+if(isset($_POST['contact_submit']) && $_POST['contact_submit']){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $tieude = $_POST['tieude'];
-    $noidung = $_POST['noidung'];
-    if(isset($_POST['name'])&& !empty($_POST['contact'])){  
-      insert_gopy($name,$tieude,$mota,$email);      
-    }
-    // die;
+    $mota = $_POST['mota'];
+    // echo "<pre>";
+    // var_dump($_POST);
+    if(!empty($name) && !empty($email) && !empty($tieude) && !empty($mota)){
+      $sql="INSERT INTO `contact`( `name`, `tieude`, `mota`, `email`) VALUES ('$name','$tieude','$mota','$email')";
+      // var_dump($sql);
+      // die;
+      pdo_execute($sql);
+  }
 }
+
 ?>
 <section class="contact_section layout_padding">
     <div class="container">
@@ -24,21 +29,21 @@ if(isset($_POST['contact_submit'])){
               Liên hệ chúng tôi
               </h2>
             </div>
-            <form action="">
+            <form action="" method="post">
               <div>
-                <input type="text" placeholder="Họ Tên" />
+                <input type="text" name="name" placeholder="Họ Tên" />
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" name="email" placeholder="Email" />
               </div>
               <div>
-                <input type="text" placeholder="Tiêu đề " />
+                <input type="text" name="tieude" placeholder="Tiêu đề " />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Nội dung góp ý" />
+                <input type="text" name="mota" class="message-box" placeholder="Nội dung góp ý" />
               </div>
               <div class="d-flex ">
-                <button type="submit"  type="submit" name="contact_submit">
+                <button type="submit"  name="contact_submit" value="ok">
                   SEND
                 </button>
               </div>
