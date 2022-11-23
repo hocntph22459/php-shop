@@ -69,8 +69,14 @@ switch ($url) {
         break;
         // thanh toán
     case 'checkout-cart':
+        $cart = loadall_cart();
         thanhtoan();
         include "./views/checkout.php";
+        break;
+          // order-deltail
+    case 'order-detail':
+        // $listbill = loadall_bill();
+        include "./views/order-deltail.php";
         break;
         // contact
     case 'contact':

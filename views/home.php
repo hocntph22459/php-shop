@@ -47,7 +47,7 @@ include "views/header.php";
                     <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
                 <?php if (isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                    <p><button type="button" class="btn btn-success" name="addtocart"><a href="http://localhost/da1/?url=cart&id=<?=$sp['id']?>">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
                 <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>
@@ -70,8 +70,10 @@ include "views/header.php";
                 <?php if (!isset($_SESSION['email'])) : ?>
                     <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
+
+                
                 <?php if (isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                    <p><button type="button" class="btn btn-success" name="addtocart"><a href="http://localhost/da1/?url=cart&id=<?=$sp['id']?>">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
                 <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>
@@ -95,7 +97,9 @@ include "views/header.php";
                     <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
                 <?php if (isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button></p>
+                    <form action="" method="post">
+                    <p><button type="button" class="btn btn-success" name="addtocart"><a href="http://localhost/da1/?url=cart&id=<?=$sp['id']?>">Thêm vào giỏ hàng</a></button></p>
+                    </form>
                 <?php endif ?>
                 <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
             </div>

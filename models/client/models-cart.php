@@ -2,7 +2,7 @@
 // load giỏ hàng
 function loadall_cart(){
     if(isset($_SESSION['email'])){
-        $sql = "SELECT * FROM `cart` ORDER BY id DESC";
+        $_SESSION['cart'] = $sql = "SELECT * FROM `cart` ORDER BY id DESC";
         $cart = pdo_query($sql);
         return $cart;
     }else{
@@ -14,8 +14,20 @@ function loadall_cart(){
 
 // function add_gio_hang()
 // {
-//     $sql = "INSERT INTO `cart`(`name`,`image`,price,`description`,`date_add`,sell,category_id) VALUES ('','','','','','','','')";
-//     pdo_execute($sql);
+//     if(isset($_POST['btn'])){
+//         if(isset($_GET['id'])){
+//             $id = $_GET['id'];
+//             $image = $_GET['image'];
+//             $name = $_GET['name'];
+//             $price = $_GET['price'];
+//             $soluong = $_GET['soluong'];
+//             $size = $_GET['size'];
+//             $color = $_GET['color'];
+//             $sql = "INSERT INTO `cart`(`id_product`,`image`, `name`, `price`, `soluong`, `size`, `color`) VALUES ('$id','$image','$name','$price','$soluong','$size','$color')";
+//             pdo_execute($sql);
+//             header("location:http://localhost/da1?url=cart");
+//         }
+//     }
 // }
 
 // sản phẩm yêu thích
@@ -52,13 +64,22 @@ function thanhtoan()
         $kh_ten = $_POST['kh_ten'];
         $kh_diachi =  $_POST['kh_diachi'];
         $kh_dienthoai =  $_POST['kh_dienthoai'];
+        $thanhtien = $_POST['thanhtien'];
         $httt_ma = $_POST['httt_ma'];
-        $sql = "INSERT INTO `bill`(`name_order`, `address`, `phone`, `method_payment_id`) 
-        VALUES ('$kh_ten','$kh_dienthoai','$kh_dienthoai','$httt_ma')";
+        $sql = "INSERT INTO `bill`(`name_order`, `address`, `phone`,`total`,`method_payment_id`) 
+        VALUES ('$kh_ten','$kh_dienthoai','$kh_dienthoai','$thanhtien','$httt_ma')";
         pdo_execute($sql);
+        header("location:http://localhost/da1/?url=order-detail");
+        exit;
     }
 }
 
+
+// function loadall_bill(){
+//     $sql="select * from bill";
+//     $listbill = pdo_query($sql);
+//     return $listbill;
+// }
 
 
 

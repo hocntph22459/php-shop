@@ -77,7 +77,7 @@ $comment_list1 = load_binhluan_by_users($id);
                         <form action="#" class="display-flex">
                             <input type="number" name="quantity" value="1" class="qty" min="0" max="<?=$spct['quantity']?>" style="border-radius: 10px; width: 100px;">
                         </form>
-                        <button type="button" class="btn btn-success"><a href="">Thêm vào giỏ hàng</a></button>
+                        <button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=cart&id=<?=$spct['id']?>">Thêm vào giỏ hàng</a></button>
                     </div>
                 </div>
             </div>
