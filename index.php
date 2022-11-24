@@ -90,9 +90,9 @@ switch ($url) {
         thanhtoan();
         include "./views/checkout.php";
         break;
-          // order-deltail
-    case 'order-detail':
-        // $listbill = loadall_bill();
+        // order-deltail
+    case 'order-deltail':
+        $listbill = loadall_bill();
         include "./views/order-deltail.php";
         break;
         // contact

@@ -75,11 +75,11 @@ function thanhtoan()
 }
 
 
-// function loadall_bill(){
-//     $sql="select * from bill";
-//     $listbill = pdo_query($sql);
-//     return $listbill;
-// }
+function loadall_bill(){
+    $sql="select * from bill";
+    $listbill = pdo_query($sql);
+    return $listbill;
+}
 
 
 

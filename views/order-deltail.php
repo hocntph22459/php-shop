@@ -15,9 +15,15 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 </head>
+<style>
+    section {
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(158, 158, 200, 1) 33%, rgba(163, 163, 205, 1) 34%, rgba(168, 168, 210, 1) 35%, rgba(147, 173, 216, 1) 43%, rgba(149, 148, 190, 1) 65%, rgba(0, 212, 255, 1) 100%);
+    }
+</style>
 
 <body>
-    <section class="h-100 gradient-custom">
+    <section class="h-1000">
         <div class="container py-5">
             <div class="row d-flex justify-content-center my-4">
                 <div class="col-md-8">
@@ -29,21 +35,21 @@
                             <hr class="my-4" />
                             <!-- Single item -->
                             <?php foreach ($listbill as $listcart) : ?>
-                                <div class="row">
+                                <div class="row mb-6">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
-                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="<?= $listcart['image'] ?>" class="w-100" alt="" />
+                                        <!-- <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                            <img src="" class="w-100" alt="" />
                                             <a href="#!">
                                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                             </a>
-                                        </div>
+                                        </div> -->
                                         <!-- Image -->
                                     </div>
 
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
-                                        <p><strong><?= $listcart['name_order'] ?></strong></p>
+                                        <p><strong>TÊN NGƯỜI NHẬN: <?= $listcart['name_order'] ?></strong></p>
                                         <p>ĐỊA CHỈ:
                                             <?= $listcart['address'] ?>
                                         </p>
@@ -63,11 +69,13 @@
                                             <?= $listcart['method_payment_id'] ?>
                                         </p>
                                         <!-- xác nhận -->
-                                        <button class="btn btn-primary px-3 ms-2">Xác nhận</button>
+                                        <a class="btn btn-primary px-3 ms-2" href="">hủy đơn hàng</a>
+                                        <a class="btn btn-primary px-3 ms-2" href="">sửa thông tin</a>
                                     </div>
                                 </div>
                             <?php endforeach ?>
                             <!-- Single item -->
+                            <hr>
                         </div>
                     </div>
                     <div class="card mb-4 mb-lg-0">

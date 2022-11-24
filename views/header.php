@@ -63,7 +63,7 @@
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=cart">Đơn hàng của tôi</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=order-deltail">Đơn hàng của tôi</a></button>
               <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
               <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
               <?php if ($_SESSION['id']['role'] == 1) : ?>
