@@ -81,14 +81,29 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="kh_ten">Họ tên</label>
+                                <?php if (isset($kh_ten_err)) : ?>
+                                    <span style="color:red">
+                                        <?= $kh_ten_err ?>
+                                    </span>
+                                <?php endif ?>
                                 <input type="text" class="form-control" name="kh_ten" id="kh_ten">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_diachi">Địa chỉ</label>
+                                <?php if (isset($kh_diachi_err)) : ?>
+                                    <span style="color:red">
+                                        <?= $kh_diachi_err ?>
+                                    </span>
+                                <?php endif ?>
                                 <input type="text" class="form-control" name="kh_diachi" id="kh_diachi">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
+                                <?php if (isset($kh_dienthoai_err)) : ?>
+                                    <span style="color:red">
+                                        <?= $kh_dienthoai_err ?>
+                                    </span>
+                                <?php endif ?>
                                 <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai">
                             </div>
 

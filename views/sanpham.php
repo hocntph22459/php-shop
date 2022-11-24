@@ -23,18 +23,29 @@ include "views/header.php";
                                     <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
                                     <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
                                     <div class="mb-3 mt-3">
-                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong">
+                                        SỐ LƯỢNG:
+                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <input type="text" class="form-control my-4" placeholder="chọn size" name="size">
+                                        SIZE:
+                                        <select name="size">
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="2XL">2XL</option>
+                                        </select>
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <input type="text" class="form-control my-4" placeholder="chọn màu" name="color">
+                                        MÀU:
+                                        <select name="color" id="" placeholder="chọn màu">
+                                            <option value="đen">đen</option>
+                                            <option value="trắng">trắng</option>
+                                            <option value="màu ghi">màu ghi</option>
+                                        </select>
                                     </div>
                                     <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                                 </form>
                             <?php endif ?>
-
                             <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
                         </div>
                     <?php endif ?>

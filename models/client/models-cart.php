@@ -69,10 +69,33 @@ function thanhtoan()
         $sql = "INSERT INTO `bill`(`name_order`, `address`, `phone`,`total`,`method_payment_id`) 
         VALUES ('$kh_ten','$kh_dienthoai','$kh_dienthoai','$thanhtien','$httt_ma')";
         pdo_execute($sql);
-        header("location:http://localhost/da1/?url=order-detail");
+        header("location:http://localhost/da1/?url=order-deltail");
         exit;
     }
 }
+// validate thanh toán
+// function validate_checkout(){
+    
+//     if (isset($_POST['btn'])) {
+//         $kh_ten = $_POST['kh_ten'];
+//         $kh_diachi =  $_POST['kh_diachi'];
+//         $kh_dienthoai =  $_POST['kh_dienthoai'];
+
+//         $httt_ma = $_POST['httt_ma'];
+//         if ($kh_ten == '') {
+//             $kh_ten_err = "vui lòng nhập";
+//         }
+//         if ($kh_diachi == '') {
+//             $kh_diachi_err = "vui lòng nhập";
+//         }
+//         if ($kh_dienthoai == '') {
+//             $kh_dienthoai_err = "vui lòng nhập";
+//         }
+//     }else{
+//         thanhtoan();
+//     }
+//     include "./views/checkout.php";
+// }
 
 
 function loadall_bill(){

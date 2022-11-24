@@ -62,7 +62,7 @@ $comment_list1 = load_binhluan_by_users($id);
                     </div>
                     <p><?= $spct['description'] ?></p>
 
-                            <!--add giỏ hàng -->
+                    <!--add giỏ hàng -->
                     <?php if (!isset($_SESSION['email'])) : ?>
                         <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
                     <?php endif ?>
@@ -72,19 +72,29 @@ $comment_list1 = load_binhluan_by_users($id);
                             <input type="text" name="name" value="<?= $spct['name'] ?>" hidden>
                             <input type="text" name="price" value="<?= $spct['price'] ?>" hidden>
                             <div class="mb-3 mt-3">
-                                <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong">
+                                SỐ LƯỢNG:
+                                <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                             </div>
                             <div class="mb-3 mt-3">
-                                <input type="text" class="form-control my-4" placeholder="chọn size" name="size">
+                                SIZE:
+                                <select name="size">
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="2XL">2XL</option>
+                                </select>
                             </div>
                             <div class="mb-3 mt-3">
-                                <input type="text" class="form-control my-4" placeholder="chọn màu" name="color">
+                                MÀU:
+                                <select name="color" id="" placeholder="chọn màu">
+                                    <option value="đen">đen</option>
+                                    <option value="trắng">trắng</option>
+                                    <option value="màu ghi">màu ghi</option>
+                                </select>
                             </div>
                             <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                         </form>
                     <?php endif ?>
-
-
                 </div>
             </div>
         </div>
