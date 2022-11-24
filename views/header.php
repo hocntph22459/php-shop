@@ -1,22 +1,23 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Header</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
-    <link rel="stylesheet" href="./views/src/css/client.css">
-    <!-- css footer -->
-    <link rel="stylesheet" href="./views/src/css/client/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> 
-    <!-- css contact -->
-    <link rel="stylesheet" href="./views/src/css/client/style1.css">
-    <link rel="stylesheet" href="./views/src/css/client/font-awesome.min.css">
-    <link rel="stylesheet" href="./views/src/css/client/responsive.css">
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mensbry</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+  <link rel="stylesheet" href="./views/src/css/client.css">
+  <!-- css footer -->
+  <link rel="stylesheet" href="./views/src/css/client/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- css contact -->
+  <link rel="stylesheet" href="./views/src/css/client/style1.css">
+  <link rel="stylesheet" href="./views/src/css/client/font-awesome.min.css">
+  <link rel="stylesheet" href="./views/src/css/client/responsive.css">
+</head>
 <body class="p-3 m-0 border-0 bd-example">
   <header>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -42,9 +43,6 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/da1/?url=contact">Chính sách</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://localhost/da1/?url=bai-viet">Bài viết</a>
-            </li>
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
             <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
@@ -59,19 +57,19 @@
           <!-- check đăng nhập -->
           <?php if (!isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập</a></button>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
-          </form>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
+            </form>
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=cart">Đơn hàng của tôi</a></button>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
-            <?php if($_SESSION['id']['role']==1 ):?>
-            <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
-            <?php endif;?>
-          </form>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=cart">Đơn hàng của tôi</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
+              <?php if ($_SESSION['id']['role'] == 1) : ?>
+                <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
+              <?php endif; ?>
+            </form>
           <?php endif ?>
         </div>
       </div>

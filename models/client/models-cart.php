@@ -12,23 +12,23 @@ function loadall_cart(){
     
 }
 
-// function add_gio_hang()
-// {
-//     if(isset($_POST['btn'])){
-//         if(isset($_GET['id'])){
-//             $id = $_GET['id'];
-//             $image = $_GET['image'];
-//             $name = $_GET['name'];
-//             $price = $_GET['price'];
-//             $soluong = $_GET['soluong'];
-//             $size = $_GET['size'];
-//             $color = $_GET['color'];
-//             $sql = "INSERT INTO `cart`(`id_product`,`image`, `name`, `price`, `soluong`, `size`, `color`) VALUES ('$id','$image','$name','$price','$soluong','$size','$color')";
-//             pdo_execute($sql);
-//             header("location:http://localhost/da1?url=cart");
-//         }
-//     }
-// }
+function add_gio_hang()
+{
+    if(isset($_POST['addtocart'])){
+            $id_product = $_POST['id_product'];
+            $image = $_POST['image'];
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $soluong = $_POST['soluong'];
+            $size = $_POST['size'];
+            $color = $_POST['color'];
+            $sql = "INSERT INTO `cart`(`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
+            VALUES ('$id_product','$image','$name','$price','$soluong','$size','$color')";
+            pdo_execute($sql);
+            header("location:http://localhost/da1?url=cart");
+            exit;
+        }
+}
 
 // sản phẩm yêu thích
 

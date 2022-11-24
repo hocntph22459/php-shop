@@ -19,6 +19,9 @@ switch ($url) {
     case '':
         // trang chủ
     case 'home':
+        // add giỏ hàng
+        add_gio_hang();
+
         $name_category = load_category_sanpham();
         $listsptop = load_sanpham_top();
         $listspnew = load_sanpham_new();
@@ -39,10 +42,16 @@ switch ($url) {
             $iddm = 0;
         }
         $listsp = loadall_sanpham($search, $iddm);
+
+        // add giỏ hàng
+        add_gio_hang();
         include "./views/sanpham.php";
         break;
         // san pham chi tiet
     case 'san-pham-ct':
+        // add giỏ hàng
+        add_gio_hang();
+
         $id = $_GET['id'];
         $name_category = load_category_sanpham();
         $listcolor = loadall_color();

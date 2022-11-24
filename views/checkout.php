@@ -15,6 +15,13 @@
     <!-- Custom css - Các file css do chúng ta tự viết -->
     <link rel="stylesheet" href="./views/src/css/client/cart/checkout.css">
 </head>
+<style>
+    body {
+        color: black;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(158, 158, 200, 1) 33%, rgba(163, 163, 205, 1) 34%, rgba(168, 168, 210, 1) 35%, rgba(147, 173, 216, 1) 43%, rgba(233, 233, 241, 1) 68%, rgba(0, 212, 255, 1) 100%);
+    }
+</style>
 
 <body>
     <main role="main">
@@ -117,13 +124,13 @@
     <!-- footer -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-            <span>Bản quyền © bởi <a href="https://nentang.vn">Nền Tảng</a> - <script>
+            <span>Bản quyền © bởi <a href="http://localhost/da1/?url=home">mensbry</a> - <script>
                     document.write(new Date().getFullYear());
                 </script>.</span>
             <span class="text-muted">Hành trang tới Tương lai</span>
 
             <p class="float-right">
-                <a href="http://localhost/da1/?url=cart">Về đầu trang</a>
+                <a href="http://localhost/da1/?url=home">Về đầu trang</a>
             </p>
         </div>
     </footer>

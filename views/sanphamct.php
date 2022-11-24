@@ -8,14 +8,13 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <?php
-if(isset($_POST['comment_submit'])){
-    
+if (isset($_POST['comment_submit'])) {
+
     $idkh = $_SESSION['id']['id'];
     $idsp = $_GET['id'];
     $contents = $_POST['contents'];
-    if(isset($_POST['contents'])&& !empty($_POST['contents'])){  
-        insert_binhluan($contents,$idsp,$idkh);
-      
+    if (isset($_POST['contents']) && !empty($_POST['contents'])) {
+        insert_binhluan($contents, $idsp, $idkh);
     }
     // die;
 }
@@ -62,23 +61,30 @@ $comment_list1 = load_binhluan_by_users($id);
                         <?php endif; ?>
                     </div>
                     <p><?= $spct['description'] ?></p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="size">Size</label>  
-                            <input type="text" name="kichco" value="<?=$spct['size']?>" class="qty" style="border-radius: 10px; width: 100px;" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="color">Color</label>
-                            <input type="text" name="mau" value="<?=$spct['color']?>" class="qty" style="border-radius: 10px; width: 100px;" readonly>
-                        </div>
-                    </div>
-                    <div class="product-count">
-                        <label for="quantity">Quantity</label>
-                        <form action="#" class="display-flex">
-                            <input type="number" name="quantity" value="1" class="qty" min="0" max="<?=$spct['quantity']?>" style="border-radius: 10px; width: 100px;">
+
+                            <!--add giỏ hàng -->
+                    <?php if (!isset($_SESSION['email'])) : ?>
+                        <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                    <?php endif ?>
+                    <?php if (isset($_SESSION['email'])) : ?>
+                        <form action="" method="post">
+                            <input type="text" name="image" value="./views/src/image/products/<?= $spct['image'] ?>" hidden>
+                            <input type="text" name="name" value="<?= $spct['name'] ?>" hidden>
+                            <input type="text" name="price" value="<?= $spct['price'] ?>" hidden>
+                            <div class="mb-3 mt-3">
+                                <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong">
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <input type="text" class="form-control my-4" placeholder="chọn size" name="size">
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <input type="text" class="form-control my-4" placeholder="chọn màu" name="color">
+                            </div>
+                            <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                         </form>
-                        <button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=cart&id=<?=$spct['id']?>">Thêm vào giỏ hàng</a></button>
-                    </div>
+                    <?php endif ?>
+
+
                 </div>
             </div>
         </div>
@@ -98,35 +104,36 @@ $comment_list1 = load_binhluan_by_users($id);
                 <div class="tab-pane fade " id="review" role="tabpanel" aria-labelledby="review-tab">
                     <div class="review-heading">Bình luận</div>
                     <p class="mb-20">
-                        <?php 
-                        foreach ($comment_list1 as $bl) { extract($bl); ?>
-                            <ul>
-                              <li class="">
-                                <p> <i><b>
-                          
-                                      <?=$name_person_comment;
-                                 
-                                      ?>
-                          
+                        <?php
+                        foreach ($comment_list1 as $bl) {
+                            extract($bl); ?>
+                    <ul>
+                        <li class="">
+                            <p> <i><b>
+
+                                        <?= $name_person_comment;
+
+                                        ?>
+
                                     </b></i>
-                                </p>
-                          
-                                <div class="d-flex justify-content-between w-75">
-                                  <p><?= $contents ?></p>
-                                  <p><?= $date_comment?></p>
-                                </div>
-                              </li>
-                            </ul>
-                          
-                          <?php }
-                        ?>
-                    </p>
-                    
-                    <?php if(isset($_SESSION['id'])):?>
-                        <form class="review-form" action="" method="post" id="">
-                            <div class="form-group">
-                                <!-- <label>Your rating</label> -->
-                                <!-- <div class="reviews-counter">
+                            </p>
+
+                            <div class="d-flex justify-content-between w-75">
+                                <p><?= $contents ?></p>
+                                <p><?= $date_comment ?></p>
+                            </div>
+                        </li>
+                    </ul>
+
+                <?php }
+                ?>
+                </p>
+
+                <?php if (isset($_SESSION['id'])) : ?>
+                    <form class="review-form" action="" method="post" id="">
+                        <div class="form-group">
+                            <!-- <label>Your rating</label> -->
+                            <!-- <div class="reviews-counter">
                                     <div class="rate">
                                         <input type="radio" id="star5" name="rate" value="5" />
                                         <label for="star5" title="text">5 stars</label>
@@ -140,24 +147,24 @@ $comment_list1 = load_binhluan_by_users($id);
                                         <label for="star1" title="text">1 star</label>
                                     </div>
                                 </div> -->
-                            </div>
-                            <div class="form-group">
-                                <label>Your message</label>
-                                <textarea class="form-control" rows="10" name="contents"></textarea>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                    
-                                        <input type="text" name="" class="form-control" value="<?=$_SESSION['id']['name']?>" readonly>
-                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Your message</label>
+                            <textarea class="form-control" rows="10" name="contents"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <input type="text" name="" class="form-control" value="<?= $_SESSION['id']['name'] ?>" readonly>
                                 </div>
                             </div>
-                            <button class="btn btn-success" name="comment_submit">Gửi</button>
-                        </form>
-                    <?php else :?>
-                        <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập để được bình luận</a></button>
-                    <?php endif;?>
+                        </div>
+                        <button class="btn btn-success" name="comment_submit">Gửi</button>
+                    </form>
+                <?php else : ?>
+                    <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập để được bình luận</a></button>
+                <?php endif; ?>
                 </div>
 
             </div>

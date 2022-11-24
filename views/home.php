@@ -34,78 +34,123 @@ include "views/header.php";
         <!-- san pham noi bat -->
         <h2 class="text-center">Sản phẩm nổi bật</h2>
         <div class="row">
-        <?php foreach ($name_category as $sp_cate) : ?>
-        <?php foreach($listsptop as $sp) :?>
-            <?php if($sp_cate['id'] == $sp['id']):?>
-            <div class="card">
-                <img src="./views/src/image/products/<?=$sp['image']?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                <h3><a href=""><?=$sp['name']?></a></h3>
-                <p class="price"><?=$sp['price']?></p>
-                <p><td><?= $sp_cate['name_category'] ?></td></p>
-                <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
-                <?php if (!isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
-                <?php endif ?>
-                <?php if (isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success" name="addtocart"><a href="http://localhost/da1/?url=cart&id=<?=$sp['id']?>">Thêm vào giỏ hàng</a></button></p>
-                <?php endif ?>
-                <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
-            </div>
-            <?php endif?>
-        <?php endforeach?>
-        <?php endforeach?>
+            <?php foreach ($name_category as $sp_cate) : ?>
+                <?php foreach ($listsptop as $sp) : ?>
+                    <?php if ($sp_cate['id'] == $sp['id']) : ?>
+                        <div class="card">
+                            <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
+                            <h3><a href=""><?= $sp['name'] ?></a></h3>
+                            <p class="price"><?= $sp['price'] ?></p>
+                            <p>
+                                <td><?= $sp_cate['name_category'] ?></td>
+                            </p>
+                            <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
+                            <?php if (!isset($_SESSION['email'])) : ?>
+                                <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                            <?php endif ?>
+                            <?php if (isset($_SESSION['email'])) : ?>
+                                <form action="" method="post">
+                                    <input type="text" name="image" value="./views/src/image/products/<?= $sp['image'] ?>" hidden>
+                                    <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
+                                    <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
+                                    <div class="mb-3 mt-3">
+                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <input type="text" class="form-control my-4" placeholder="chọn size" name="size">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <input type="text" class="form-control my-4" placeholder="chọn màu" name="color">
+                                    </div>
+                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                </form>
+                            <?php endif ?>
+                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
+                        </div>
+                    <?php endif ?>
+                <?php endforeach ?>
+            <?php endforeach ?>
         </div>
         <!-- san pham giam gia -->
         <h2 class="text-center">Sản phẩm giảm giá</h2>
         <div class="row">
-        <?php foreach ($name_category as $sp_cate) : ?>
-        <?php foreach($listspsell as $sp) :?>
-            <?php if($sp_cate['id'] == $sp['id']):?>
-            <div class="card">
-                <img src="./views/src/image/products/<?=$sp['image']?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                <h3><a href=""><?=$sp['name']?></a></h3>
-                <p class="price"><?=$sp['price']?></p>
-                <p><td><?= $sp_cate['name_category'] ?></td></p>
-                <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
-                <?php if (!isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
-                <?php endif ?>
+            <?php foreach ($name_category as $sp_cate) : ?>
+                <?php foreach ($listspsell as $sp) : ?>
+                    <?php if ($sp_cate['id'] == $sp['id']) : ?>
+                        <div class="card">
+                            <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
+                            <h3><a href=""><?= $sp['name'] ?></a></h3>
+                            <p class="price"><?= $sp['price'] ?></p>
+                            <p>
+                                <td><?= $sp_cate['name_category'] ?></td>
+                            </p>
+                            <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
+                            <?php if (!isset($_SESSION['email'])) : ?>
+                                <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                            <?php endif ?>
 
-                
-                <?php if (isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success" name="addtocart"><a href="http://localhost/da1/?url=cart&id=<?=$sp['id']?>">Thêm vào giỏ hàng</a></button></p>
-                <?php endif ?>
-                <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
-            </div>
-            <?php endif?>
-        <?php endforeach?>
-        <?php endforeach?>
+                            <?php if (isset($_SESSION['email'])) : ?>
+                                <form action="" method="post">
+                                    <input type="text" name="image" value="./views/src/image/products/<?= $sp['image'] ?>" hidden>
+                                    <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
+                                    <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
+                                    <div class="mb-3 mt-3">
+                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <input type="text" class="form-control my-4" placeholder="chọn size" name="size">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <input type="text" class="form-control my-4" placeholder="chọn màu" name="color">
+                                    </div>
+                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                </form>
+                            <?php endif ?>
+                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
+                        </div>
+                    <?php endif ?>
+                <?php endforeach ?>
+            <?php endforeach ?>
         </div>
         <!-- san pham moi -->
         <h2 class="text-center">Sản phẩm mới</h2>
         <div class="row">
-        <?php foreach ($name_category as $sp_cate) : ?>
-        <?php foreach($listspnew as $sp) :?>
-            <?php if($sp_cate['id'] == $sp['id']):?>
-            <div class="card">
-                <img src="./views/src/image/products/<?=$sp['image']?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                <h3><a href=""><?=$sp['name']?></a></h3>
-                <p class="price"><?=$sp['price']?></p>
-                <p><td><?= $sp_cate['name_category'] ?></td></p>   
-                <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
-                <?php if (!isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
-                <?php endif ?>
-                <?php if (isset($_SESSION['email'])) : ?>
-                    <form action="" method="post">
-                    <p><button type="button" class="btn btn-success" name="addtocart"><a href="http://localhost/da1/?url=cart&id=<?=$sp['id']?>">Thêm vào giỏ hàng</a></button></p>
-                    </form>
-                <?php endif ?>
-                <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?=$sp['id']?>">Xem chi tiết</a></button></p>
-            </div>
-            <?php endif?>
-        <?php endforeach?>
-        <?php endforeach?>
+            <?php foreach ($name_category as $sp_cate) : ?>
+                <?php foreach ($listspnew as $sp) : ?>
+                    <?php if ($sp_cate['id'] == $sp['id']) : ?>
+                        <div class="card">
+                            <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
+                            <h3><a href=""><?= $sp['name'] ?></a></h3>
+                            <p class="price"><?= $sp['price'] ?></p>
+                            <p>
+                                <td><?= $sp_cate['name_category'] ?></td>
+                            </p>
+                            <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
+                            <?php if (!isset($_SESSION['email'])) : ?>
+                                <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                            <?php endif ?>
+                            <?php if (isset($_SESSION['email'])) : ?>
+                                <form action="" method="post">
+                                    <input type="text" name="image" value="./views/src/image/products/<?= $sp['image'] ?>" hidden>
+                                    <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
+                                    <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
+                                    <div class="mb-3 mt-3">
+                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <input type="text" class="form-control my-4" placeholder="chọn size" name="size">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <input type="text" class="form-control my-4" placeholder="chọn màu" name="color">
+                                    </div>
+                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                </form>
+                            <?php endif ?>
+                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
+                        </div>
+                    <?php endif ?>
+                <?php endforeach ?>
+            <?php endforeach ?>
         </div>
     </div>
     <!-- End block content -->
