@@ -39,11 +39,14 @@ include "views/header.php";
                     <?php if ($sp_cate['id'] == $sp['id']) : ?>
                         <div class="card">
                             <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                            <h3><a href=""><?= $sp['name'] ?></a></h3>
-                            <p class="price"><?= $sp['price'] ?></p>
-                            <p>
-                                <td><?= $sp_cate['name_category'] ?></td>
-                            </p>
+                            <h3 style="text-transform: uppercase;"><a href=""><?= $sp['name'] ?></a></h3>
+                            <?php if ($sp['sell'] > 0) : ?>
+                                <div class="product-price-discount" style="font-size: 20px;"><del>$<?= $sp['price'] - ($sp['price'] * $sp['sell'] / 100) ?></del><span class="line-through">$<?= $sp['price'] ?></span></div>
+                            <?php endif; ?>
+                            <?php if ($sp['sell'] == 0) : ?>
+                                <div class="product-price-discount"><span>$<?= $sp['price'] ?></span></div>
+                            <?php endif; ?>
+                            <h4 style="color: red;"><?= $sp_cate['name_category'] ?></h4>
                             <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
                             <?php if (!isset($_SESSION['email'])) : ?>
                                 <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
@@ -54,8 +57,7 @@ include "views/header.php";
                                     <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
                                     <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
                                     <div class="mb-3 mt-3">
-                                        SỐ LƯỢNG:
-                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
+                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1" hidden>
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
@@ -63,11 +65,10 @@ include "views/header.php";
                                     <div class="mb-3 mt-3">
                                         <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
                                     </div>
-                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                    <button name="addtocart" class="btn btn-success" style="margin-bottom: 10px;">Thêm vào giỏ hàng</button>
+                                    <button class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>" style="color: white; margin-bottom: 10px;">Xem chi tiết</a></button>
                                 </form>
                             <?php endif ?>
-                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
-                        </div>
                     <?php endif ?>
                 <?php endforeach ?>
             <?php endforeach ?>
@@ -80,11 +81,14 @@ include "views/header.php";
                     <?php if ($sp_cate['id'] == $sp['id']) : ?>
                         <div class="card">
                             <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                            <h3><a href=""><?= $sp['name'] ?></a></h3>
-                            <p class="price"><?= $sp['price'] ?></p>
-                            <p>
-                                <td><?= $sp_cate['name_category'] ?></td>
-                            </p>
+                            <h3 style="text-transform: uppercase;"><a href=""><?= $sp['name'] ?></a></h3>
+                            <?php if ($sp['sell'] > 0) : ?>
+                                <div class="product-price-discount" style="font-size: 20px;"><del>$<?= $sp['price'] - ($sp['price'] * $sp['sell'] / 100) ?></del><span class="line-through">$<?= $sp['price'] ?></span></div>
+                            <?php endif; ?>
+                            <?php if ($sp['sell'] == 0) : ?>
+                                <div class="product-price-discount"><span>$<?= $sp['price'] ?></span></div>
+                            <?php endif; ?>
+                            <h4 style="color: red;"><?= $sp_cate['name_category'] ?></h4>
                             <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
                             <?php if (!isset($_SESSION['email'])) : ?>
                                 <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
@@ -96,8 +100,7 @@ include "views/header.php";
                                     <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
                                     <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
                                     <div class="mb-3 mt-3">
-                                        SỐ LƯỢNG:
-                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
+                                        <input type="number" class="" placeholder="chọn số lượng" name="soluong" value="1" style="width: 50px;" hidden>
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
@@ -105,10 +108,12 @@ include "views/header.php";
                                     <div class="mb-3 mt-3">
                                         <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
                                     </div>
-                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                    <button name="addtocart" class="btn btn-success" style="margin-bottom: 10px;">Thêm vào giỏ hàng</button>
+                                    <button class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>" style="color: white; margin-bottom: 10px;">Xem chi tiết</a></button>
                                 </form>
                             <?php endif ?>
-                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
+
+
                         </div>
                     <?php endif ?>
                 <?php endforeach ?>
@@ -122,11 +127,14 @@ include "views/header.php";
                     <?php if ($sp_cate['id'] == $sp['id']) : ?>
                         <div class="card">
                             <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                            <h3><a href=""><?= $sp['name'] ?></a></h3>
-                            <p class="price"><?= $sp['price'] ?></p>
-                            <p>
-                                <td><?= $sp_cate['name_category'] ?></td>
-                            </p>
+                            <h3 style="text-transform: uppercase;"><a href=""><?= $sp['name'] ?></a></h3>
+                            <?php if ($sp['sell'] > 0) : ?>
+                                <div class="product-price-discount" style="font-size: 20px;"><del>$<?= $sp['price'] - ($sp['price'] * $sp['sell'] / 100) ?></del><span class="line-through">$<?= $sp['price'] ?></span></div>
+                            <?php endif; ?>
+                            <?php if ($sp['sell'] == 0) : ?>
+                                <div class="product-price-discount"><span>$<?= $sp['price'] ?></span></div>
+                            <?php endif; ?>
+                            <h4 style="color: red;"><?= $sp_cate['name_category'] ?></h4>
                             <!-- bắt lỗi đăng nhập mới thêm đc giỏ hàng -->
                             <?php if (!isset($_SESSION['email'])) : ?>
                                 <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
@@ -137,8 +145,7 @@ include "views/header.php";
                                     <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
                                     <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
                                     <div class="mb-3 mt-3">
-                                        SỐ LƯỢNG:
-                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
+                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1" hidden>
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
@@ -146,10 +153,10 @@ include "views/header.php";
                                     <div class="mb-3 mt-3">
                                         <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
                                     </div>
-                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                                    <button name="addtocart" class="btn btn-success" style="margin-bottom: 10px;">Thêm vào giỏ hàng</button>
+                                    <button class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>" style="color: white; margin-bottom: 10px;">Xem chi tiết</a></button>
                                 </form>
                             <?php endif ?>
-                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
                         </div>
                     <?php endif ?>
                 <?php endforeach ?>
