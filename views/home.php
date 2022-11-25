@@ -69,6 +69,7 @@ include "views/header.php";
                                     <button class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>" style="color: white; margin-bottom: 10px;">Xem chi tiết</a></button>
                                 </form>
                             <?php endif ?>
+                            </div>
                     <?php endif ?>
                 <?php endforeach ?>
             <?php endforeach ?>
