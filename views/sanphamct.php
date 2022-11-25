@@ -60,7 +60,11 @@ $comment_list1 = load_binhluan_by_users($id);
                             <div class="product-price-discount"><span>$<?= $spct['price'] ?></span></div>
                         <?php endif; ?>
                     </div>
-                    <p><?= $spct['description'] ?></p>
+                    <select name="" id="" class="form-select" aria-label="Default select example">
+                    <?php foreach($list_attributes as $attributes):?>
+                        <option value="<?=$attributes['id']?>"><?= $attributes['size']?> - <?= $attributes['color']?>  </option>
+                    <?php endforeach;?>
+                    </select>
 
                     <!--add giỏ hàng -->
                     <?php if (!isset($_SESSION['email'])) : ?>
@@ -75,11 +79,6 @@ $comment_list1 = load_binhluan_by_users($id);
                                 SỐ LƯỢNG:
                                 <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                             </div>
-                            <div class="mb-3 mt-3">
-                                <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $spct['size'] ?>">
-                            </div>
-                            <div class="mb-3 mt-3">
-                                <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $spct['color'] ?>">
                             </div>
                             <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                         </form>

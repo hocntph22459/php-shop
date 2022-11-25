@@ -8,6 +8,7 @@ include "./models/client/models-cart.php";
 include "./models/admin/models-mau.php";
 include "./models/admin/models-kichco.php";
 include "./models/admin/models-binhluan.php";
+include "./models/admin/models-thuoctinhsp.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
 // nên include vào file. file nào cần thì include
@@ -57,6 +58,7 @@ switch ($url) {
         $listcolor = loadall_color();
         $listsize = loadall_size();
         $spct = loadone_sanpham($id);
+        $list_attributes = loadall_attributes();
         include "./views/sanphamct.php";
         break;
         // bài viết

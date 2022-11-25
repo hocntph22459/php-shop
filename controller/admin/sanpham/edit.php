@@ -17,6 +17,8 @@
 
     <!-- Custom styles for this template-->
     <link href="../../views/src/css/admin/admin.css" rel="stylesheet">
+    <script src="../../ckeditor/ckeditor.js"></script>
+    <script src="../../ckfinder/ckfinder.js"></script>
 
 </head>
 <style>
@@ -118,65 +120,62 @@
                     <h3>sửa sản phẩm</h3>
                     <a class="" href="http://localhost/da1/controller/admin/?url=san-pham">quay lại danh sách</a>
                 </div>
-                <form action="http://localhost/da1/controller/admin/?url=update-san-pham&id=<?=$sanpham['id']?>" method="post" enctype="multipart/form-data">
+                <form action="http://localhost/da1/controller/admin/?url=update-san-pham&id=<?= $sanpham['id'] ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?=$sanpham['id']?>" readonly>
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?= $sanpham['id'] ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tensp" value="<?=$sanpham['name']?>">
+                        <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tensp" value="<?= $sanpham['name'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Ảnh sản phẩm</label>
-                        <input type="file" class="form-control my-4" placeholder="Nhập ảnh" name="anhsp" ><?=$sanpham['image']?>
+                        <input type="file" class="form-control my-4" placeholder="Nhập ảnh" name="anhsp"><?= $sanpham['image'] ?>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Giá sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Nhập giá" name="giasp" value="<?=$sanpham['price']?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Mô tả sản phẩm</label>
-                        <!-- <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp" value=""> -->
-                        <textarea name="motasp" class="form-control my-4" cols="20" rows="7"   value="<?=$sanpham['description']?>"><?=$sanpham['description']?></textarea>
+                        <input type="text" class="form-control my-4" placeholder="Nhập giá" name="giasp" value="<?= $sanpham['price'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Ngày nhập sản phẩm</label>
-                        <input type="date" class="form-control my-4" placeholder="Ngày nhập sản phẩm" name="ngaynhap" value="<?=$sanpham['date_add']?>">
+                        <input type="date" class="form-control my-4" placeholder="Ngày nhập sản phẩm" name="ngaynhap" value="<?= $sanpham['date_add'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Giá giảm sản phẩm</label>
-                        <input type="number" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="giamgia" value="<?=$sanpham['sell']?>">
+                        <input type="number" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="giamgia" value="<?= $sanpham['sell'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Loại sản phẩm</label>
                         <select name="loaisp" id="">
-                        <?php foreach ($listcat as $list) : ?>
-                            <?php
-                                if($sanpham['category_id'] == $list['id']){
-                                    echo "<option value=".$list['id']." selected>".$list['name']."</option>";
+                            <?php foreach ($listcat as $list) : ?>
+                                <?php
+                                if ($sanpham['category_id'] == $list['id']) {
+                                    echo "<option value=" . $list['id'] . " selected>" . $list['name'] . "</option>";
+                                } else {
+                                    echo "<option value=" . $list['id'] . ">" . $list['name'] . "</option>";
                                 }
-                                else{
-                                    echo "<option value=".$list['id'].">".$list['name']."</option>";
-                                }    
-                            ?>
-                        <?php endforeach?>
+                                ?>
+                            <?php endforeach ?>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Màu sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="mau" value="<?=$sanpham['color']?>">
+                        <label for="" class="form-label">Mô tả sản phẩm</label>
+                        <!-- <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp" value=""> -->
+                        <textarea name="motasp" class="form-control my-4" cols="20" rows="7"  id="description"><?= $sanpham['description'] ?></textarea>
                     </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Kích cỡ sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="kichco" value="<?=$sanpham['size']?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Số lượng sản phẩm</label>
-                        <input type="number" class="form-control my-4" placeholder="Giảm giá sản phẩm" name="soluong" value="<?=$sanpham['quantity']?>">
-                    </div>
-                    <button name="btn" class="btn btn-secondary btn-lg" >Sửa</button>
+                    <button name="btn" class="btn btn-secondary btn-lg">Sửa</button>
                 </form>
+                <script>
+                    var editor = CKEDITOR.replace('description', {
+                        filebrowserBrowseUrl: '../../ckfinder/ckfinder.html',
+                        filebrowserImageBrowseUrl: '../../ckfinder/ckfinder.html?type=Images',
+                        filebrowserUploadUrl: '../../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                        filebrowserImageUploadUrl: '../../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                        height: 500,
+                    })
+                    CKFinder.setupCKEditor(editor);
+                </script>
                 <!-- Content Row -->
             </div>
         </div>
@@ -202,5 +201,4 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
-
 </html>

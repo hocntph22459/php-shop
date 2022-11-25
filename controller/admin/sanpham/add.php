@@ -17,6 +17,8 @@
 
     <!-- Custom styles for this template-->
     <link href="../../views/src/css/admin/admin.css" rel="stylesheet">
+    <script src="../../ckeditor/ckeditor.js"></script>
+    <script src="../../ckfinder/ckfinder.js"></script>
 
 </head>
 <style>
@@ -118,7 +120,7 @@
                     <h3>thêm loại hàng</h3>
                     <a class="" href="http://localhost/da1/controller/admin/?url=san-pham">quay lại danh sách</a>
                 </div>
-                <form action="http://localhost/da1/controller/admin/?url=add-san-pham" method="post" enctype="multipart/form-data" >
+                <form action="http://localhost/da1/controller/admin/?url=add-san-pham" method="post" enctype="multipart/form-data">
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã sản phẩm</label>
                         <input type="text" class="form-control my-4" placeholder="auto number" name="id" readonly>
@@ -136,11 +138,6 @@
                         <input type="text" class="form-control my-4" placeholder="Nhập giá" name="giasp">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Mô tả sản phẩm</label>
-                        <!-- <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp"> -->
-                        <textarea name="motasp" class="form-control my-4" cols="20" rows="7" placeholder="Nhập mô tả"></textarea>
-                    </div>
-                    <div class="mb-3">
                         <label for="" class="form-label">Ngày nhập sản phẩm</label>
                         <input type="date" class="form-control my-4" placeholder="Ngày nhập sản phẩm" name="ngaynhap">
                     </div>
@@ -151,25 +148,28 @@
                     <div class="mb-3">
                         <label for="" class="form-label">Loại sản phẩm</label>
                         <select name="loaisp" id="">
-                        <?php foreach ($listcat as $list) : ?>
-                            <option value="<?=$list['id']?>"><?=$list['name']?></option>
-                        <?php endforeach?>
+                            <?php foreach ($listcat as $list) : ?>
+                                <option value="<?= $list['id'] ?>"><?= $list['name'] ?></option>
+                            <?php endforeach ?>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Màu sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="Màu sản phẩm" name="mau">
+                        <label for="" class="form-label">Mô tả sản phẩm</label>
+                        <!-- <input type="text" class="form-control my-4" placeholder="Nhập mô tả" name="motasp"> -->
+                        <textarea name="motasp" class="form-control my-4" cols="20" rows="7" placeholder="Nhập mô tả" id="description"></textarea>
                     </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Kích cỡ sản phẩm</label>
-                        <input type="text" class="form-control my-4" placeholder="kích cỡ sản phẩm" name="kichco">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Số lượng sản phẩm</label>
-                        <input type="number" class="form-control my-4" placeholder="Số lượng sản phẩm" name="soluong">
-                    </div>
-                    <button name="btn" class="btn btn-secondary btn-lg" >thêm mới</button>
+                    <button name="btn" class="btn btn-secondary btn-lg">thêm mới</button>
                 </form>
+                <script>
+                    var editor = CKEDITOR.replace('description', {
+                        filebrowserBrowseUrl: '../../ckfinder/ckfinder.html',
+                        filebrowserImageBrowseUrl: '../../ckfinder/ckfinder.html?type=Images',
+                        filebrowserUploadUrl: '../../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                        filebrowserImageUploadUrl: '../../ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                        height: 500,
+                    })
+                    CKFinder.setupCKEditor(editor);
+                </script>
                 <!-- Content Row -->
             </div>
         </div>
