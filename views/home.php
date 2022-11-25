@@ -58,21 +58,10 @@ include "views/header.php";
                                         <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        SIZE:
-                                        <select name="size">
-                                            <option value="M">M</option>
-                                            <option value="L">L</option>
-                                            <option value="XL">XL</option>
-                                            <option value="2XL">2XL</option>
-                                        </select>
+                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        MÀU:
-                                        <select name="color" id="" placeholder="chọn màu">
-                                            <option value="đen">đen</option>
-                                            <option value="trắng">trắng</option>
-                                            <option value="màu ghi">màu ghi</option>
-                                        </select>
+                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
                                     </div>
                                     <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                                 </form>
@@ -111,21 +100,10 @@ include "views/header.php";
                                         <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        SIZE:
-                                        <select name="size">
-                                            <option value="M">M</option>
-                                            <option value="L">L</option>
-                                            <option value="XL">XL</option>
-                                            <option value="2XL">2XL</option>
-                                        </select>
+                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        MÀU:
-                                        <select name="color" id="" placeholder="chọn màu">
-                                            <option value="đen">đen</option>
-                                            <option value="trắng">trắng</option>
-                                            <option value="màu ghi">màu ghi</option>
-                                        </select>
+                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
                                     </div>
                                     <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                                 </form>
@@ -163,21 +141,10 @@ include "views/header.php";
                                         <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        SIZE:
-                                        <select name="size">
-                                            <option value="M">M</option>
-                                            <option value="L">L</option>
-                                            <option value="XL">XL</option>
-                                            <option value="2XL">2XL</option>
-                                        </select>
+                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        MÀU:
-                                        <select name="color" id="" placeholder="chọn màu">
-                                            <option value="đen">đen</option>
-                                            <option value="trắng">trắng</option>
-                                            <option value="màu ghi">màu ghi</option>
-                                        </select>
+                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
                                     </div>
                                     <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                                 </form>
