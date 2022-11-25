@@ -81,12 +81,12 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php if (isset($_SESSION['email'])) {
-                                                                                                echo $_SESSION['email'];
-                                                                                            } ?></span>
-                                <img class="img-profile rounded-circle" src="../../views/src/image/admin/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <?php if (isset($_SESSION['email'])) {
+                                        echo $_SESSION['email'];
+                                    } ?></span>
+                                <img class="img-profile rounded-circle" src="../../views/src/image/admin/undraw_profile.svg"> <a href="http://localhost/da1/controller/admin/?url=logout-admin"><img style="margin: 1px;" src="../../views/src/image/icon/logout.svg" alt="" width="30px"></a>
                             </a>
-                            <a href="http://localhost/da1/controller/admin/?url=logout-admin">đăng xuất</a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">

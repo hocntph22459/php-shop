@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./views/src/css/client/font-awesome.min.css">
   <link rel="stylesheet" href="./views/src/css/client/responsive.css">
 </head>
+
 <body class="p-3 m-0 border-0 bd-example">
   <header>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -59,13 +60,14 @@
             <form class="form-inline">
               <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập</a></button>
               <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">ADMIN</a></button>
             </form>
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=order-deltail">Đơn hàng của tôi</a></button>
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=doi-mat-khau">đổi mật khẩu</a></button>
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=logout-khach-hang">Đăng xuất</a></button>
+              <a href="http://localhost/da1?url=order-deltail"><img src="./views/src/image/icon/cart.svg" alt="" width="30px"></a>
+              <a class="m-3" href="http://localhost/da1?url=doi-mat-khau"><img src="./views/src/image/icon/edit.svg" alt=""></a>
+              <a href="http://localhost/da1?url=logout-khach-hang"><img src="./views/src/image/icon/logout.svg" alt="" width="30px"></a>
               <?php if ($_SESSION['id']['role'] == 1) : ?>
                 <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
               <?php endif; ?>
