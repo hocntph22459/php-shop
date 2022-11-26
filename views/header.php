@@ -68,9 +68,6 @@
               <a href="http://localhost/da1?url=order-deltail"><img src="./views/src/image/icon/cart.svg" alt="" width="30px"></a>
               <a class="m-3" href="http://localhost/da1?url=doi-mat-khau"><img src="./views/src/image/icon/edit.svg" alt=""></a>
               <a href="http://localhost/da1?url=logout-khach-hang"><img src="./views/src/image/icon/logout.svg" alt="" width="30px"></a>
-              <?php if ($_SESSION['id']['role'] == 1) : ?>
-                <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">Admin</a></button>
-              <?php endif; ?>
             </form>
           <?php endif ?>
         </div>

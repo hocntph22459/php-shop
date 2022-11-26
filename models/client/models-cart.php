@@ -33,19 +33,34 @@ function add_gio_hang()
 // sản phẩm yêu thích
 
 
+// load 1 sp
+function loadone_cart()
+{
+    if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM cart WHERE id = $id";
+    $cartone = pdo_query($sql);
+    return $cartone;
+    }
+    
+}
+
 
 // update giỏ hàng
-// function update_cart()
-// {
-//     if (isset($_POST['btn'])) {
-//         $id = $_GET['id'];
-//         $soluong = $_POST['soluong'];
-//         $sql = "UPDATE `cart` SET`soluong`='$soluong' WHERE id = $id;";
-//         pdo_execute($sql);
-//         header("location:http://localhost/da1/?url=cart");
-//         exit;
-//     }
-// }
+
+function update_cart()
+{
+    if(isset($_POST['btn'])){
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $soluong = $_POST['soluong'];
+        $sql = "UPDATE `cart` SET`soluong`='$soluong' WHERE id = $id;";
+        pdo_execute($sql);
+        header("location:http://localhost/da1/?url=cart");
+        exit;
+        }
+    }
+}
 
 // xóa giỏ hàng
 function delete_cart(){
@@ -91,10 +106,7 @@ function thanhtoan()
 //         if ($kh_dienthoai == '') {
 //             $kh_dienthoai_err = "vui lòng nhập";
 //         }
-//     }else{
-//         thanhtoan();
 //     }
-//     include "./views/checkout.php";
 // }
 
 

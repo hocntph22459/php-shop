@@ -87,7 +87,7 @@ $comment_list1 = load_binhluan_by_users($id);
                     <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
                 <?php if (isset($_SESSION['email'])) : ?>
-                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
+                    <button onclick="alert('thêm vào giỏ hàng thành công')" name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
                 <?php endif ?>
                 </form>
             </div>

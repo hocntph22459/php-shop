@@ -86,6 +86,12 @@ switch ($url) {
     case 'delete-cart':
         delete_cart();
         break;
+        // sửa cart
+    case 'update-cart':
+        $cartone = loadone_cart();
+        update_cart();
+        include "./views/update-cart.php";
+        break;
         // thanh toán
     case 'checkout-cart':
         $cart = loadall_cart();

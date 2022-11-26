@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>giỏ hàng</title>
+    <title>cập nhật giỏ hàng</title>
     <link rel="stylesheet" href="./views/src/css/client/cart/cart.css">
 
     <!-- Font Awesome -->
@@ -28,13 +28,9 @@
             <div class="row d-flex justify-content-center my-4">
                 <div class="col-md-8">
                     <div class="card mb-4">
-                        <div class="card-header py-3">
-                            <a href="http://localhost/da1/?url=san-pham">tiếp tục mua sắm</a>
-                            <h3 class="mb-0">sản phẩm</h3>
-                        </div>
                         <div class="card-body">
                             <!-- Single item -->
-                            <?php foreach ($cart as $listcart) : ?>
+                            <?php foreach ($cartone as $listcart) : ?>
                                 <div class="row">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
@@ -66,6 +62,7 @@
                                         </button>
                                         <!-- Data -->
                                     </div>
+
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                         <!-- Quantity -->
                                         <div class="d-flex mb-4" style="max-width: 300px">
@@ -74,26 +71,19 @@
                                                     <input id="form1" min="0" name="soluong" value="<?= $listcart['soluong'] ?>" type="number" class="form-control" />
                                                     <label class="form-label" for="form1">Số lượng</label>
                                                 </div>
+                                                <!-- xác nhận --> <br>
+                                                <button name="btn" class="btn btn-primary px-3 ms-2">cập nhật</button>
                                             </form>
-                                            <!-- xác nhận -->
-                                            <a class="btn btn-primary px-3 ms-2 py-3" href="http://localhost/da1/?url=update-cart&id=<?= $listcart['id'] ?>"><img src="./views/src/image/admin/eye-fill.svg" alt=""></a>
                                         </div>
                                         <!-- Price -->
                                         <p class="text-start text-md-center">
                                             <strong>Thành tiền : <?= $thanhtien = $listcart['price'] * $listcart['soluong']; ?></strong>
                                         </p> <br>
+
                                     </div>
                                 </div>
                             <?php endforeach ?>
                             <!-- Single item -->
-
-                            <hr class="my-4" />
-                        </div>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p><strong>Dự kiến ​​giao hàng vận chuyển</strong></p>
-                            <p class="mb-0">chúng tôi cam kết sẽ gửi hàng trong 1 - 2 ngày tới</p>
                         </div>
                     </div>
                     <div class="card mb-4 mb-lg-0">
@@ -103,34 +93,6 @@
                             <img class="me-2" width="45px" src="./views/src/image/cart/emegica.png" alt="American Express" />
                             <img class="me-2" width="45px" src="./views/src/image/cart/the-mastercard.png" alt="Mastercard" />
                             <img class="me-2" width="45px" src="./views/src/image/cart/paypal.png" alt="PayPal acceptance mark" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-header py-3">
-                            <h5 class="mb-0">Tóm tắt</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <!-- <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                    sản phẩm
-                                    <span><?= $listcart['name'] ?></span>
-                                    <span><?= $listcart['soluong'] ?></span>
-                                </li> -->
-                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                                    <div>
-                                        <strong>Tổng cộng</strong>
-                                        <strong>
-                                            <p class="mb-0">(bao gồm VAT - miễn phí vận chuyển)</p>
-                                        </strong>
-                                    </div>
-                                    <span>
-                                        <?php $name = $listcart['price'] * $listcart['soluong']; ?>
-                                        <strong><?= $tong = $name; ?></strong></span>
-                                </li>
-                            </ul>
-                            <a href="http://localhost/da1/?url=checkout-cart" class="btn btn-primary btn-lg btn-block">ĐI ĐẾN THANH TOÁN</a>
                         </div>
                     </div>
                 </div>
