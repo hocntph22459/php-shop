@@ -27,6 +27,11 @@ function loadone_attributes($id)
     $attributes = pdo_query_one($sql);
     return $attributes;
 }
+function load_attributes_product($id){
+    $sql = "SELECT*FROM attributes_product where id_product = $id";
+    $list_attributes = pdo_query($sql);
+    return $list_attributes;
+}
 
 
 ?>
