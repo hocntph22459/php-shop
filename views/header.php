@@ -46,14 +46,14 @@
             </li>
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
-            <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
+            <input class="form-control me-2" type="text" placeholder="tìm kiếm" aria-label="Search" name="search">
             <select class="form-select" aria-label="Default select example" style="width: 70px; margin-right:10px ;" name="iddm">
-              <option value="0" selected>All</option>
+              <option value="0" selected>tất cả</option>
               <?php foreach ($listdm as $dm) : ?>
                 <option value="<?= $dm['id'] ?>"><?= $dm['name'] ?></option>
               <?php endforeach ?>
             </select>
-            <button class="btn btn-outline-success" type="submit" name="OK">Search</button>
+            <button class="btn btn-outline-success" type="submit" name="OK">Tìm</button>
           </form>
           <!-- check đăng nhập -->
           <?php if (!isset($_SESSION['email'])) : ?>

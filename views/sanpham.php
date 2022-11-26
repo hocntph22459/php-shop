@@ -16,25 +16,6 @@ include "views/header.php";
                             <p>
                                 <td><?= $sp_cate['name_category'] ?></td>
                             </p>
-                            <!-- add giỏ hàng -->
-                            <?php if (isset($_SESSION['email'])) : ?>
-                                <form action="" method="post">
-                                    <input type="text" name="image" value="./views/src/image/products/<?= $sp['image'] ?>" hidden>
-                                    <input type="text" name="name" value="<?= $sp['name'] ?>" hidden>
-                                    <input type="text" name="price" value="<?= $sp['price'] ?>" hidden>
-                                    <div class="mb-3 mt-3">
-                                        SỐ LƯỢNG:
-                                        <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
-                                    </div>
-                                    <div class="mb-3 mt-3">
-                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="size" value="<?= $sp['size'] ?>" hidden>
-                                    </div>
-                                    <div class="mb-3 mt-3">
-                                        <input type="text" class="form-control my-4" placeholder="chọn số lượng" name="color" value="<?= $sp['color'] ?>" hidden>
-                                    </div>
-                                    <button name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
-                                </form>
-                            <?php endif ?>
                             <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
                         </div>
                     <?php endif ?>
