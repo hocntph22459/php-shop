@@ -234,9 +234,11 @@ switch ($url) {
     case 'add-bai-viet':
         include "../admin/baiviet/add.php";
         if (isset($_POST['btn'])) {
+            $anh_tieude = $_FILES['anh_tieude']['name'];
             $tieude = $_POST['tieude'];
             $noidung = $_POST['noidung'];
-            insert_post($tieude,$noidung);
+            move_uploaded_file($_FILES["anh_tieude"]["tmp_name"], "../../views/src/image/post/tittle/" . $_FILES["anh_tieude"]["name"]);
+            insert_post($anh_tieude,$tieude,$noidung);
             header("location:../../controller/admin/index.php?url=bai-viet");
         }
         break;
@@ -245,9 +247,11 @@ switch ($url) {
         $postone = load_one_post($id);
         include "../admin/baiviet/edit.php";
         if (isset($_POST['btn'])) {
+            $anh_tieude = $_FILES['anh_tieude']['name'];
             $tieude = $_POST['tieude'];
             $noidung = $_POST['noidung'];
-            update_post($id,$tieude,$noidung);
+            move_uploaded_file($_FILES["anh_tieude"]["tmp_name"], "../../views/src/image/post/tittle/" . $_FILES["anh_tieude"]["name"]);
+            update_post($id,$anh_tieude,$tieude,$noidung);
             header("location:../../controller/admin/index.php?url=bai-viet");
         }
         break;

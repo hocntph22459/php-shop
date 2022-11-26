@@ -44,23 +44,26 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/da1/?url=contact">Chính sách</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost/da1/?url=post">Bài Viết</a>
+            </li>
           </ul>
           <form class="d-flex" role="search" style="margin-right: 50px;" action="?url=san-pham" method="post">
-            <input class="form-control me-2" type="text" placeholder="tìm kiếm" aria-label="Search" name="search">
-            <select class="form-select" aria-label="Default select example" style="width: 70px; margin-right:10px ;" name="iddm">
-              <option value="0" selected>tất cả</option>
+            <input class="form-control me-2" type="text" placeholder="Tìm kiếm" aria-label="Search" name="search">
+            <select class="form-select" aria-label="Default select example" style="width: 120px; margin-right:10px ;" name="iddm">
+              <option value="0" selected>Tất cả</option>
               <?php foreach ($listdm as $dm) : ?>
                 <option value="<?= $dm['id'] ?>"><?= $dm['name'] ?></option>
               <?php endforeach ?>
             </select>
-            <button class="btn btn-outline-success" type="submit" name="OK">Tìm</button>
+            <button class="btn btn-outline-success" type="submit" name="OK" style="width: 100px;">Tìm</button>
           </form>
           <!-- check đăng nhập -->
           <?php if (!isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập</a></button>
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang">Đăng Ký</a></button>
-              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin">ADMIN</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang" style="color:black ;">Đăng nhập</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=signin-khach-hang" style="color:black ;">Đăng Ký</a></button>
+              <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-admin" style="color:black ;">Admin</a></button>
             </form>
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>

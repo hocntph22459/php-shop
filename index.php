@@ -9,6 +9,7 @@ include "./models/admin/models-mau.php";
 include "./models/admin/models-kichco.php";
 include "./models/admin/models-binhluan.php";
 include "./models/admin/models-thuoctinhsp.php";
+include "./models/admin/models-baiviet.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
 // nên include vào file. file nào cần thì include
@@ -62,12 +63,15 @@ switch ($url) {
         include "./views/sanphamct.php";
         break;
         // bài viết
-    case 'bai-viet':
+    case 'post':
+        $list_post =  load_all_post();
         include "./views/post.php";
         break;
         // bai viet chi tiet
-    case 'bai-viet-ct':
-        include "./views/detail_post.php";
+    case 'post-ct':
+        $id = $_GET['id'];
+        $post = load_one_post($id);
+        include "./views/post_detail.php";
         break;
         //  đăng nhập
     case 'login-khach-hang':

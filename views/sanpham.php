@@ -11,11 +11,9 @@ include "views/header.php";
                     <?php if ($sp_cate['id'] == $sp['id']) : ?>
                         <div class="card">
                             <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
-                            <h3><a href=""><?= $sp['name'] ?></a></h3>
+                            <h3 style="text-transform: uppercase;"><a href=""><?= $sp['name'] ?></a></h3>
                             <p class="price"><?= $sp['price'] ?></p>
-                            <p>
-                                <td><?= $sp_cate['name_category'] ?></td>
-                            </p>
+                            <h4 style="color: red;"><?= $sp_cate['name_category'] ?></h4>
                             <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
                         </div>
                     <?php endif ?>

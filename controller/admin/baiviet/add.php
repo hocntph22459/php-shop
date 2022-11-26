@@ -120,7 +120,11 @@
                     <h3>Đăng bài viết</h3>
                     <a class="" href="http://localhost/da1/controller/admin/?url=bai-viet">quay lại danh sách</a>
                 </div>
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Ảnh tiêu đề</label>
+                        <input type="file" class="form-control my-4" placeholder="Nhập tiêu đề" name="anh_tieude">
+                    </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tiêu đề</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập tiêu đề" name="tieude">

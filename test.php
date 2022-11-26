@@ -33,3 +33,10 @@ function login_khachhang()
 }
 
 ?>
+<form action="">
+    <select name="id1" id="">
+        <option value="1"><input type="text" value="2"></option>
+        <option value="1"><input type="text" value="2"></option>
+        <option value="1"><input type="text"></option>
+    </select>
+</form>
