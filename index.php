@@ -58,7 +58,7 @@ switch ($url) {
         $listcolor = loadall_color();
         $listsize = loadall_size();
         $spct = loadone_sanpham($id);
-        $list_attributes = loadall_attributes();
+        $list_attributes = load_attributes_product($id);
         include "./views/sanphamct.php";
         break;
         // bài viết
