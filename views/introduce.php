@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-md-6 col-lg-5 ">
           <div class="img-box">
-          <img src="./views/src/image/about/about-img.png" alt="">
+          <img src="./views/src/image/about/about-img1.png" alt="">
           </div>
         </div>
         <div class="col-md-6 col-lg-7">
@@ -20,9 +20,7 @@
               </h2>
             </div>
             <p>
-            Có rất nhiều biến thể của các đoạn văn trong Lorem Ipsum, nhưng phần lớn đã bị thay đổi dưới một số hình thức,
-             bằng cách thêm vào sự hài hước hoặc những từ ngữ ngẫu nhiên trông thậm chí không đáng tin chút nào.
-             Nếu bạn định sử dụng một đoạn văn của Lorem Ipsum, bạn cần chắc chắn rằng không có điều gì đáng xấu hổ ẩn giấu ở giữa văn bản. Tất cả các
+            Áo polo là một trong số những loại áo có cổ, hay còn được nhiều người biết đến là áo cổ gập. Áo thun polo được may bằng chất vải thun co giãn, với khả năng thấm hút mồ hôi cực tốt, đem đến cho người dùng sự thoải mái, dễ chịu và thông thoáng trong quá trình sử dụng.
 
             </p>
             <a href="">

@@ -149,6 +149,21 @@ switch ($url) {
             $listusers = loadall_users();
             header("location:../../controller/admin/index.php?url=khach-hang");
         }
+ case 'update-khach-hang':
+        $id = $_GET['id'];
+        $khachhang = loadone_users($id);
+        include "../admin/khachhang/edit.php";
+        if (isset($_POST['btn'])) {
+            $tennd = $_POST['tennd'];
+            $email = $_POST['email'];
+            $matkhau = $_POST['matkhau'];
+            $sdt = $_POST['sdt'];
+            $diachi = $_POST['diachi'];
+            $vaitro = $_POST['vaitro'];
+            update_users($tennd, $email, $matkhau, $sdt, $diachi, $vaitro, $id);
+            header("location:../../controller/admin/index.php?url=khach-hang");
+        }
+        break;        
         ///Bình luận
     case 'binh-luan':
         $items = thong_ke_binh_luan();
@@ -181,36 +196,36 @@ switch ($url) {
         }
     case 'update-hoa-don':
         $id = $_GET['id'];
+        $hoadon = loadone_bill($id);
         include "../admin/hoadon/edit.php";
         if (isset($_POST['btn'])) {
-            $name_order = $_POST['name_order'];
-            $address = $_POST['address'];
-            $phone = $_POST['phone'];
-            $total = $_POST['total'];
-            $date_purchase = $_POST['date_purchase'];
-            $status = $_POST['status'];
-            $method_payment_id = $_POST['method_payment_id '];
-
-            update_bill($id, $name_order, $address, $phone, $total, $date_purchase, $status, $method_payment_id);
+            $tennd = $_POST['tennd'];
+            $diachi = $_POST['diachi'];
+            $sdt = $_POST['sdt'];
+            $tongtien = $_POST['tongtien'];
+            $ngaymua = $_POST['ngaymua'];
+            $trangthai = $_POST['trangthai'];
+            $phuongthuc = $_POST['phuongthuc'];
+            update_bill($tennd, $diachi, $sdt, $tongtien, $ngaymua, $trangthai, $phuongthuc,$id);
             header("location:../../controller/admin/index.php?url=hoa-don");
         }
         break;
-    case 'edit-hoa-don':
-        $id = $_GET['id'];
-        $bill = loadone_bill($id);
-        include "../admin/hoadon/edit.php";
-        if (isset($_POST['btn'])) {
-            $name_order = $_POST['name_order'];
-            $address = $_POST['address'];
-            $phone = $_POST['phone'];
-            $total = $_POST['total'];
-            $date_purchase = $_POST['date_purchase'];
-            $status = $_POST['status'];
-            $method_payment_id = $_POST['method_payment_id'];
-            update_bill($id, $name_order, $address, $phone, $total, $date_purchase, $status, $method_payment_id);
-            header("location:../../controller/admin/index.php?url=hoa-don");
-        }
-        break;
+    // case 'edit-hoa-don':
+    //     $id = $_GET['id'];
+    //     $bill = loadone_bill($id);
+    //     include "../admin/hoadon/edit.php";
+    //     if (isset($_POST['btn'])) {
+    //         $name_order = $_POST['name_order'];
+    //         $address = $_POST['address'];
+    //         $phone = $_POST['phone'];
+    //         $total = $_POST['total'];
+    //         $date_purchase = $_POST['date_purchase'];
+    //         $status = $_POST['status'];
+    //         $method_payment_id = $_POST['method_payment_id'];
+    //         update_bill($id, $name_order, $address, $phone, $total, $date_purchase, $status, $method_payment_id);
+    //         header("location:../../controller/admin/index.php?url=hoa-don");
+    //     }
+    //     break;
         // bài viet
     case 'bai-viet':
         $listpost = load_all_post();

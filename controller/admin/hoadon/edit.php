@@ -118,38 +118,38 @@
                     <h3>Sửa Hóa Đơn</h3>
                     <a class="" href="http://localhost/da1/controller/admin/?url=hoa-don">quay lại danh sách</a>
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="http://localhost/da1/controller/admin/?url=update-hoa-don&id=<?= $hoadon['id'] ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã đơn hàng</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id"  readonly>
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?= $hoadon['id'] ?>"  readonly>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên người đặt</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="name_order" value="<?php if(isset($name_order)){echo $name_order['name_order'];} ?>">
+                        <input type="text" class="form-control my-4" placeholder="" name="tennd" value="<?= $hoadon['name_order'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="address" value="<?php if(isset($address)){echo $address['address'];} ?>">
+                        <input type="text" class="form-control my-4" placeholder="" name="diachi" value="<?= $hoadon['address'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Số điện thoại</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="phone" value="<?php if(isset($phone)){echo $phone['phone'];} ?>">
+                        <input type="text" class="form-control my-4" placeholder="" name="sdt" value="<?= $hoadon['phone'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tổng tiền</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="date_purchase" value="<?php if(isset($date_purchase)){echo $date_purchase['date_purchase'];} ?>">
+                        <input type="text" class="form-control my-4" placeholder="" name="tongtien" value="<?= $hoadon['total'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Ngày mua</label>
-                        <input type="date" class="form-control my-4" placeholder="" name="total" value="<?php if(isset($total)){echo $total['total'];} ?>">
+                        <input type="date" class="form-control my-4" placeholder="" name="ngaymua" value="<?= $hoadon['date_purchase'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Trạng thái</label>
-                        <input type="number" class="form-control my-4" placeholder="" name="status" value="<?php if(isset($status)){echo $status['status'];} ?>">
+                        <input type="number" class="form-control my-4" placeholder="" name="trangthai" value="<?= $hoadon['status'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Phương thức thanh toán</label>
-                        <input type="number" class="form-control my-4" placeholder="" name="method_payment_id" value="<?php if(isset($method_payment_id)){echo $method_payment_id['method_payment_id'];} ?>">
+                        <input type="number" class="form-control my-4" placeholder="" name="phuongthuc" value="<?= $hoadon['method_payment_id'] ?>">
                     </div>
                     <button name="btn" class="btn btn-secondary btn-lg" >Sửa</button>
                 </form>

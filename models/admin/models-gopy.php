@@ -15,7 +15,7 @@
     }        
     function loadone_gopy($id ){
         $sql= "select * from contact where id =".$id;
-        $contact=pdo_query($sql); 
+        $contact= pdo_query_one($sql); 
         return $contact;  
     }
 

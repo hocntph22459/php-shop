@@ -139,6 +139,8 @@
                                 <td><?= $users['role'] ?></td>
                                 <td>
                                     <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-khach-hang&id=<?= $users['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/controller/admin/?url=update-khach-hang&id=<?= $users['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+
                                 </td>
                             </tr>
                         <?php endforeach ?>

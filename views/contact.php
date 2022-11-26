@@ -52,7 +52,7 @@ if(isset($_POST['contact_submit']) && $_POST['contact_submit']){
         </div>
         <div class="col-md-6">
           <div class="img-box">
-            <img src="./views/src/image/contact/contact-img.jpg" alt="">
+            <img src="./views/src/image/contact/contact-img3.webp" alt="" >
           </div>
         </div>
       </div>
