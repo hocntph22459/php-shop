@@ -145,7 +145,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Trạng thái</label>
-                        <input type="number" class="form-control my-4" placeholder="" name="trangthai" value="<?= $hoadon['status'] ?>">
+                        <input type="text" class="form-control my-4" placeholder="" name="trangthai" value="<?= $hoadon['status'] ?>">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Phương thức thanh toán</label>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>đơn hàng của tôi</title>
+    <title>chỉnh sửa đơn hàng</title>
     <link rel="stylesheet" href="./views/src/css/client/cart/cart.css">
 
     <!-- Font Awesome -->
@@ -34,43 +34,29 @@
                         <div class="card-body">
                             <hr class="my-4" />
                             <!-- Single item -->
-                            <?php foreach ($listbill as $listcart) : ?>
+                            <?php foreach ($billone as $listcart) : ?>
                                 <div class="row mb-6">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                        <!-- Image -->
-                                        <!-- <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="" class="w-100" alt="" />
-                                            <a href="#!">
-                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                            </a>
-                                        </div> -->
-                                        <!-- Image -->
-                                    </div>
 
+                                    </div>
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                        <!-- Data -->
-                                        <p><strong>TÊN NGƯỜI NHẬN: <?= $listcart['name_order'] ?></strong></p>
-                                        <p>ĐỊA CHỈ:
-                                            <?= $listcart['address'] ?>
-                                        </p>
-                                        <p>SỐ ĐIỆN THOẠI:
-                                            <?= $listcart['phone'] ?>
-                                        </p>
-                                        <p>THÀNH TIỀN:
-                                            <?= $listcart['total'] ?>
-                                        </p>
-                                        <p>NGÀY ĐẶT:
-                                            <?= $listcart['date_purchase'] ?>
-                                        </p>
-                                        <p>TRẠNG THÁI ĐƠN HÀNG:
-                                            <?= $listcart['status'] ?>
-                                        </p>
-                                        <p>PHƯƠNG THỨC THANH TOÁN:
-                                            <?= $listcart['method_payment_id'] ?>
-                                        </p>
-                                        <!-- xác nhận -->
-                                        <a onclick="return confirm('bạn có chắc muốn hủy ?')" class="btn btn-primary px-3 ms-2" data-mdb-toggle="tooltip" title="hủy" href="http://localhost/da1/?url=delete-order&id=<?= $listcart['id'] ?>">hủy đơn hàng</i></a>
-                                        <a class="btn btn-primary px-3 ms-2" href="http://localhost/da1/?url=edit-order&id=<?= $listcart['id'] ?>">sửa thông tin</a>
+                                        <form action="" method="post">
+                                            <!-- Data -->
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">tên người nhận</label> <br>
+                                                <input type="text" class="form-control my-4" id="diachi" value="<?= $listcart['name_order'] ?>" name="name_order">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Địa chỉ</label> <br>
+                                                <input type="text" class="form-control my-4" id="diachi" value="<?= $listcart['address'] ?>" name="diachi">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">số điện thoại</label> <br>
+                                                <input type="text" class="form-control my-4" id="phone" value="<?= $listcart['phone'] ?>" name="phone">
+                                            </div>
+                                            <!-- xác nhận -->
+                                            <button name="btn" class="btn btn-primary px-3 ms-2">cập nhật</button>
+                                        </form>
                                     </div>
                                 </div>
                             <?php endforeach ?>

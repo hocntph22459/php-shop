@@ -107,6 +107,16 @@ switch ($url) {
         $listbill = loadall_bill();
         include "./views/order-deltail.php";
         break;
+        // hủy đơn hàng
+    case 'delete-order':
+        delete_order();
+        break;
+        // cập nhật đơn hàng
+    case 'edit-order':
+        $billone = loadone_bill();
+        update_bill();
+        include "./views/edit-order.php";
+        break;
         // contact
     case 'contact':
         include "./views/contact.php";
