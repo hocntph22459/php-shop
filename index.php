@@ -53,7 +53,9 @@ switch ($url) {
         $id = $_GET['id'];
         $name_category = load_category_sanpham();
         $spct = loadone_sanpham($id);
+        extract($spct);
         $list_attributes = load_attributes_product($id);
+        $sanphamkhac = load_sanpham_cungloai($id,$category_id);
         include "./views/sanphamct.php";
         break;
         // bài viết

@@ -140,7 +140,16 @@
                                 <td><?= $bill['total'] ?></td>
                                 <td><?= $bill['date_purchase'] ?></td>
                                 <td><?= $bill['status'] ?></td>
-                                <td><?= $bill['method_payment_id'] ?></td>
+                                <td>
+                                    <?php if($bill['method_payment_id'] == 1  ):?>
+                                        Tiền mặt
+                                        <?php endif;?>
+                                    <?php if( $bill['method_payment_id'] == 2  ):?>
+                                        Chuyển khoản
+                                        <?php endif;?>
+                                    <?php if($bill['method_payment_id'] == 3  ):?>
+                                        Ship COD
+                                        <?php endif;?>
                                 <td>
                                     <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
                                     <a href="http://localhost/da1/controller/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>

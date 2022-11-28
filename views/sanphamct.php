@@ -169,6 +169,22 @@ $comment_list1 = load_binhluan_by_users($id);
 
         </div>
     </div>
+    <h2 class="text-center">Sản phẩm cùng loại</h2>
+        <div class="row">
+            <?php foreach ($name_category as $sp_cate) : ?>
+                <?php foreach ($sanphamkhac as $sp) : ?>
+                    <?php if ($sp_cate['id'] == $sp['id']) : ?>
+                        <div class="card">
+                            <img src="./views/src/image/products/<?= $sp['image'] ?>" alt="Denim Jeans" style="width:100%; margin: auto;">
+                            <h3 style="text-transform: uppercase;"><a href=""><?= $sp['name'] ?></a></h3>
+                            <p class="price"><?= $sp['price'] ?></p>
+                            <h4 style="color: red;"><?= $sp_cate['name_category'] ?></h4>
+                            <p><button type="button" class="btn btn-info"><a href="http://localhost/da1/?url=san-pham-ct&id=<?= $sp['id'] ?>">Xem chi tiết</a></button></p>
+                        </div>
+                    <?php endif ?>
+                <?php endforeach ?>
+            <?php endforeach ?>
+        </div>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

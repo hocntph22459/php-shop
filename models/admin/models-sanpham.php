@@ -20,6 +20,13 @@ function load_sanpham_top ()
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+function load_sanpham_cungloai($id,$category_id){
+    $sql ="select * from products where category_id = $category_id and id <> $id limit 0,4";
+    $listsanphamcungloai = pdo_query($sql);
+    // var_dump($sql);
+    // die;
+    return $listsanphamcungloai;
+}
 function load_sanpham_new()
 {
     $sql = "SELECT*FROM products ORDER BY id DESC limit 0,4";
