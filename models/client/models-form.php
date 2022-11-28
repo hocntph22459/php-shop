@@ -107,6 +107,7 @@ function login_admin()
             if ($user['password'] == $matkhau) {
                 if ($user['role'] == 1) {
                     $_SESSION['email'] = $user['email'];
+                    $_SESSION['id'] = $user;
                     header("location:http://localhost/da1/controller/admin/?url=home");
                     exit;
                 } else {
