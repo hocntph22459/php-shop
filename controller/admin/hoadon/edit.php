@@ -145,7 +145,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Trạng thái</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="trangthai" value="<?= $hoadon['status'] ?>">
+                        <select name="trangthai" id="" class="form-control my-4">
+                            <option value="<?= $hoadon['status'] ?>" selected><?= $hoadon['status'] ?></option>
+                            <option value="Đang chờ duyệt" >Đang chờ duyệt</option>
+                            <option value="Giao thành công" >Giao thành công</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Phương thức thanh toán</label>
