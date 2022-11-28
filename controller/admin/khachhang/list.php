@@ -136,10 +136,11 @@
                                 <td><?= $users['password'] ?></td>
                                 <td><?= $users['phone'] ?></td>
                                 <td><?= $users['address'] ?></td>
-                                <td><?= $users['role'] ?></td>
+                                <td><?= ($users['role'] == 1) ? "Quản trị": "Khách hàng" ?></td>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/controller/admin/?url=delete-khach-hang&id=<?= $users['id'] ?>"><img src="../../views/src/image/admin/delete.svg" alt=""></a>
+                                    <?php if($_SESSION['email'] != $users['email']):?>
                                     <a href="http://localhost/da1/controller/admin/?url=update-khach-hang&id=<?= $users['id'] ?>"><img src="../../views/src/image/admin/edit.svg" alt=""></a>
+                                    <?php endif;?>
 
                                 </td>
                             </tr>
