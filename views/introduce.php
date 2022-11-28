@@ -23,8 +23,8 @@
             Áo polo là một trong số những loại áo có cổ, hay còn được nhiều người biết đến là áo cổ gập. Áo thun polo được may bằng chất vải thun co giãn, với khả năng thấm hút mồ hôi cực tốt, đem đến cho người dùng sự thoải mái, dễ chịu và thông thoáng trong quá trình sử dụng.
 
             </p>
-            <a href="">
-              Read More
+            <a href="http://localhost/da1/?url=post-ct&id=1">
+            Đọc thêm
             </a>
           </div>
         </div>
