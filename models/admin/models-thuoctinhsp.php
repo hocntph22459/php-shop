@@ -15,9 +15,9 @@ function delete_attributes($id)
     $sql = "DELETE FROM  attributes_product WHERE id=" . $id;
     pdo_execute($sql);
 }
-function update_attributes($id,$kichco,$mau,$soluong)
+function update_attributes($id,$idsp,$kichco,$mau,$soluong)
 {
-    $sql = "UPDATE attributes_product SET size='" . $kichco . "',color='" . $mau . "',quantity='" . $soluong . "' WHERE id=" . $id;
+    $sql = "UPDATE attributes_product SET id_product = '".$idsp."', size='" . $kichco . "',color='" . $mau . "',quantity='" . $soluong . "' WHERE id=" . $id;
     pdo_execute($sql);
 }
 function loadone_attributes($id)

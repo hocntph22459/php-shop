@@ -12,18 +12,32 @@ function loadall_cart(){
     
 }
 
+function load_attributes($attributes){
+    $attributes = $_POST['attributes'];
+    $sql = "SELECT * FROM `attributes_product` WHERE id = $attributes";
+    // echo "<pre>";
+    // var_dump(pdo_query_one($sql));
+    
+    // die;
+    return pdo_query_one($sql);
+}
 function add_gio_hang()
 {
     if(isset($_POST['addtocart'])){
-            $id_product = $_POST['id_product'];
+            $attributes = $_POST['attributes'];
             $image = $_POST['image'];
             $name = $_POST['name'];
             $price = $_POST['price'];
             $soluong = $_POST['soluong'];
-            $size = $_POST['size'];
-            $color = $_POST['color'];
+            $id_att  = load_attributes($attributes);
+            $size = $id_att['size'];
+            $color = $id_att['color'];
+            $id_product = $id_att['id_product'];
             $sql = "INSERT INTO `cart`(`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
             VALUES ('$id_product','$image','$name','$price','$soluong','$size','$color')";
+            // echo "<pre>";
+            // var_dump($id_att);
+            // die;
             pdo_execute($sql);
             header("location:http://localhost/da1?url=cart");
             exit;

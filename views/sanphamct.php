@@ -62,18 +62,13 @@ $comment_list1 = load_binhluan_by_users($id);
                     </div>
                     <!--add giỏ hàng -->
                     <form action="" method="post">
-                        size:
-                        <select name="size" class="form-select" aria-label="Default select example">
+                        Thuộc tính:
+                        <select name="attributes" class="form-select" aria-label="Default select example">
                             <?php foreach ($list_attributes as $attributes) : ?>
-                                <option name="size" value="<?= $attributes['size'] ?>"><?= $attributes['size'] ?></option>
+                                <option name="" value="<?= $attributes['id'] ?>"><?= $attributes['size'] ?> - <?= $attributes['color'] ?> </option>
                             <?php endforeach; ?>
                         </select> <br>
-                        chọn màu:
-                        <select name="color" class="form-select" aria-label="Default select example">
-                            <?php foreach ($list_attributes as $attributes) : ?>
-                                <option name="size" value="<?= $attributes['color'] ?>"><?= $attributes['color'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                        
                         <input type="text" name="image" value="./views/src/image/products/<?= $spct['image'] ?>" hidden>
                         <input type="text" name="name" value="<?= $spct['name'] ?>" hidden>
                         <input type="text" name="price" value="<?= $spct['price'] ?>" hidden>

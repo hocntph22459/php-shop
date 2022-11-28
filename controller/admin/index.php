@@ -81,10 +81,11 @@ switch ($url) {
         $listsanpham = loadall_sanpham_admin();
         include "../admin/thuoctinh/edit.php";
         if (isset($_POST['btn'])) {
+            $idsp = $_POST['idsp'];
             $kichco = $_POST['kichco'];
             $mau = $_POST['mau'];
             $soluong = $_POST['soluong'];
-            update_attributes($id, $kichco, $mau , $soluong);
+            update_attributes($id,$idsp, $kichco, $mau , $soluong);
             header("location:../../controller/admin/index.php?url=attributes");
         }
         break;
