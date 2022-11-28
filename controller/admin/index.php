@@ -10,16 +10,17 @@ include "../../models/admin/models-hoadon.php";
 include "../../models/admin/models-gopy.php";
 include "../../models/admin/models-baiviet.php";
 include "../../models/admin/models-thuoctinhsp.php";
-
+// bắt lỗi đăng nhập admin mới truy cập đc all
+checklogin_admin();
 
 include "../../models/connect.php";
 $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 // echo $url;
 switch ($url) {
+    
     case '':
         // trang chủ  
     case 'home':
-        checklogin_admin();
         include "./home.php";
         break;
         // đăng xuất admin

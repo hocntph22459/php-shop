@@ -10,8 +10,6 @@ include "./models/admin/models-thuoctinhsp.php";
 include "./models/admin/models-baiviet.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
-// nên include vào file. file nào cần thì include
-// include "./views/header.php";
 
 $url = isset($_GET['url']) ? $_GET['url'] : '';
 // echo $url;
@@ -128,10 +126,6 @@ switch ($url) {
         // quêm mật khẩu
     case 'quen-mat-khau':
         quen_mat_khau();
-        break;
-        // sản phẩm yêu thích
-    case 'san-pham-yeu-thich':
-        include "./views/product-tym.php";
         break;
         // đổi mật khẩu
     case 'doi-mat-khau':
