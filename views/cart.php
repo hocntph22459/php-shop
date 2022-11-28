@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+$total = 0;
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,6 +61,10 @@
                                         <p>giá tiền:
                                             <?= $listcart['price'] ?>
                                         </p>
+                                        <?php
+                                            $total = $total + $listcart['price']*$listcart['soluong'];
+                                        ?>
+                                        
                                         <a onclick="return confirm('bạn có chắc xóa ?')" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa" href="http://localhost/da1/?url=delete-cart&id=<?= $listcart['id'] ?>"><i class="fas fa-trash"></i></a>
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="yêu thích">
@@ -126,8 +132,7 @@
                                         </strong>
                                     </div>
                                     <span>
-                                        <?php $name = $listcart['price'] * $listcart['soluong']; ?>
-                                        <strong><?= $tong = $name; ?></strong></span>
+                                        <strong><?= $tong = $total; ?></strong></span>
                                 </li>
                             </ul>
                             <a href="http://localhost/da1/?url=checkout-cart" class="btn btn-primary btn-lg btn-block">ĐI ĐẾN THANH TOÁN</a>

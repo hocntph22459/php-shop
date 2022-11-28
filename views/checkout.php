@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="h-100">
-
+<?php $total  = 0;?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -60,11 +60,12 @@
                                 <input type="hidden" name="sanphamgiohang[2][sp_ma]" value="4">
                                 <input type="hidden" name="sanphamgiohang[2][gia]" value="14990000.00">
                                 <input type="hidden" name="sanphamgiohang[2][soluong]" value="8">
+                                <?php $total = $total + $listcart['price']*$listcart['soluong']; ?>
                             </ul>
                         <?php endforeach ?>
                         <li class="list-group-item d-flex justify-content-between">
                                     <span>Tổng thành tiền</span>
-                                    <strong><?= $tongtien = $listcart['price'] * $listcart['soluong']; ?></strong>
+                                    <strong><?= $total; ?></strong>
                                 </li> <br>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Mã khuyến mãi">
