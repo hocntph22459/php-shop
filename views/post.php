@@ -9,7 +9,7 @@
                 
                 <div class="card single_post">
                     <div class="body">
-                        <h3 class="m-t-0 m-b-5"><a href="blog-details.html"><?=$list['tittle']?></a></h3>
+                        <h3 class="m-t-0 m-b-5"><a href="#"><?=$list['tittle']?></a></h3>
                     </div>
                     <div class="body">
                         <div class="img-post m-b-15">

@@ -5,8 +5,6 @@ include "./models/admin/models-sanpham.php";
 include "./models/admin/models-loaihang.php";
 include "./models/client/models-form.php";
 include "./models/client/models-cart.php";
-include "./models/admin/models-mau.php";
-include "./models/admin/models-kichco.php";
 include "./models/admin/models-binhluan.php";
 include "./models/admin/models-thuoctinhsp.php";
 include "./models/admin/models-baiviet.php";
@@ -56,8 +54,6 @@ switch ($url) {
 
         $id = $_GET['id'];
         $name_category = load_category_sanpham();
-        $listcolor = loadall_color();
-        $listsize = loadall_size();
         $spct = loadone_sanpham($id);
         $list_attributes = load_attributes_product($id);
         include "./views/sanphamct.php";
