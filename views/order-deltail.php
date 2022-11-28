@@ -66,7 +66,15 @@
                                             <?= $listcart['status'] ?>
                                         </p>
                                         <p>PHƯƠNG THỨC THANH TOÁN:
-                                            <?= $listcart['method_payment_id'] ?>
+                                            <?php if($listcart['method_payment_id'] == 1  ):?>
+                                                Tiền mặt
+                                                <?php endif;?>
+                                            <?php if( $listcart['method_payment_id'] == 2  ):?>
+                                                Chuyển khoản
+                                                <?php endif;?>
+                                            <?php if($listcart['method_payment_id'] == 3  ):?>
+                                                Ship COD
+                                                <?php endif;?>
                                         </p>
                                         <!-- xác nhận -->
                                         <a onclick="return confirm('bạn có chắc muốn hủy ?')" class="btn btn-primary px-3 ms-2" data-mdb-toggle="tooltip" title="hủy" href="http://localhost/da1/?url=delete-order&id=<?= $listcart['id'] ?>">hủy đơn hàng</i></a>
