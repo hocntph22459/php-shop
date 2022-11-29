@@ -95,7 +95,8 @@ switch ($url) {
         // thanh toán
     case 'checkout-cart':
         $cart = loadall_cart();
-        thanhtoan();
+        validate_checkout();
+        // thanhtoan();
         include "./views/checkout.php";
         break;
         // order-deltail

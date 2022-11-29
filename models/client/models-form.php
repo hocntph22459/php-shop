@@ -168,11 +168,9 @@ function doimatkhau()
 function validate_doi_mat_khau()
 {
     if (isset($_POST['btn'])) {
-        $email = $_POST['email'];
-        $matkhaucu = $_POST['matkhaucu'];
         $password = $_POST['password'];
         $rpassword = $_POST['rpassword'];
-        if ($password < '6') {
+        if ($password < '') {
             $matkhau_err = "mật khẩu phải trên 6 kí tự";
         }
         if ($rpassword != $password) {

@@ -19,20 +19,21 @@
 
 <body>
     <div class="container">
+    <?php if (isset($_SESSION['id'])) : ?>
         <div class="panel panel-primary">
             <div class="panel-heading"> <br>
-                <h2 class="text-center">ĐỔI MẬT KHẨU</h2>
+                <h2 class="text-center">cập nhật tài khoản</h2>
             </div>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="" class="form-label">name</label> <br>
-                    <input type="text" class="form-control my-4" id="id" placeholder="Nhập name của bạn" name="name">
+                    <input type="text" class="form-control my-4" id="id" placeholder="Nhập name của bạn" name="name" value="<?= $_SESSION['id']['name'] ?>">
                     <label for="" class="form-label">email</label> <br>
-                    <input type="email" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="email">
+                    <input type="email" class="form-control my-4" id="pwd" placeholder="Nhập tên" name="email" value="<?= $_SESSION['id']['email'] ?>">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">mật khẩu</label> <br>
-                    <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhaucu">
+                    <input type="password" class="form-control my-4" id="matkhau" placeholder="Nhập mật khẩu" name="matkhaucu" value="<?= $_SESSION['id']['password'] ?>">
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="" class="form-label">mật khẩu mới</label> <br>
@@ -52,9 +53,10 @@
                     <?php endif ?>
                     <input type="password" class="form-control my-4" id="rmatkhau" placeholder="Nhập lại mật khẩu" name="rpassword">
                 </div>
-                <button onclick="alert('thành công')" class="btn btn-success" name="btn" id="bt">ĐỔI</button>
+                <button onclick="confirm('bạn có chắc muốn thay đổi?')" class="btn btn-success" name="btn" id="bt">ĐỔI</button>
             </form>
         </div>
+    <?php endif ?>
     </div>
 </body>
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi" class="h-100">
-<?php $total  = 0;?>
+<?php $total  = 0; ?>
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -22,6 +23,11 @@
         background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(158, 158, 200, 1) 33%, rgba(163, 163, 205, 1) 34%, rgba(168, 168, 210, 1) 35%, rgba(147, 173, 216, 1) 43%, rgba(233, 233, 241, 1) 68%, rgba(0, 212, 255, 1) 100%);
     }
 </style>
+<script>
+    function thanhtoan() {
+        confirm("bạn có chắc mua hàng ?");
+    }
+</script>
 
 <body>
     <main role="main">
@@ -60,13 +66,13 @@
                                 <input type="hidden" name="sanphamgiohang[2][sp_ma]" value="4">
                                 <input type="hidden" name="sanphamgiohang[2][gia]" value="14990000.00">
                                 <input type="hidden" name="sanphamgiohang[2][soluong]" value="8">
-                                <?php $total = $total + $listcart['price']*$listcart['soluong']; ?>
+                                <?php $total = $total + $listcart['price'] * $listcart['soluong']; ?>
                             </ul>
                         <?php endforeach ?>
                         <li class="list-group-item d-flex justify-content-between">
-                                    <span>Tổng thành tiền</span>
-                                    <strong><?= $total; ?></strong>
-                                </li> <br>
+                            <span>Tổng thành tiền</span>
+                            <strong><?= $total; ?></strong>
+                        </li> <br>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Mã khuyến mãi">
                             <div class="input-group-append">
@@ -107,7 +113,7 @@
                                 <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai">
                             </div>
 
-                            <input hidden type="text" class="form-control" name="thanhtien" id="" value="<?= $tongtien = $listcart['price'] * $listcart['soluong']; ?>">
+                            <input hidden type="text" class="form-control" name="tongtien" id="" value="<?= $total; ?>">
 
                         </div>
                         <h4 class="mb-3">Hình thức thanh toán</h4>
@@ -126,7 +132,7 @@
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="btn">Đặt
+                        <button onclick="return thanhtoan()" class="btn btn-primary btn-lg btn-block" type="submit" name="btn">Đặt
                             hàng</button>
                     </div>
                 </div>
