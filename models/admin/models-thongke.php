@@ -25,7 +25,7 @@ function thong_ke_binh_luan()
 }
 function thong_ke_doanh_thu()
 {
-    $sql = "SELECT SUM(total) AS doanhthu FROM bill WHERE YEAR(date_purchase) = 2022";
+    $sql = "SELECT MONTH(date_purchase) AS thang, SUM(total) AS doanhthu FROM bill WHERE YEAR(date_purchase) = 2022 GROUP BY MONTH(date_purchase)";
     return pdo_query($sql);
 }
 
