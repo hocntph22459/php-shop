@@ -42,9 +42,6 @@
               <a class="nav-link" href="http://localhost/da1/?url=contact">Liên hệ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost/da1/?url=contact">Chính sách</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="http://localhost/da1/?url=post">Bài Viết</a>
             </li>
           </ul>

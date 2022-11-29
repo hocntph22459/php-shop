@@ -23,4 +23,27 @@ function thong_ke_binh_luan()
         . " having so_luong>0";
     return pdo_query($sql);
 }
+function thong_ke_doanh_thu()
+{
+    $sql = "SELECT SUM(total) AS doanhthu FROM bill WHERE YEAR(date_purchase) = 2022";
+    return pdo_query($sql);
+}
+
+function thong_ke_don_hang()
+{
+    $sql = "SELECT COUNT(id) AS donhang FROM bill WHERE id";
+    return pdo_query($sql);
+}
+
+function thong_ke_san_pham()
+{
+    $sql = "SELECT COUNT(id) AS sanpham FROM products WHERE id";
+    return pdo_query($sql);
+}
+function thong_ke_yeu_cau()
+{
+    $sql = "SELECT COUNT(status) AS yeucau FROM bill WHERE status = 'Đang chờ duyệt'";
+    return pdo_query($sql);
+
+}
 ?>

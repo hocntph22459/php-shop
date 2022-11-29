@@ -259,6 +259,10 @@ switch ($url) {
         break;
         // thống kê
     case 'thong-ke':
+        $listdoanhthu = thong_ke_doanh_thu();
+        $listdonhang = thong_ke_don_hang();
+        $listsanpham = thong_ke_san_pham();
+        $listyeucau = thong_ke_yeu_cau();
         include "../admin/thongke/list.php";
         break;
 

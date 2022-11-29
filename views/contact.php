@@ -44,7 +44,7 @@ if(isset($_POST['contact_submit']) && $_POST['contact_submit']){
               </div>
               <div class="d-flex ">
                 <button type="submit"  name="contact_submit" value="ok">
-                  SEND
+                  GỬI
                 </button>
               </div>
             </form>
