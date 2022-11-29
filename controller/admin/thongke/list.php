@@ -1,3 +1,17 @@
+<?php
+foreach ($listdoanhthu as $doanhthu) {
+    extract($doanhthu);
+}
+foreach($listdonhang as $donhang){
+    extract($donhang);
+}
+foreach($listsanpham as $sanpham){
+    extract($sanpham);
+}
+foreach($listyeucau as $yeucau){
+    extract($yeucau);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -138,7 +152,7 @@
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 TỔNG SỐ DOANH THU</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                    
+                                    <?=$doanhthu?> VNĐ
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -158,7 +172,7 @@
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 TỔNG SỐ ĐƠN HÀNG</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                    
+                                <?=$donhang?>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -177,8 +191,8 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">TỔNG SẢN PHẨM
                                 </div>
-                                <div class="row no-gutters align-items-center">
-                                    
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                <?=$sanpham?>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -198,7 +212,7 @@
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 YÊU CÂU ĐANG ĐỢI GIẢI QUYÊT</div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                    
+                                <?=$yeucau?>
                                 </div>
                             </div>
                             <div class="col-auto">
