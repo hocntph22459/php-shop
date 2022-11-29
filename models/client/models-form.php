@@ -86,7 +86,7 @@ function checklogin_admin()
 {
     // kiểm tra đăng nhập
 
-    if (!isset($_SESSION['email'])) {
+    if (!isset($_SESSION['email_admin'])) {
         header("location:http://localhost/da1/?url=login-admin");
         exit;
     }
@@ -106,7 +106,7 @@ function login_admin()
             //kiểm tra matkhau
             if ($user['password'] == $matkhau) {
                 if ($user['role'] == 1) {
-                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['email_admin'] = $user['email'];
                     $_SESSION['id'] = $user;
                     header("location:http://localhost/da1/controller/admin/?url=home");
                     exit;

@@ -82,8 +82,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <?php if (isset($_SESSION['email'])) {
-                                        echo $_SESSION['email'];
+                                    <?php if (isset($_SESSION['email_admin'])) {
+                                        echo $_SESSION['email_admin'];
                                     } ?></span>
                                 <img class="img-profile rounded-circle" src="../../views/src/image/admin/undraw_profile.svg"> <a href="http://localhost/da1/controller/admin/?url=logout-admin"><img style="margin: 1px;" src="../../views/src/image/icon/logout.svg" alt="" width="30px"></a>
                             </a>

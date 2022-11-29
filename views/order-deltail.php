@@ -30,6 +30,7 @@
                     <div class="card mb-4">
                         <div class="card-header py-3">
                             <h5 class="mb-0">ĐƠN HÀNG CỦA TÔI</h5>
+                            <a href="http://localhost/da1/?url=home">trang chủ</a>
                         </div>
                         <div class="card-body">
                             <hr class="my-4" />
