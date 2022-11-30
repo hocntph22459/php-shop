@@ -1,8 +1,8 @@
 <?php
 // load giỏ hàng
-function loadall_cart(){
+function loadall_cart($id_user){
     if(isset($_SESSION['email'])){
-        $_SESSION['cart'] = $sql = "SELECT * FROM `cart` ORDER BY id DESC";
+        $_SESSION['cart'] = $sql = "SELECT * FROM `cart` where id_users = $id_user";
         $cart = pdo_query($sql);
         return $cart;
     }else{
@@ -24,6 +24,7 @@ function load_attributes($attributes){
 function add_gio_hang()
 {
     if(isset($_POST['addtocart'])){
+            $id_user = $_POST['id_user'];
             $attributes = $_POST['attributes'];
             $image = $_POST['image'];
             $name = $_POST['name'];
@@ -38,8 +39,8 @@ function add_gio_hang()
                 header("location:http://localhost/da1/?url=san-pham-ct&id=$id_product");
             }
             else{
-                $sql = "INSERT INTO `cart`(`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
-                VALUES ('$id_product','$image','$name','$price','$soluong','$size','$color')";
+                $sql = "INSERT INTO `cart`(`id_users`,`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
+                VALUES ('$id_user','$id_product','$image','$name','$price','$soluong','$size','$color')";
                 // echo "<pre>";
                 // var_dump($id_att);
                 // die;

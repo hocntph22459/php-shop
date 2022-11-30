@@ -79,7 +79,8 @@ switch ($url) {
         break;
         // cart
     case 'cart':
-        $cart = loadall_cart();
+        $id_user = $_SESSION['id']['id'];
+        $cart = loadall_cart($id_user);
         include "./views/cart.php";
         break;
         // xóa cart
@@ -94,7 +95,8 @@ switch ($url) {
         break;
         // thanh toán
     case 'checkout-cart':
-        $cart = loadall_cart();
+        $id_user = $_SESSION['id']['id'];
+        $cart = loadall_cart($id_user);
         validate_checkout();
         // thanhtoan();
         include "./views/checkout.php";
