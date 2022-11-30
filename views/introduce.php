@@ -31,6 +31,7 @@
       </div>
     </div>
   </section>
+  <br> <br> <br>
 
   <!-- end about section -->
 <?php 
