@@ -138,7 +138,7 @@
                                 <td><?= $users['address'] ?></td>
                                 <td><?= ($users['role'] == 1) ? "Quản trị": "Khách hàng" ?></td>
                                 <td>
-                                    <?php if($_SESSION['id']['id'] != $users['id']):?>
+                                    <?php if(!$users['role'] == 1):?>
                                     <a href="http://localhost/da1/admin/?url=update-khach-hang&id=<?= $users['id'] ?>"><img src="../views/src/image/admin/edit.svg" alt=""></a>
                                     <?php endif;?>
 

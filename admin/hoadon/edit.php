@@ -147,7 +147,7 @@
                         <label for="" class="form-label">Trạng thái</label>
                         <select name="trangthai" id="" class="form-control my-4">
                             <option value="<?= $hoadon['status'] ?>" selected><?= $hoadon['status'] ?></option>
-                            <option value="Đang chờ duyệt" >Đang chờ duyệt</option>
+                            <option value="Đang giao hàng" >Đang giao hàng</option>
                             <option value="Giao thành công" >Giao thành công</option>
                         </select>
                     </div>

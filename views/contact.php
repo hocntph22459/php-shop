@@ -43,7 +43,7 @@ if(isset($_POST['contact_submit']) && $_POST['contact_submit']){
                 <input type="text" name="mota" class="message-box" placeholder="Nội dung góp ý" />
               </div>
               <div class="d-flex ">
-                <button type="submit"  name="contact_submit" value="ok">
+                <button onclick="return confirm('gửi góp ý thành công ?')" type="submit"  name="contact_submit" value="ok">
                   GỬI
                 </button>
               </div>
