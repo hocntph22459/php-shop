@@ -16,7 +16,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="http://localhost/da1/controller/admin/?url=thong-ke">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Thống Kê</span></a>
     </li>
 
     <!-- Divider -->

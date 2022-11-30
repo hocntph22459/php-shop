@@ -46,7 +46,7 @@
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
                                         <p><strong><?= $listcart['name'] ?></strong></p>
-                                        <p>màu xắc:
+                                        <p>màu sắc:
                                             <?= $listcart['color'] ?>
                                         </p>
                                         <p>Size:
@@ -68,7 +68,7 @@
                                         <div class="d-flex mb-4" style="max-width: 300px">
                                             <form action="" method="post">
                                                 <div class="form-outline">
-                                                    <input id="form1" min="0" name="soluong" value="<?= $listcart['soluong'] ?>" type="number" class="form-control" />
+                                                    <input id="form1" min="0" name="soluong" value="<?= $listcart['soluong'] ?>" type="number" class="form-control" min="0" />
                                                     <label class="form-label" for="form1">Số lượng</label>
                                                 </div>
                                                 <!-- xác nhận --> <br>

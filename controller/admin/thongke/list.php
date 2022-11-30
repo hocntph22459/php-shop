@@ -103,7 +103,7 @@ foreach($listyeucau as $yeucau){
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMIN</span>
                                 <img class="img-profile rounded-circle" src="../../views/src/image/admin/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -157,7 +157,12 @@ foreach($listyeucau as $yeucau){
                                 </svg>
                             </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                    <?=$doanhthu?> VNĐ
+                                    <?php if(!isset($doanhthu)):?>
+                                    <?=0?> 
+                                    <?php endif;?>
+                                    <?php if(isset($doanhthu)):?>
+                                    <?=$doanhthu?> 
+                                    <?php endif;?>
                                 </div>
                             </div>
                             <div class="col-auto">
