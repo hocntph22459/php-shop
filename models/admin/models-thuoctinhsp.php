@@ -5,6 +5,17 @@ function loadall_attributes()
     $list_attributes = pdo_query($sql);
     return $list_attributes;
 }
+function loadall_attributes_admin($id)
+{
+    if($id> 0 ){
+        $sql = "SELECT*FROM attributes_product where id_product = $id";
+    }
+    else{
+        $sql = "SELECT*FROM attributes_product where 1";
+    }
+    $list_attributes = pdo_query($sql);
+    return $list_attributes;
+}
 function insert_attributes($idsp,$kichco,$mau,$soluong)
 {
     $sql = "INSERT INTO `attributes_product`(id_product,size,color,quantity) VALUES ('$idsp','$kichco','$mau','$soluong')";

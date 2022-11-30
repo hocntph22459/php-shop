@@ -51,9 +51,18 @@ switch ($url) {
         break;
         // thuộc tính sản phẩm
     case 'attributes':
-        $list_attributes = loadall_attributes();
         $listsanpham = loadall_sanpham_admin();
-        include "../admin/thuoctinh/list.php";
+        if(isset($_POST['search']) && ($_POST['idsp'] > 0)){
+            $id = $_POST['idsp'];
+            $list_attributes = loadall_attributes_admin($id);
+            include "../admin/thuoctinh/list.php";
+        }
+        else{
+            $id = 0;
+            $list_attributes = loadall_attributes_admin($id);
+            include "../admin/thuoctinh/list.php";
+        }
+        
         break;
     case 'delete-attributes':
         if (isset($_GET['id'])) {
