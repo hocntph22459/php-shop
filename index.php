@@ -101,7 +101,8 @@ switch ($url) {
         break;
         // order-deltail
     case 'order-deltail':
-        $listbill = loadall_bill();
+        $id = $_SESSION['id']['id'];
+        $listbill = loadall_bill($id);
         include "./views/order-deltail.php";
         break;
         // hủy đơn hàng

@@ -97,12 +97,13 @@ function thanhtoan()
 {
     if (isset($_POST['btn'])) {
         $kh_ten = $_POST['kh_ten'];
+        $id_user = $_POST['id_user'];
         $kh_diachi =  $_POST['kh_diachi'];
         $kh_dienthoai =  $_POST['kh_dienthoai'];
         $tongtien = $_POST['tongtien'];
         $httt_ma = $_POST['httt_ma'];
-        $sql = "INSERT INTO `bill`(`name_order`, `address`, `phone`,`total`,`method_payment_id`) 
-        VALUES ('$kh_ten','$kh_diachi','$kh_dienthoai','$tongtien','$httt_ma')";
+        $sql = "INSERT INTO `bill`(`id_user`,`name_order`, `address`, `phone`,`total`,`method_payment_id`) 
+        VALUES ('$id_user','$kh_ten','$kh_diachi','$kh_dienthoai','$tongtien','$httt_ma')";
         pdo_execute($sql);
         header("location:http://localhost/da1/?url=order-deltail");
         exit;
@@ -132,8 +133,8 @@ function validate_checkout(){
 }
 
 // đơn hàng đã đặt
-function loadall_bill(){
-    $sql="select * from bill";
+function loadall_bill($id){
+    $sql="select * from bill where id_user = $id";
     $listbill = pdo_query($sql);
     return $listbill;
 }
