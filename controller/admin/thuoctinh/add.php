@@ -117,7 +117,7 @@
                 <!-- End of Topbar -->
                 <div class="tile">
                     <h3>thêm thuộc tính</h3>
-                    <a class="" href="http://localhost/da1/controller/admin/?url=color">quay lại danh sách</a>
+                    <a class="" href="http://localhost/da1/controller/admin/?url=attributes">quay lại danh sách</a>
                 </div>
                 <form action="" method="post">
                     <div class="mb-3 mt-3">

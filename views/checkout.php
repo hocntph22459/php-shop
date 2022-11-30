@@ -119,6 +119,9 @@
                         <h4 class="mb-3">Hình thức thanh toán</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
+                                <input id="" name="id_user" type="text" class="custom-control-input" required="" value="<?=$_SESSION['id']['id']?>" hidden>
+                            </div>
+                            <div class="custom-control custom-radio">
                                 <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required="" value="1">
                                 <label class="custom-control-label" for="httt-1">Tiền mặt</label>
                             </div>
