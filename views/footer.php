@@ -9,7 +9,7 @@
               CHÚNG TÔI
             </h4>
             <p>
-              mensbry là website chuyên kinh doanh các mặt hàng thời trang , phù hợp cho mọi lứa tuổi nam nữ . chúng tôi cam kết về giá thành và chất lượng sản phẩm mà chúng tôi cung cấp cảm ơn sự tin tưởng của khách hàng đã dành cho chúng tôi!
+              Mensbry là website chuyên kinh doanh các mặt hàng thời trang , phù hợp cho mọi lứa tuổi nam nữ . chúng tôi cam kết về giá thành và chất lượng sản phẩm mà chúng tôi cung cấp cảm ơn sự tin tưởng của khách hàng đã dành cho chúng tôi!
             </p>
             <div class="footer_social">
               <a href="">

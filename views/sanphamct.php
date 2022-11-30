@@ -29,7 +29,7 @@ $comment_list1 = load_binhluan_by_users($id);
 <div class="pd-wrap">
     <div class="container">
         <div class="heading-section">
-            <h2>Product Details</h2>
+            <h2>Sản Phẩm Chi Tiết</h2>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -91,10 +91,10 @@ $comment_list1 = load_binhluan_by_users($id);
     <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Mô Tả</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Bình Luận</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -149,7 +149,7 @@ $comment_list1 = load_binhluan_by_users($id);
                                 </div> -->
                     </div>
                     <div class="form-group">
-                        <label>Your message</label>
+                        <label>Bình luận của bạn</label>
                         <textarea class="form-control" rows="10" name="contents"></textarea>
                     </div>
                     <div class="row">

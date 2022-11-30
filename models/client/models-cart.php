@@ -33,14 +33,20 @@ function add_gio_hang()
             $size = $id_att['size'];
             $color = $id_att['color'];
             $id_product = $id_att['id_product'];
-            $sql = "INSERT INTO `cart`(`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
-            VALUES ('$id_product','$image','$name','$price','$soluong','$size','$color')";
-            // echo "<pre>";
-            // var_dump($id_att);
-            // die;
-            pdo_execute($sql);
-            header("location:http://localhost/da1?url=cart");
-            exit;
+            if($soluong > $id_att['quantity']){
+                echo '<script>alert("Số lượng mặt hàng này hiện không đủ")</script>';
+                header("location:http://localhost/da1/?url=san-pham-ct&id=$id_product");
+            }
+            else{
+                $sql = "INSERT INTO `cart`(`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
+                VALUES ('$id_product','$image','$name','$price','$soluong','$size','$color')";
+                // echo "<pre>";
+                // var_dump($id_att);
+                // die;
+                pdo_execute($sql);
+                header("location:http://localhost/da1?url=cart");
+                exit;
+            }
         }
 }
 

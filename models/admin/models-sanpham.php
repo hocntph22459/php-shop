@@ -16,12 +16,12 @@ function delete_binhluan_sp($id){
 }
 function load_sanpham_top ()
 {
-    $sql ="select * from products where 1 order by view desc limit 0,4";
+    $sql ="select * from products where 1 order by view desc limit 0,3";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
 function load_sanpham_cungloai($id,$category_id){
-    $sql ="select * from products where category_id = $category_id and id <> $id limit 0,4";
+    $sql ="select * from products where category_id = $category_id and id <> $id limit 0,3";
     $listsanphamcungloai = pdo_query($sql);
     // var_dump($sql);
     // die;
@@ -29,13 +29,13 @@ function load_sanpham_cungloai($id,$category_id){
 }
 function load_sanpham_new()
 {
-    $sql = "SELECT*FROM products ORDER BY id DESC limit 0,4";
+    $sql = "SELECT*FROM products ORDER BY id DESC limit 0,3";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
 function load_sanpham_sell()
 {
-    $sql = "select * from products where 1 order by sell desc limit 0,4";
+    $sql = "select * from products where 1 order by sell desc limit 0,3";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
