@@ -110,10 +110,6 @@ function login_admin()
                     $_SESSION['id'] = $user;
                     header("location:http://localhost/da1/admin/?url=home");
                     exit;
-                } else {
-                    $_SESSION['email'] = $user['email'];
-                    header("location:http://localhost/da1/?url=home");
-                    exit;
                 }
             } else {
                 $error = "tài khoản hoặc mật khẩu không chính xác";
