@@ -257,6 +257,13 @@ switch ($url) {
             header("location:../../controller/admin/index.php?url=bai-viet");
         }
         break;
+    case 'delete-bai-viet':
+        $id = $_GET['id'];
+        delete_baiviet($id);
+        $listpost = load_all_post();
+        // include "../admin/binhluan/detail.php";
+        header("location:../../controller/admin/index.php?url=bai-viet");
+        break;
         // thống kê
     case 'thong-ke':
         $listdoanhthu = thong_ke_doanh_thu();

@@ -28,4 +28,8 @@
     // die;
     pdo_execute($sql);
 }
+function delete_baiviet($id){
+    $sql = "DELETE FROM post WHERE id=$id";
+    pdo_execute($sql);
+}
 ?>
