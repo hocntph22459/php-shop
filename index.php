@@ -1,13 +1,13 @@
 <?php
 session_start();
 include "./models/connect.php";
-include "./models/admin/models-sanpham.php";
-include "./models/admin/models-loaihang.php";
-include "./models/client/models-form.php";
-include "./models/client/models-cart.php";
-include "./models/admin/models-binhluan.php";
-include "./models/admin/models-thuoctinhsp.php";
-include "./models/admin/models-baiviet.php";
+include "./models/models-sanpham.php";
+include "./models/models-loaihang.php";
+include "./models/models-form.php";
+include "./models/models-cart.php";
+include "./models/models-binhluan.php";
+include "./models/models-thuoctinhsp.php";
+include "./models/models-baiviet.php";
 //biến toàn cục
 $listdm = loadall_cat(); //lấy danh mục
 

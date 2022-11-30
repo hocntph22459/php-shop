@@ -83,7 +83,7 @@ $comment_list1 = load_binhluan_by_users($id);
                 </div>
                 <!--đăng nhập mới mua hàng -->
                 <?php if (!isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                    <p><button type="button" class="btn btn-outline-success"><a href="http://localhost/da1/?url=signin-khach-hang">Thêm vào giỏ hàng</a></button></p>
                 <?php endif ?>
                 <?php if (isset($_SESSION['email'])) : ?>
                     <button onclick="alert('thêm vào giỏ hàng thành công')" name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
@@ -133,7 +133,7 @@ $comment_list1 = load_binhluan_by_users($id);
             ?>
             </p>
 
-            <?php if (isset($_SESSION['id'])) : ?>
+            <?php if (isset($_SESSION['email'])) : ?>
                 <form class="review-form" action="" method="post" id="">
                     <div class="form-group">
                         <!-- <label>Your rating</label> -->
