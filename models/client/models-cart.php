@@ -93,6 +93,10 @@ function delete_cart(){
         exit;
     }
 }
+function delete_cart_thanhtoan($id_user){
+        $sql = "DELETE FROM  cart WHERE id_user=" . $id_user;
+        pdo_execute($sql);
+}
 // thanh toán checkout
 function thanhtoan()
 {
@@ -103,9 +107,12 @@ function thanhtoan()
         $kh_dienthoai =  $_POST['kh_dienthoai'];
         $tongtien = $_POST['tongtien'];
         $httt_ma = $_POST['httt_ma'];
+        
         $sql = "INSERT INTO `bill`(`id_user`,`name_order`, `address`, `phone`,`total`,`method_payment_id`) 
         VALUES ('$id_user','$kh_ten','$kh_diachi','$kh_dienthoai','$tongtien','$httt_ma')";
         pdo_execute($sql);
+
+
         header("location:http://localhost/da1/?url=order-deltail");
         exit;
     }
@@ -129,6 +136,7 @@ function validate_checkout(){
             $kh_dienthoai_err = "vui lòng nhập";
         }else{
             thanhtoan();
+            
         }
     }
 }

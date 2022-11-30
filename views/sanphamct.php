@@ -72,7 +72,10 @@ $comment_list1 = load_binhluan_by_users($id);
                         <input type="text" name="image" value="./views/src/image/products/<?= $spct['image'] ?>" hidden>
                         <input type="text" name="name" value="<?= $spct['name'] ?>" hidden>
                         <input type="text" name="price" value="<?= $spct['price'] ?>" hidden>
-                        <input type="text" name="id_user" value="<?= $_SESSION['id']['id'] ?>" hidden>
+                        <?php if (isset($_SESSION['email'])) : ?>
+                            <input type="text" name="id_user" value="<?= $_SESSION['id']['id'] ?>" hidden>
+                        <?php endif ?>
+                        
                         <div class="mb-3 mt-3">
                             SỐ LƯỢNG:
                             <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
