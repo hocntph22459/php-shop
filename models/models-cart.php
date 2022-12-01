@@ -113,7 +113,7 @@ function thanhtoan()
         pdo_execute($sql);
 
 
-        header("location:http://localhost/da1/?url=order-deltail");
+        header("location:http://localhost/da1/?url=order");
         exit;
     }
 }
@@ -141,7 +141,7 @@ function validate_checkout(){
     }
 }
 
-// đơn hàng đã đặt
+// đơn hàng đã đặt load all bill
 function loadall_bill($id){
     $sql="select * from bill where id_user = $id";
     $listbill = pdo_query($sql);
@@ -154,12 +154,12 @@ function delete_order(){
         $id = $_GET['id'];
         $sql = "DELETE FROM  bill WHERE id=" . $id;
         pdo_execute($sql);
-        header("location:http://localhost/da1/?url=order-deltail");
+        header("location:http://localhost/da1/?url=order");
         exit;
     }
 }
 
-// hiển thị 1 đơn hàng
+// hiển thị 1 bill
 function loadone_bill()
 {
     if (isset($_GET['id'])) {
@@ -183,7 +183,7 @@ function update_bill()
         $phone = $_POST['phone'];
         $sql = "UPDATE `bill` SET`name_order`='$name_order',`address`='$diachi',`phone`='$phone' WHERE id = $id;";
         pdo_execute($sql);
-        header("location:http://localhost/da1/?url=order-deltail");
+        header("location:http://localhost/da1/?url=order");
         exit;
         }
     }

@@ -38,16 +38,8 @@
                             <?php foreach ($listbill as $listcart) : ?>
                                 <div class="row mb-6">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                        <!-- Image -->
-                                        <!-- <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="" class="w-100" alt="" />
-                                            <a href="#!">
-                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                                            </a>
-                                        </div> -->
-                                        <!-- Image -->
+                                        <a class="btn btn-primary px-3 ms-2" href="http://localhost/da1/?url=order-deltail&id=<?= $listcart['id'] ?>">xem chi tiết</a>
                                     </div>
-
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
                                         <p><strong>TÊN NGƯỜI NHẬN: <?= $listcart['name_order'] ?></strong></p>
@@ -67,15 +59,15 @@
                                             <?= $listcart['status'] ?>
                                         </p>
                                         <p>PHƯƠNG THỨC THANH TOÁN:
-                                            <?php if($listcart['method_payment_id'] == 1  ):?>
+                                            <?php if ($listcart['method_payment_id'] == 1) : ?>
                                                 Tiền mặt
-                                                <?php endif;?>
-                                            <?php if( $listcart['method_payment_id'] == 2  ):?>
+                                            <?php endif; ?>
+                                            <?php if ($listcart['method_payment_id'] == 2) : ?>
                                                 Chuyển khoản
-                                                <?php endif;?>
-                                            <?php if($listcart['method_payment_id'] == 3  ):?>
+                                            <?php endif; ?>
+                                            <?php if ($listcart['method_payment_id'] == 3) : ?>
                                                 Ship COD
-                                                <?php endif;?>
+                                            <?php endif; ?>
                                         </p>
                                         <!-- xác nhận -->
                                         <a onclick="return confirm('bạn có chắc muốn hủy ?')" class="btn btn-primary px-3 ms-2" data-mdb-toggle="tooltip" title="hủy" href="http://localhost/da1/?url=delete-order&id=<?= $listcart['id'] ?>">hủy đơn hàng</i></a>

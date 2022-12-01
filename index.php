@@ -55,7 +55,7 @@ switch ($url) {
         $spct = loadone_sanpham($id);
         extract($spct);
         $list_attributes = load_attributes_product($id);
-        $sanphamkhac = load_sanpham_cungloai($id,$category_id);
+        $sanphamkhac = load_sanpham_cungloai($id, $category_id);
         include "./views/sanphamct.php";
         break;
         // bài viết
@@ -98,14 +98,20 @@ switch ($url) {
         $id_user = $_SESSION['id']['id'];
         $cart = loadall_cart($id_user);
         validate_checkout();
-        // thanhtoan();
         include "./views/checkout.php";
         break;
-        // order-deltail
-    case 'order-deltail':
+        // đơn hàng đã đặt
+    case 'order':
         $id = $_SESSION['id']['id'];
         $listbill = loadall_bill($id);
-        include "./views/order-deltail.php";
+        include "./views/order.php";
+        break;
+        //chi tiết đơn hàng đã đặt
+    case 'order-deltail':
+        $id_user = $_SESSION['id']['id'];
+        $cart = loadall_cart($id_user);
+        $billone = loadone_bill();
+        include "./views/order-deltai.php";
         break;
         // hủy đơn hàng
     case 'delete-order':

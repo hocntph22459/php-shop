@@ -46,9 +46,6 @@
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Giỏ hàng</span>
-                            <span class="badge badge-secondary badge-pill">
-                                <!-- sô đơn -->
-                            </span>
                         </h4>
                         <?php foreach ($cart as $listcart) : ?>
                             <ul class="list-group mb-3">
@@ -78,6 +75,15 @@
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-secondary">Xác nhận</button>
                             </div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <label for="kh_dienthoai"><strong>ngân hàng</strong></label>
+                            <input type="text" class="form-control" value="vietcombank">
+                            <label for="kh_dienthoai"><strong>số tài khoản</strong></label>
+                            <input type="text" class="form-control" value="9973867151">
+                            <label for="kh_dienthoai"><strong>người nhận</strong></label>
+                            <input type="text" class="form-control" value="nguyễn thái học">
                         </div>
 
                     </div>
@@ -119,7 +125,7 @@
                         <h4 class="mb-3">Hình thức thanh toán</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="" name="id_user" type="text" class="custom-control-input" required="" value="<?=$_SESSION['id']['id']?>" hidden>
+                                <input id="" name="id_user" type="text" class="custom-control-input" required="" value="<?= $_SESSION['id']['id'] ?>" hidden>
                             </div>
                             <div class="custom-control custom-radio">
                                 <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required="" value="1">
