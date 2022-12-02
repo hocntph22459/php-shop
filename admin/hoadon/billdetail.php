@@ -1,3 +1,8 @@
+<?php
+if (is_array($bill_one)) {
+    extract($bill_one);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sửa Hóa Đơn</title>
+    <title>danh sách loại hàng</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -70,7 +75,7 @@
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-<form class="form-inline mr-auto w-100 navbar-search">
+                                <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
@@ -114,50 +119,53 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-<div class="tile">
-                    <h3>Sửa Hóa Đơn</h3>
-                    <a class="" href="http://localhost/da1/admin/?url=hoa-don">quay lại danh sách</a>
-                </div>
-                <form action="http://localhost/da1/admin/?url=update-hoa-don&id_bill=<?= $hoadon['id_bill'] ?>" method="post" enctype="multipart/form-data">
-                    <div class="mb-3 mt-3">
-                        <label for="" class="form-label">Mã đơn hàng</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?= $hoadon['id_bill'] ?>"  readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Tên người đặt</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="tennd" value="<?= $hoadon['name_order'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="diachi" value="<?= $hoadon['address'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Số điện thoại</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="sdt" value="<?= $hoadon['phone'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Tổng tiền</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="tongtien" value="<?= $hoadon['total'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Ngày mua</label>
-                        <input type="date" class="form-control my-4" placeholder="" name="ngaymua" value="<?= $hoadon['date_purchase'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Trạng thái</label>
-                        <select name="trangthai" id="" class="form-control my-4">
-                            <option value="<?= $hoadon['status'] ?>" selected><?= $hoadon['status'] ?></option>
-                            <option value="Đang giao hàng" >Đang giao hàng</option>
-                            <option value="Giao thành công" >Giao thành công</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Phương thức thanh toán</label>
-                        <input type="number" class="form-control my-4" placeholder="" name="phuongthuc" value="<?= $hoadon['method_payment_id'] ?>">
-                    </div>
-                    <button name="btn" class="btn btn-secondary btn-lg" >Sửa</button>
-                </form>
-<!-- Content Row -->
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ảnh Sản Phẩm</th>
+                            <th scope="col">Tên Sản Phẩm</th>
+                            <th scope="col">Màu</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Số Lượng</th>
+                            <th scope="col">Giá Tiền</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <?php $id = $_GET['id_bill'];
+                            $bill = loadall_cart($id);
+                            foreach ($bill as $key) {
+                            ?>
+                                <tr>
+                                <td class="img1"><img src="../views/src/image/products/<?= $key['image'] ?>" alt=""></td>
+                                    <td>
+                                        <?= $key['name'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $key['color'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $key['soluong'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $key['size'] ?>
+                                    </td>
+                                    <td>
+                                        <?= number_format($key['price']) ?>₫
+                                    </td>                                                                      
+                                    <td>
+                                        <a href="http://localhost/da1/admin/?url=hoa-don">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                                        </svg>
+                                        </a>
+                                    </td>
+                            <?php } ?>
+
+                        
+                    </tbody>
+                </table>
+                <!-- Content Row -->
             </div>
         </div>
     </div>

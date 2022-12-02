@@ -31,7 +31,7 @@ function thong_ke_doanh_thu()
 
 function thong_ke_don_hang()
 {
-    $sql = "SELECT COUNT(id) AS donhang FROM bill WHERE id";
+    $sql = "SELECT COUNT(id_bill) AS donhang FROM bill WHERE id_bill";
     return pdo_query($sql);
 }
 

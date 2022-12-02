@@ -120,7 +120,6 @@
                 <table class="table table-hover table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">ID </th>
                             <th scope="col">Tên Người Đặt </th>
                             <th scope="col">Địa chỉ</th> 
                             <th scope="col">Số điện thoại</th>
@@ -133,7 +132,6 @@
                     <tbody>
                         <?php foreach ($listbill as $bill) : ?>
                             <tr>
-                                <th scope="row"><?= $bill['id'] ?></th>
                                 <td><?= $bill['name_order'] ?></td>
                                 <td><?= $bill['address'] ?></td>
                                 <td><?= $bill['phone'] ?></td>
@@ -151,8 +149,9 @@
                                         Ship COD
                                         <?php endif;?>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/admin/?url=delete-hoa-don&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/delete.svg" alt=""></a>
-                                    <a href="http://localhost/da1/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/admin/?url=delete-hoa-don&id_bill=<?= $bill['id_bill'] ?>"><img src="../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/admin/?url=update-hoa-don&id_bill=<?= $bill['id_bill'] ?>"><img src="../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a href="http://localhost/da1/admin/?url=hoa-don-ct&id_bill=<?= $bill['id_bill'] ?>"><img src="../views/src/image/admin/eye-fill.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

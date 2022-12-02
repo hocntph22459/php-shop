@@ -199,15 +199,15 @@ switch ($url) {
         include "./hoadon/list.php";
         break;
     case 'delete-hoa-don':
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            delete_bill($id);
-            $listbill = loadall_bill($id);
+        if (isset($_GET['id_bill'])) {
+            $id_bill = $_GET['id_bill'];
+            delete_bill($id_bill);
+            $listbill = loadall_bill($id_bill);
             header("location:../admin/index.php?url=hoa-don");
         }
     case 'update-hoa-don':
-        $id = $_GET['id'];
-        $hoadon = loadone_bill($id);
+        $id_bill = $_GET['id_bill'];
+        $hoadon = loadone_bill($id_bill);
         include "./hoadon/edit.php";
         if (isset($_POST['btn'])) {
             $tennd = $_POST['tennd'];
@@ -217,10 +217,21 @@ switch ($url) {
             $ngaymua = $_POST['ngaymua'];
             $trangthai = $_POST['trangthai'];
             $phuongthuc = $_POST['phuongthuc'];
-            update_bill($tennd, $diachi, $sdt, $tongtien, $ngaymua, $trangthai, $phuongthuc,$id);
+            update_bill($tennd, $diachi, $sdt, $tongtien, $ngaymua, $trangthai, $phuongthuc,$id_bill);
             header("location:../admin/index.php?url=hoa-don");
         }
         break;
+    case 'hoa-don-ct': 
+            if(isset($_GET['id_bill']) && ($_GET['id_bill']) > 0) { 
+                $id_bill = $_GET['id_bill'];
+                $bill_one = loadone_bill($id_bill);
+            }
+            include "./hoadon/billdetail.php";
+            break;        
+   
+    //  case 'hoa-don-ct':
+    //     include "./hoadon/billdetail.php";
+    //     break;    
     // case 'edit-hoa-don':
     //     $id = $_GET['id'];
     //     $bill = loadone_bill($id);
