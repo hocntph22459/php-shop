@@ -212,10 +212,9 @@ switch ($url) {
             $diachi = $_POST['diachi'];
             $sdt = $_POST['sdt'];
             $tongtien = $_POST['tongtien'];
-            $ngaymua = $_POST['ngaymua'];
             $trangthai = $_POST['trangthai'];
             $phuongthuc = $_POST['phuongthuc'];
-            update_bill($tennd, $diachi, $sdt, $tongtien, $ngaymua, $trangthai, $phuongthuc, $id);
+            update_bill($tennd, $diachi, $sdt, $tongtien, $trangthai, $phuongthuc, $id);
             header("location:../admin/index.php?url=hoa-don");
         }
         break;
@@ -224,7 +223,20 @@ switch ($url) {
         $cart = loadall_cart($id_user);
         include "./hoadon/billdetail.php";
         break;
-
+// case 'update-gio-hang':
+//         $id = $_GET['id'];
+//         $giohang = loadone_cart($id);
+//         include "./hoadon/editbill.php";
+//         if (isset($_POST['btn'])) {
+//             $tensp = $_POST['name'];
+//             $giatien = $_POST['giatien'];
+//             $soluong = $_POST['soluong'];
+//             $mau = $_POST['mau'];
+//             $size = $_POST['size'];
+//             update_cart($tensp, $mau, $size, $soluong, $giatien,$id);
+//             header("location:../admin/index.php?url=hoa-don");
+//         }
+//         break;
         //  case 'hoa-don-ct':
         //     include "./hoadon/billdetail.php";
         //     break;    

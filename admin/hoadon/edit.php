@@ -140,10 +140,6 @@
                         <input type="text" class="form-control my-4" placeholder="" name="tongtien" value="<?= $hoadon['total'] ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Ngày mua</label>
-                        <input type="date" class="form-control my-4" placeholder="" name="ngaymua" value="<?= $hoadon['date_purchase'] ?>">
-                    </div>
-                    <div class="mb-3">
                         <label for="" class="form-label">Trạng thái</label>
                         <select name="trangthai" id="" class="form-control my-4">
                             <option value="<?= $hoadon['status'] ?>" selected><?= $hoadon['status'] ?></option>
@@ -155,7 +151,7 @@
                         <label for="" class="form-label">Phương thức thanh toán</label>
                         <input type="number" class="form-control my-4" placeholder="" name="phuongthuc" value="<?= $hoadon['method_payment_id'] ?>">
                     </div>
-                    <button name="btn" class="btn btn-secondary btn-lg" >Sửa</button>
+                    <button name="btn" class="btn btn-secondary btn-lg" >Cập Nhập</button>
                 </form>
 <!-- Content Row -->
             </div>
