@@ -23,11 +23,13 @@
     table {
         width: 1280px;
     }
-    .img1 img{
+
+    .img1 img {
         width: 100px;
         height: 100px;
     }
 </style>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -72,7 +74,7 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
@@ -108,12 +110,12 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" >
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
-</li>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
@@ -121,7 +123,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Tên Người Đặt </th>
-                            <th scope="col">Địa chỉ</th> 
+                            <th scope="col">Địa chỉ</th>
                             <th scope="col">Số điện thoại</th>
                             <th scope="col">Tổng Tiền</th>
                             <th scope="col">Ngày Mua hàng</th>
@@ -139,19 +141,19 @@
                                 <td><?= $bill['date_purchase'] ?></td>
                                 <td><?= $bill['status'] ?></td>
                                 <td>
-                                    <?php if($bill['method_payment_id'] == 1  ):?>
+                                    <?php if ($bill['method_payment_id'] == 1) : ?>
                                         Tiền mặt
-                                        <?php endif;?>
-                                    <?php if( $bill['method_payment_id'] == 2  ):?>
+                                    <?php endif; ?>
+                                    <?php if ($bill['method_payment_id'] == 2) : ?>
                                         Chuyển khoản
-                                        <?php endif;?>
-                                    <?php if($bill['method_payment_id'] == 3  ):?>
+                                    <?php endif; ?>
+                                    <?php if ($bill['method_payment_id'] == 3) : ?>
                                         Ship COD
-                                        <?php endif;?>
+                                    <?php endif; ?>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/admin/?url=delete-hoa-don&id_bill=<?= $bill['id_bill'] ?>"><img src="../views/src/image/admin/delete.svg" alt=""></a>
-                                    <a href="http://localhost/da1/admin/?url=update-hoa-don&id_bill=<?= $bill['id_bill'] ?>"><img src="../views/src/image/admin/edit.svg" alt=""></a>
-                                    <a href="http://localhost/da1/admin/?url=hoa-don-ct&id_bill=<?= $bill['id_bill'] ?>"><img src="../views/src/image/admin/eye-fill.svg" alt=""></a>
+                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/admin/?url=delete-hoa-don&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/delete.svg" alt=""></a>
+                                    <a href="http://localhost/da1/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/edit.svg" alt=""></a>
+                                    <a href="http://localhost/da1/admin/?url=hoa-don-ct&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/eye-fill.svg" alt=""></a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

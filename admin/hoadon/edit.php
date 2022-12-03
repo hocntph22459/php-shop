@@ -118,10 +118,10 @@
                     <h3>Sửa Hóa Đơn</h3>
                     <a class="" href="http://localhost/da1/admin/?url=hoa-don">quay lại danh sách</a>
                 </div>
-                <form action="http://localhost/da1/admin/?url=update-hoa-don&id_bill=<?= $hoadon['id_bill'] ?>" method="post" enctype="multipart/form-data">
+                <form action="http://localhost/da1/admin/?url=update-hoa-don&id=<?= $hoadon['id'] ?>" method="post" enctype="multipart/form-data">
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã đơn hàng</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?= $hoadon['id_bill'] ?>"  readonly>
+                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?= $hoadon['id'] ?>"  readonly>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên người đặt</label>

@@ -39,8 +39,8 @@ function add_gio_hang()
                 header("location:http://localhost/da1/?url=san-pham-ct&id=$id_product");
             }
             else{
-                $sql = "INSERT INTO `cart`(`id_users`,`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`) 
-                VALUES ('$id_user','$id_product','$image','$name','$price','$soluong','$size','$color')";
+                $sql = "INSERT INTO `cart`(`id_users`,`id_product`, `image`, `name`, `price`, `soluong`, `size`, `color`,`id_bill`) 
+                VALUES ('$id_user','$id_product','$image','$name','$price','$soluong','$size','$color','')";
                 // echo "<pre>";
                 // var_dump($id_att);
                 // die;
@@ -50,8 +50,6 @@ function add_gio_hang()
             }
         }
 }
-
-// sản phẩm yêu thích
 
 
 // load 1 sp
