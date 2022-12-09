@@ -117,6 +117,7 @@ switch ($url) {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             delete_binhluan_sp($id);
+            delete_thuoctinh_sp($id);
             delete_sanpham($id);
             $listsanpham = loadall_sanpham_admin();
             header("location:../admin/index.php?url=san-pham");

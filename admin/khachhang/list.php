@@ -124,7 +124,7 @@
                             <th scope="col">Điện thoại</th>
                             <th scope="col">Địa chỉ</th>
                             <th scope="col">Vai trò</th>
-                            <!-- <th scope="col"><a href="http://localhost/da1/admin/?url=add-loai-hang">thêm mới</a></th> -->
+                            <!-- <th scope="col"><a href="http://localhost/da1/admin/?url=add-loai-hang">thêm mới</a></th> -->  
                         </tr>
                     </thead>
                     <tbody>

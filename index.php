@@ -104,6 +104,17 @@ switch ($url) {
             $data[] = $soluong_dh;
             $data[] = $id_att['id'];
             $data[] = $id_att['quantity'];
+            foreach($_SESSION['mycart'] as $key => $cart){
+                // echo "<pre>";
+                // var_dump($key);
+                // die;
+                if($cart[3] == $id_att['id']){
+                    $_SESSION['mycart'][$key][2] = $_SESSION['mycart'][$key][2] + $soluong_dh;
+                    // var_dump($_SESSION['mycart'][$key][2] + $soluong_dh);
+                    // die;
+                    $data[2] = 1000000000000000;
+                }
+            }
             if($data[2] < $data[4]){
             $_SESSION['mycart'][] = $data;
             }
