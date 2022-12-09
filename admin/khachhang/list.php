@@ -120,7 +120,7 @@
                             <th scope="col">Mã người dùng</th>
                             <th scope="col">Tên người dùng</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Mật khẩu</th>
+                            
                             <th scope="col">Điện thoại</th>
                             <th scope="col">Địa chỉ</th>
                             <th scope="col">Vai trò</th>
@@ -133,7 +133,7 @@
                                 <th scope="row"><?= $users['id'] ?></th>
                                 <td><?= $users['name'] ?></td>
                                 <td><?= $users['email'] ?></td>
-                                <td><?= $users['password'] ?></td>
+                                
                                 <td><?= $users['phone'] ?></td>
                                 <td><?= $users['address'] ?></td>
                                 <td><?= ($users['role'] == 1) ? "Quản trị": "Khách hàng" ?></td>
