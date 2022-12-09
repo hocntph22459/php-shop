@@ -119,39 +119,18 @@
                     <a class="" href="http://localhost/da1/admin/?url=hoa-don">quay lại danh sách</a>
                 </div>
                 <form action="http://localhost/da1/admin/?url=update-hoa-don&id=<?= $hoadon['id'] ?>" method="post" enctype="multipart/form-data">
-                    <div class="mb-3 mt-3">
-                        <label for="" class="form-label">Mã đơn hàng</label>
-                        <input type="text" class="form-control my-4" placeholder="auto number" name="id" value="<?= $hoadon['id'] ?>"  readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Tên người đặt</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="tennd" value="<?= $hoadon['name_order'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="diachi" value="<?= $hoadon['address'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Số điện thoại</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="sdt" value="<?= $hoadon['phone'] ?>">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Tổng tiền</label>
-                        <input type="text" class="form-control my-4" placeholder="" name="tongtien" value="<?= $hoadon['total'] ?>">
-                    </div>
+                    
                     <div class="mb-3">
                         <label for="" class="form-label">Trạng thái</label>
                         <select name="trangthai" id="" class="form-control my-4">
                             <option value="<?= $hoadon['status'] ?>" selected><?= $hoadon['status'] ?></option>
+                            <option value="Đang chờ duyệt" >Đang chờ duyệt</option>
                             <option value="Đang giao hàng" >Đang giao hàng</option>
                             <option value="Giao thành công" >Giao thành công</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Phương thức thanh toán</label>
-                        <input type="number" class="form-control my-4" placeholder="" name="phuongthuc" value="<?= $hoadon['method_payment_id'] ?>">
-                    </div>
-                    <button name="btn" class="btn btn-secondary btn-lg" >Cập Nhập</button>
+                    
+                    <button name="btn" class="btn btn-secondary btn-lg" >Cập Nhật</button>
                 </form>
 <!-- Content Row -->
             </div>

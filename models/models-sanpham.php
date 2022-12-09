@@ -90,4 +90,3 @@ function load_category_sanpham(){
     return $name_category;
 }
 
-

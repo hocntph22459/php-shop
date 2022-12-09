@@ -135,14 +135,23 @@
                     <div class="mb-3">
                         <label for="" class="form-label">Kích cỡ sản phẩm</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập kích cỡ" name="kichco">
+                        <?php if (isset($_GET['kichcoerr'])) : ?>
+                        <span style="color: red"><?= $_GET['kichcoerr'] ?></span>
+                        <?php endif ?>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Màu sản phẩm</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập màu" name="mau">
+                        <?php if (isset($_GET['mauerr'])) : ?>
+                        <span style="color: red"><?= $_GET['mauerr'] ?></span>
+                        <?php endif ?>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Số lượng</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập số lượng" name="soluong">
+                        <?php if (isset($_GET['soluongerr'])) : ?>
+                        <span style="color: red"><?= $_GET['soluongerr'] ?></span>
+                        <?php endif ?>
                     </div>
                     <button name="btn" class="btn btn-secondary btn-lg">thêm mới</button>
                 </form>

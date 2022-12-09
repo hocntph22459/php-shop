@@ -151,7 +151,6 @@
                                         Ship COD
                                     <?php endif; ?>
                                 <td>
-                                    <a onclick="return confirm('bạn có chắc xóa?')" href="http://localhost/da1/admin/?url=delete-hoa-don&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/delete.svg" alt=""></a>
                                     <a href="http://localhost/da1/admin/?url=update-hoa-don&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/edit.svg" alt=""></a>
                                     <a href="http://localhost/da1/admin/?url=hoa-don-ct&id=<?= $bill['id'] ?>"><img src="../views/src/image/admin/eye-fill.svg" alt=""></a>
                                 </td>

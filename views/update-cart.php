@@ -30,12 +30,18 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <!-- Single item -->
-                            <?php foreach ($cartone as $listcart) : ?>
+                                <?php
+                                    // var_dump($id);
+                                    // die;
+
+use function GuzzleHttp\Promise\each;
+
+                                ?>
                                 <div class="row">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
                                         <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                                            <img src="<?= $listcart['image'] ?>" class="w-100" alt="" />
+                                            <img src="<?= $_SESSION['mycart'][$id]['image'] ?>" class="w-100" alt="" />
                                             <a href="#!">
                                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                             </a>
@@ -45,17 +51,20 @@
 
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
-                                        <p><strong><?= $listcart['name'] ?></strong></p>
+                                        <p><strong><?= $_SESSION['mycart'][$id]['name'] ?></strong></p>
                                         <p>màu sắc:
-                                            <?= $listcart['color'] ?>
+                                            <?= $_SESSION['mycart'][$id][0] ?>
                                         </p>
                                         <p>Size:
-                                            <?= $listcart['size'] ?>
+                                            <?= $_SESSION['mycart'][$id][1] ?>
                                         </p>
                                         <p>giá tiền:
-                                            <?= $listcart['price'] ?>
+                                            <?= $_SESSION['mycart'][$id]['price'] ?>
                                         </p>
-                                        <a onclick="return confirm('bạn có chắc xóa ?')" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa" href="http://localhost/da1/?url=delete-cart&id=<?= $listcart['id'] ?>"><i class="fas fa-trash"></i></a>
+                                        <?php
+                                           
+                                        ?>
+                                        <a  class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa" href="?url=delete-cart&idcart=<?= $id ?>"><i class="fas fa-trash"></i></a>
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="yêu thích">
                                             <i class="fas fa-heart"></i>
@@ -68,21 +77,25 @@
                                         <div class="d-flex mb-4" style="max-width: 300px">
                                             <form action="" method="post">
                                                 <div class="form-outline">
-                                                    <input id="form1" min="0" name="soluong" value="<?= $listcart['soluong'] ?>" type="number" class="form-control" min="0" />
+                                                    <input id="form1" min="0" name="soluong" value="<?= $_SESSION['mycart'][$id][2] ?>" type="number" class="form-control" min="0" />
                                                     <label class="form-label" for="form1">Số lượng</label>
                                                 </div>
                                                 <!-- xác nhận --> <br>
-                                                <button name="btn" class="btn btn-primary px-3 ms-2">cập nhật</button>
+                                                <button name="update_cart" type="submit" class="btn btn-primary px-3 ms-2">cập nhật</button>
+                                                
                                             </form>
                                         </div>
                                         <!-- Price -->
                                         <p class="text-start text-md-center">
-                                            <strong>Thành tiền : <?= $thanhtien = $listcart['price'] * $listcart['soluong']; ?></strong>
+                                            <strong>Thành tiền : <?php 
+                                                $thanhtien = ( $_SESSION['mycart'][$id]['price'] - $_SESSION['mycart'][$id]['price']*$_SESSION['mycart'][$id]['sell'])  * $_SESSION['mycart'][$id][2] ;
+                                            ?></strong>
+                                            <?= $thanhtien?>
                                         </p> <br>
 
                                     </div>
                                 </div>
-                            <?php endforeach ?>
+                            
                             <!-- Single item -->
                         </div>
                     </div>

@@ -119,32 +119,40 @@
                         <tr>
                             <th scope="col">Tên Sản Phẩm</th>
                             <th scope="col">Màu</th>
-                            <th scope="col">Size</th>
+                            <th scope="col">Kích cỡ</th>
                             <th scope="col">Số Lượng</th>
                             <th scope="col">Giá Tiền</th>
-
+                            <th scope="col">Thành Tiền</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $id = $_GET['id'];
-                        $bill = loadall_cart($id);
-                        foreach ($cart as $key) {
+                        <?php 
+                        // $bill = loadall_cart($id);
+                        foreach ($bill_detail as $key) {
                         ?>
                             <tr>
                                 <td>
-                                    <?= $key['name'] ?>
+                                    <?= $key['product'] ?>
                                 </td>
                                 <td>
                                     <?= $key['color'] ?>
                                 </td>
                                 <td>
-                                    <?= $key['soluong'] ?>
-                                </td>
-                                <td>
                                     <?= $key['size'] ?>
                                 </td>
                                 <td>
+                                    <?= $key['quantity'] ?>
+                                </td>
+                                <td>
                                     <?= number_format($key['price']) ?>₫
+                                </td>
+                                <td>
+                                    <?php if($key['sell'] == 0):?>
+                                        <?=$key['price']?>
+                                    <?php endif?>
+                                    <?php if($key['sell'] > 0):?>
+                                        <?= $thanhtien = ($key['price'] - ($key['price']* $key['sell']/100)) * $key['quantity']; ?>
+                                    <?php endif?>
                                 </td>
                                 <td>
                                     <a href="http://localhost/da1/admin/?url=hoa-don">

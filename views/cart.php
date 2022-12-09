@@ -2,7 +2,9 @@
 <html lang="en">
 <?php
 $total = 0;
+$i= 0;
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,10 +38,17 @@ $total = 0;
                         </div>
                         <div class="card-body">
                             <!-- Single item -->
-                            <?php foreach ($cart as $listcart) : ?>
+                            <?php
+                            // echo "<pre>";
+                            // var_dump($_SESSION['mycart']);
+
+                            // die;
+                            ?>
+                            <?php foreach ($_SESSION['mycart'] as $listcart) : ?>
                                 <div class="row">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
                                         <!-- Image -->
+
                                         <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                                             <img src="<?= $listcart['image'] ?>" class="w-100" alt="" />
                                             <a href="#!">
@@ -53,19 +62,25 @@ $total = 0;
                                         <!-- Data -->
                                         <p><strong><?= $listcart['name'] ?></strong></p>
                                         <p>màu xắc:
-                                            <?= $listcart['color'] ?>
+                                            <?= $listcart[0] ?>
                                         </p>
                                         <p>Size:
-                                            <?= $listcart['size'] ?>
+                                            <?= $listcart[1] ?>
                                         </p>
                                         <p>giá tiền:
                                             <?= $listcart['price'] ?>
                                         </p>
                                         <?php
-                                            $total = $total + $listcart['price']*$listcart['soluong'];
+                                            // echo "<pre>";
+                                            // var_dump($listcart[$i]);
+                                            
+                                            // die;
                                         ?>
+                                        <?php
                                         
-                                        <a onclick="return confirm('bạn có chắc xóa ?')" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa" href="http://localhost/da1/?url=delete-cart&id=<?= $listcart['id'] ?>"><i class="fas fa-trash"></i></a>
+                                        ?>
+
+                                        <a href="?url=delete-cart&idcart=<?=$i?>" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="xóa" name="delcart"><i class="fas fa-trash"></i></a>
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="yêu thích">
                                             <i class="fas fa-heart"></i>
@@ -77,16 +92,21 @@ $total = 0;
                                         <div class="d-flex mb-4" style="max-width: 300px">
                                             <form action="" method="post">
                                                 <div class="form-outline">
-                                                    <input id="form1" min="0" name="soluong" value="<?= $listcart['soluong'] ?>" type="number" class="form-control" />
+                                                    <input id="form1" min="0" name="soluong" value="<?= $listcart[2] ?>" type="number" class="form-control" />
                                                     <label class="form-label" for="form1">Số lượng</label>
                                                 </div>
                                             </form>
                                             <!-- xác nhận -->
-                                            <a class="btn btn-primary px-3 ms-2 py-3" href="http://localhost/da1/?url=update-cart&id=<?= $listcart['id'] ?>"><img src="./views/src/image/admin/eye-fill.svg" alt=""></a>
+                                            <a class="btn btn-primary px-3 ms-2 py-3" href="?url=update-cart&idcart=<?= $i ?>"><img src="./views/src/image/admin/eye-fill.svg" alt=""></a>
                                         </div>
                                         <!-- Price -->
                                         <p class="text-start text-md-center">
-                                            <strong>Thành tiền : <?= $thanhtien = $listcart['price'] * $listcart['soluong']; ?></strong>
+                                            <strong>Thành tiền : <?php 
+                                                $thanhtien = ( $listcart['price'] - $listcart['sell']*$listcart['price']/100)  * $listcart[2] ; 
+                                                $total = $total + $thanhtien;
+                                            ?></strong>
+                                            <?= $thanhtien?>
+                                            <?php $i +=  1;?>
                                         </p> <br>
                                     </div>
                                 </div>
@@ -121,8 +141,7 @@ $total = 0;
                             <ul class="list-group list-group-flush">
                                 <!-- <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                     sản phẩm
-                                    <span><?= $listcart['name'] ?></span>
-                                    <span><?= $listcart['soluong'] ?></span>
+                                    
                                 </li> -->
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                     <div>
@@ -131,11 +150,16 @@ $total = 0;
                                             <p class="mb-0">(bao gồm VAT - miễn phí vận chuyển)</p>
                                         </strong>
                                     </div>
-                                    <span>
-                                        <strong><?= $tong = $total; ?></strong></span>
+                                    <span><strong><?= $total; ?></strong></span>
+                                    
+                                        
+                                    
                                 </li>
                             </ul>
-                            <a href="http://localhost/da1/?url=checkout-cart" class="btn btn-primary btn-lg btn-block">ĐI ĐẾN THANH TOÁN</a>
+                            <form action="?url=checkout-cart" method="POST">
+                            <input type="text" value="<?=$total?>" name="tien" hidden>
+                            <button class="btn btn-primary btn-lg btn-block" name="check" type="submit">ĐI ĐẾN THANH TOÁN</button>
+                            </form>
                         </div>
                     </div>
                 </div>

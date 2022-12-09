@@ -66,7 +66,8 @@
           <?php endif ?>
           <?php if (isset($_SESSION['email'])) : ?>
             <form class="form-inline">
-              <a href="http://localhost/da1?url=order"><img src="./views/src/image/icon/cart.svg" alt="" width="30px"></a>
+              
+              <a href="http://localhost/da1?url=order"><img src="./views/src/image/icon/archive-fill.svg" alt="" width="30px"></a>
               <a class="m-3" href="http://localhost/da1?url=doi-mat-khau"><img src="./views/src/image/icon/edit.svg" alt=""></a>
               <a href="http://localhost/da1?url=logout-khach-hang"><img src="./views/src/image/icon/logout.svg" alt="" width="30px"></a>
             </form>

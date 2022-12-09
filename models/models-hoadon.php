@@ -4,7 +4,7 @@ function loadall_bill($id_user)
     $sql = "select * from bill";
     if ($id_user > 0) $sql .= " AND id_user=" . $id_user;
     $sql . "= order by id desc";
-    $listbill = pdo_query($sql);
+    $listbill = pdo_query($sql);  
     return $listbill;
 }
 function loadone_bill($id)
@@ -14,22 +14,22 @@ function loadone_bill($id)
     return $bill_one;
 }
 
-function update_bill($tennd, $diachi, $sdt, $tongtien, $trangthai, $phuongthuc, $id)
+function update_bill($trangthai,  $id)
 {
-    $sql = "UPDATE bill SET name_order='" . $tennd . "', address='" . $diachi . "', phone='" . $sdt . "', total='" . $tongtien . "', status='" . $trangthai . "', method_payment_id ='" . $phuongthuc . "' WHERE id=" . $id;
+    $sql = "UPDATE bill SET  status='" . $trangthai . "' WHERE id=" . $id;
     pdo_execute($sql);
 }
-function delete_bill($id)
-{
-    $sql = "delete from bill where id=" . $id;
-    pdo_execute($sql);
-}
+// function delete_bill($id)
+// {
+//     $sql = "delete from bill where id=" . $id;
+//     pdo_execute($sql);
+// }
 
 function loadall_cart($id_user)
 {
-    $_SESSION['cart'] = $sql = "SELECT * FROM `cart` where id_users = $id_user";
-    $cart = pdo_query($sql);
-    return $cart;
+    // $_SESSION['cart'] = $sql = "SELECT * FROM `cart` where id_users = $id_user";
+    // $cart = pdo_query($sql);
+    // return $cart;
 }
 // function loadall_cart($id){
 //     $sql = "SELECT * FROM `cart` where id=".$id;
@@ -48,3 +48,8 @@ function loadall_cart($id_user)
 //     $cart_one = pdo_query_one($sql);
 //     return $cart_one;
 // }
+function loadone_bill_detail1($id){
+    $sql = "select * from bill_detail where id_bill = $id";
+    $listbill = pdo_query($sql);
+    return $listbill;
+}

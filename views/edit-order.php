@@ -34,32 +34,32 @@
                         <div class="card-body">
                             <hr class="my-4" />
                             <!-- Single item -->
-                            <?php foreach ($billone as $listcart) : ?>
+                           
                                 <div class="row mb-6">
                                     <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
 
                                     </div>
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                        <form action="" method="post">
+                                        <form action="" method="post" >
                                             <!-- Data -->
                                             <div class="mb-3">
                                                 <label for="" class="form-label">tên người nhận</label> <br>
-                                                <input type="text" class="form-control my-4" id="diachi" value="<?= $listcart['name_order'] ?>" name="name_order">
+                                                <input type="text" class="form-control my-4" id="diachi" value="<?= $billone['name_order'] ?>" name="name_order">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Địa chỉ</label> <br>
-                                                <input type="text" class="form-control my-4" id="diachi" value="<?= $listcart['address'] ?>" name="diachi">
+                                                <input type="text" class="form-control my-4" id="diachi" value="<?= $billone['address'] ?>" name="diachi">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">số điện thoại</label> <br>
-                                                <input type="text" class="form-control my-4" id="phone" value="<?= $listcart['phone'] ?>" name="phone">
+                                                <input type="text" class="form-control my-4" id="phone" value="<?= $billone['phone'] ?>" name="phone">
                                             </div>
                                             <!-- xác nhận -->
-                                            <button name="btn" class="btn btn-primary px-3 ms-2">cập nhật</button>
+                                            <button name="btn" class="btn btn-primary px-3 ms-2" type="submit">cập nhật</button>
                                         </form>
                                     </div>
                                 </div>
-                            <?php endforeach ?>
+                            
                             <!-- Single item -->
                             <hr>
                         </div>

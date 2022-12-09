@@ -39,7 +39,7 @@ switch ($url) {
         delete_cat();
         include "./loaihang/delete.php";
         break;
-    case 'add-loai-hang':
+    case 'add-loai-hang': 
         insert_cat();
         include "./loaihang/add.php";
         break;
@@ -80,6 +80,12 @@ switch ($url) {
             $kichco = $_POST['kichco'];
             $mau = $_POST['mau'];
             $soluong = $_POST['soluong'];
+            require  "../models/validate.php";
+            if(!empty($kichcoerr)  || !empty($mauerr) || !empty($soluongerr) ){
+               
+                header("location: ../admin/index.php?url=add-attributes&kichcoerr=$kichcoerr&mauerr=$mauerr&soluongerr=$soluongerr");
+                die;
+            }
             insert_attributes($idsp, $kichco, $mau, $soluong);
             header("location:http://localhost/da1/admin/?url=attributes");
         }
@@ -94,12 +100,15 @@ switch ($url) {
             $kichco = $_POST['kichco'];
             $mau = $_POST['mau'];
             $soluong = $_POST['soluong'];
+            require  "../models/validate.php";
+            
             update_attributes($id, $idsp, $kichco, $mau, $soluong);
             header("location:../admin/index.php?url=attributes");
         }
         break;
         //sản phẩm 
     case 'san-pham':
+        
         $name_category = load_category_sanpham();
         $listsanpham = loadall_sanpham_admin();
         include "./sanpham/list.php";
@@ -124,6 +133,14 @@ switch ($url) {
             $loaisp = $_POST['loaisp'];
             $ngaynhap = $_POST['ngaynhap'];
             $giamgia = $_POST['giamgia'];
+            require  "../models/validate.php";
+
+            if(!empty($nameerr)  || !empty($imageerr) || !empty($priceerr) || !empty($loaierr) ){
+               
+                header("location: ../admin/index.php?url=add-san-pham&nameerr=$nameerr&imageerr=$imageerr&priceerr=$priceerr&loaierr=$loaierr");
+                die;
+            }
+
             move_uploaded_file($_FILES["anhsp"]["tmp_name"], "../views/src/image/products/" . $_FILES["anhsp"]["name"]);
             insert_sanpham($tensp, $anhsp, $giasp, $motasp, $ngaynhap, $giamgia, $loaisp);
             header("location:../admin/index.php?url=san-pham");
@@ -142,6 +159,7 @@ switch ($url) {
             $loaisp = $_POST['loaisp'];
             $ngaynhap = $_POST['ngaynhap'];
             $giamgia = $_POST['giamgia'];
+            require  "../models/validate.php";
             move_uploaded_file($_FILES["anhsp"]["tmp_name"], "../views/src/image/products/" . $_FILES["anhsp"]["name"]);
             update_sanpham($tensp, $anhsp, $giasp, $motasp, $ngaynhap, $giamgia, $loaisp, $id);
             header("location:../admin/index.php?url=san-pham");
@@ -197,30 +215,25 @@ switch ($url) {
         $listbill = loadall_bill(0);
         include "./hoadon/list.php";
         break;
-    case 'delete-hoa-don':
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            delete_bill($id);
-            header("location:../admin/index.php?url=hoa-don");
-        }
+    // case 'delete-hoa-don':
+    //     if (isset($_GET['id'])) {
+    //         $id = $_GET['id'];
+    //         delete_bill($id);
+    //         header("location:../admin/index.php?url=hoa-don");
+    //     }
     case 'update-hoa-don':
         $id = $_GET['id'];
         $hoadon = loadone_bill($id);
         include "./hoadon/edit.php";
         if (isset($_POST['btn'])) {
-            $tennd = $_POST['tennd'];
-            $diachi = $_POST['diachi'];
-            $sdt = $_POST['sdt'];
-            $tongtien = $_POST['tongtien'];
             $trangthai = $_POST['trangthai'];
-            $phuongthuc = $_POST['phuongthuc'];
-            update_bill($tennd, $diachi, $sdt, $tongtien, $trangthai, $phuongthuc, $id);
+            update_bill($trangthai, $id);
             header("location:../admin/index.php?url=hoa-don");
         }
         break;
     case 'hoa-don-ct':
-        $id_user = $_SESSION['id']['id'];
-        $cart = loadall_cart($id_user);
+        $bill_detail = loadone_bill_detail1($_GET['id']);
+        // $cart = loadall_cart($id_user);
         include "./hoadon/billdetail.php";
         break;
 // case 'update-gio-hang':

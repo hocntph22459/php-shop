@@ -47,23 +47,23 @@
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">sản phẩm đã đặt</span>
                         </h4>
-                        <?php foreach ($cart as $listcart) : ?>
+                        <?php foreach ($list_bill_detail as $bill_detail) : ?>
                             <ul class="list-group mb-3">
-                                <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
-                                <input type="hidden" name="sanphamgiohang[1][gia]" value="11800000.00">
-                                <input type="hidden" name="sanphamgiohang[1][soluong]" value="2">
+                                <?php
+                                    // echo "<pre>";
+                                    // var_dump($bill_detail);
+                                    // die;
+                                ?>
 
                                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                                     <div>
-                                        <h6 class="my-0"><?= $listcart['name'] ?></h6>
-                                        <small class="text-muted"><?= $listcart['price'] ?> x <?= $listcart['soluong'] ?></small>
+                                        <h6 class="my-0"><?= $bill_detail['product'] ?></h6>
+                                        <small class="text-muted"><?= $bill_detail['price'] ?> x <?= $bill_detail['quantity'] ?></small>
                                     </div>
-                                    <span class="text-muted"><?= $thanhtien = $listcart['price'] * $listcart['soluong']; ?></span>
+                                    <span class="text-muted"><?= $thanhtien = ($bill_detail['price'] - ($bill_detail['price']* $bill_detail['sell']/100)) * $bill_detail['quantity']; ?></span>
                                 </li>
-                                <input type="hidden" name="sanphamgiohang[2][sp_ma]" value="4">
-                                <input type="hidden" name="sanphamgiohang[2][gia]" value="14990000.00">
-                                <input type="hidden" name="sanphamgiohang[2][soluong]" value="8">
-                                <?php $total = $total + $listcart['price'] * $listcart['soluong']; ?>
+                                
+                                <?php $total = $total + $thanhtien ?>
                             </ul>
                         <?php endforeach ?>
                         <li class="list-group-item d-flex justify-content-between">
@@ -73,39 +73,37 @@
                     </div>
                     <div class="col-md-8 order-md-1">
                         <h4 class="mb-3">Thông tin khách hàng</h4>
-                        <?php foreach ($billone as $bill) : ?>
                             <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                 <!-- Data -->
-                                <p><strong>TÊN NGƯỜI NHẬN: <?= $bill['name_order'] ?></strong></p>
+                                <p><strong>TÊN NGƯỜI NHẬN: <?= $listbill_one['name_order'] ?></strong></p>
                                 <p>ĐỊA CHỈ:
-                                    <?= $bill['address'] ?>
+                                    <?= $listbill_one['address'] ?>
                                 </p>
                                 <p>SỐ ĐIỆN THOẠI:
-                                    <?= $bill['phone'] ?>
+                                    <?= $listbill_one['phone'] ?>
                                 </p>
                                 <p>THÀNH TIỀN:
-                                    <?= $bill['total'] ?>
+                                    <?= $listbill_one['total'] ?>
                                 </p>
                                 <p>NGÀY ĐẶT:
-                                    <?= $bill['date_purchase'] ?>
+                                    <?= $listbill_one['date_purchase'] ?>
                                 </p>
                                 <p>TRẠNG THÁI ĐƠN HÀNG:
-                                    <?= $bill['status'] ?>
+                                    <?= $listbill_one['status'] ?>
                                 </p>
                                 <p>PHƯƠNG THỨC THANH TOÁN:
-                                    <?php if ($bill['method_payment_id'] == 1) : ?>
+                                    <?php if ($listbill_one['method_payment_id'] == 1) : ?>
                                         Tiền mặt
                                     <?php endif; ?>
-                                    <?php if ($bill['method_payment_id'] == 2) : ?>
+                                    <?php if ($listbill_one['method_payment_id'] == 2) : ?>
                                         Chuyển khoản
                                     <?php endif; ?>
-                                    <?php if ($bill['method_payment_id'] == 3) : ?>
+                                    <?php if ($listbill_one['method_payment_id'] == 3) : ?>
                                         Ship COD
                                     <?php endif; ?>
                                 </p>
                                 <!-- xác nhận -->
                             </div>
-                        <?php endforeach ?>
                     </div>
             </form>
 

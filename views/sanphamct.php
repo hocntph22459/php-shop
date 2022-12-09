@@ -61,83 +61,78 @@ $comment_list1 = load_binhluan_by_users($id);
                         <?php endif; ?>
                     </div>
                     <!--add giỏ hàng -->
-                    <form action="" method="post">
+                    <form action="?url=cart" method="post">
                         Thuộc tính:
                         <select name="attributes" class="form-select" aria-label="Default select example">
                             <?php foreach ($list_attributes as $attributes) : ?>
                                 <option name="" value="<?= $attributes['id'] ?>"><?= $attributes['size'] ?> - <?= $attributes['color'] ?> </option>
                             <?php endforeach; ?>
                         </select> <br>
-                        
+
                         <input type="text" name="image" value="./views/src/image/products/<?= $spct['image'] ?>" hidden>
                         <input type="text" name="name" value="<?= $spct['name'] ?>" hidden>
                         <input type="text" name="price" value="<?= $spct['price'] ?>" hidden>
-                        <?php if (isset($_SESSION['email'])) : ?>
-                            <input type="text" name="id_user" value="<?= $_SESSION['id']['id'] ?>" hidden>
-                        <?php endif ?>
-                        
                         <div class="mb-3 mt-3">
                             SỐ LƯỢNG:
                             <input type="number" class="form-control my-4" placeholder="chọn số lượng" name="soluong" value="1">
                         </div>
+                        <!--đăng nhập mới mua hàng -->
+                        <?php if (!isset($_SESSION['id'])) : ?>
+                            <p><button type="submit" name="addtocart" class="btn btn-outline-success"><a href="http://localhost/da1/?url=login-khach-hang">Thêm vào giỏ hàng</a></button></p>
+                        <?php endif ?>
+                        <?php if (isset($_SESSION['id'])) : ?>
+                            <button name="addtocart" class="btn btn-success" type="submit">Thêm vào giỏ hàng</button>
+                        <?php endif ?>
+                    </form>
                 </div>
-                <!--đăng nhập mới mua hàng -->
-                <?php if (!isset($_SESSION['email'])) : ?>
-                    <p><button type="button" class="btn btn-outline-success"><a href="http://localhost/da1/?url=signin-khach-hang">Thêm vào giỏ hàng</a></button></p>
-                <?php endif ?>
-                <?php if (isset($_SESSION['email'])) : ?>
-                    <button onclick="alert('thêm vào giỏ hàng thành công')" name="addtocart" class="btn btn-success">Thêm vào giỏ hàng</button>
-                <?php endif ?>
-                </form>
             </div>
         </div>
-    </div>
-    <div class="product-info-tabs">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Mô Tả</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Bình Luận</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                <?= $spct['description'] ?>
-            </div>
-            <div class="tab-pane fade " id="review" role="tabpanel" aria-labelledby="review-tab">
-                <div class="review-heading">Bình luận</div>
-                <p class="mb-20">
-                    <?php
-                    foreach ($comment_list1 as $bl) {
-                        extract($bl); ?>
-                <ul>
-                    <li class="">
-                        <p> <i><b>
+        <div class="product-info-tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Mô Tả</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Bình Luận</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                    <?= $spct['description'] ?>
+                </div>
+                <div class="tab-pane fade " id="review" role="tabpanel" aria-labelledby="review-tab">
+                    <div class="review-heading">Bình luận</div>
+                    <p class="mb-20">
+                        <?php
+                        foreach ($comment_list1 as $bl) {
+                            extract($bl); ?>
+                    <ul>
+                        <li class="">
+                            <p> <i><b>
 
-                                    <?= $name_person_comment;
+                                        <?= $name_person_comment;
 
-                                    ?>
+                                        ?>
 
-                                </b></i>
-                        </p>
+                                    </b></i>
+                            </p>
 
-                        <div class="d-flex justify-content-between w-75">
-                            <p><?= $contents ?></p>
-                            <p><?= $date_comment ?></p>
-                        </div>
-                    </li>
-                </ul>
+                            <div class="d-flex justify-content-between w-75">
+                                <p><?= $contents ?></p>
+                                <p><?= $date_comment ?></p>
+                            </div>
+                        </li>
+                    </ul>
 
-            <?php }
-            ?>
-            </p>
+                <?php }
+                ?>
+                </p>
 
-            <?php if (isset($_SESSION['email'])) : ?>
-                <form class="review-form" action="" method="post" id="">
-                    <div class="form-group">
-                        <!-- <label>Your rating</label> -->
-                        <!-- <div class="reviews-counter">
+                <?php if (isset($_SESSION['email'])) : ?>
+                    <form class="review-form" action="" method="post" id="">
+                        <div class="form-group">
+                            <!-- <label>Your rating</label> -->
+                            <!-- <div class="reviews-counter">
                                     <div class="rate">
                                         <input type="radio" id="star5" name="rate" value="5" />
                                         <label for="star5" title="text">5 stars</label>
@@ -151,29 +146,29 @@ $comment_list1 = load_binhluan_by_users($id);
                                         <label for="star1" title="text">1 star</label>
                                     </div>
                                 </div> -->
-                    </div>
-                    <div class="form-group">
-                        <label>Bình luận của bạn</label>
-                        <textarea class="form-control" rows="10" name="contents"></textarea>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                            <label>Bình luận của bạn</label>
+                            <textarea class="form-control" rows="10" name="contents"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
 
-                                <input type="text" name="" class="form-control" value="<?= $_SESSION['id']['name'] ?>" readonly>
+                                    <input type="text" name="" class="form-control" value="<?= $_SESSION['id']['name'] ?>" readonly>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <button class="btn btn-success" name="comment_submit">Gửi</button>
-                </form>
-            <?php else : ?>
-                <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập để được bình luận</a></button>
-            <?php endif; ?>
-            </div>
+                        <button class="btn btn-success" name="comment_submit">Gửi</button>
+                    </form>
+                <?php else : ?>
+                    <button class="btn btn-outline-success" type="button"><a href="http://localhost/da1?url=login-khach-hang">Đăng nhập để được bình luận</a></button>
+                <?php endif; ?>
+                </div>
 
+            </div>
         </div>
-    </div>
-    <h2 class="text-center">Sản phẩm cùng loại</h2>
+        <h2 class="text-center">Sản phẩm cùng loại</h2>
         <div class="row">
             <?php foreach ($name_category as $sp_cate) : ?>
                 <?php foreach ($sanphamkhac as $sp) : ?>
@@ -189,7 +184,7 @@ $comment_list1 = load_binhluan_by_users($id);
                 <?php endforeach ?>
             <?php endforeach ?>
         </div>
-</div>
+    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -124,20 +124,30 @@
                     <div class="mb-3 mt-3">
                         <label for="" class="form-label">Mã sản phẩm</label>
                         <input type="text" class="form-control my-4" placeholder="auto number" name="id" readonly>
+                        
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tên sản phẩm</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập tên" name="tensp">
+                        <?php if (isset($_GET['nameerr'])) : ?>
+                        <span style="color: red"><?= $_GET['nameerr'] ?></span>
+                        <?php endif ?>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Ảnh sản phẩm</label>
                         <input type="file" class="form-control my-4" placeholder="Nhập ảnh" name="anhsp">
+                        <?php if (isset($_GET['imageerr'])) : ?>
+                        <span style="color: red"><?= $_GET['imageerr'] ?></span>
+                        <?php endif ?>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Giá sản phẩm</label>
                         <input type="text" class="form-control my-4" placeholder="Nhập giá" name="giasp">
+                        <?php if (isset($_GET['priceerr'])) : ?>
+                        <span style="color: red"><?= $_GET['priceerr'] ?></span>
+                        <?php endif ?>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" hidden>
                         <label for="" class="form-label">Ngày nhập sản phẩm</label>
                         <input type="date" class="form-control my-4" placeholder="Ngày nhập sản phẩm" name="ngaynhap">
                     </div>
@@ -152,6 +162,9 @@
                                 <option value="<?= $list['id'] ?>"><?= $list['name'] ?></option>
                             <?php endforeach ?>
                         </select>
+                        <?php if (isset($_GET['loaierrr'])) : ?>
+                        <span style="color: red"><?= $_GET['loaierrr'] ?></span>
+                        <?php endif ?>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Mô tả sản phẩm</label>

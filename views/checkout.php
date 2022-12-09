@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi" class="h-100">
-<?php $total  = 0; ?>
 
 <head>
     <!-- Required meta tags -->
@@ -24,17 +23,14 @@
     }
 </style>
 <script>
-    function thanhtoan() {
-        confirm("bạn có chắc mua hàng ?");
-    }
 </script>
 
 <body>
     <main role="main">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container mt-4">
-            <form class="needs-validation" name="frmthanhtoan" method="post" action="#">
-                <input type="hidden" name="kh_tendangnhap" value="dnpcuong">
+            <form class="needs-validation" name="frmthanhtoan" method="post" action="?url=add-bill">
+                <input type="hidden" name="kh_tendangnhap" value="">
 
                 <div class="py-5 text-center">
                     <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
@@ -47,25 +43,7 @@
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Giỏ hàng</span>
                         </h4>
-                        <?php foreach ($cart as $listcart) : ?>
-                            <ul class="list-group mb-3">
-                                <input type="hidden" name="sanphamgiohang[1][sp_ma]" value="2">
-                                <input type="hidden" name="sanphamgiohang[1][gia]" value="11800000.00">
-                                <input type="hidden" name="sanphamgiohang[1][soluong]" value="2">
-
-                                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                    <div>
-                                        <h6 class="my-0"><?= $listcart['name'] ?></h6>
-                                        <small class="text-muted"><?= $listcart['price'] ?> x <?= $listcart['soluong'] ?></small>
-                                    </div>
-                                    <span class="text-muted"><?= $thanhtien = $listcart['price'] * $listcart['soluong']; ?></span>
-                                </li>
-                                <input type="hidden" name="sanphamgiohang[2][sp_ma]" value="4">
-                                <input type="hidden" name="sanphamgiohang[2][gia]" value="14990000.00">
-                                <input type="hidden" name="sanphamgiohang[2][soluong]" value="8">
-                                <?php $total = $total + $listcart['price'] * $listcart['soluong']; ?>
-                            </ul>
-                        <?php endforeach ?>
+                        
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Tổng thành tiền</span>
                             <strong><?= $total; ?></strong>
@@ -93,29 +71,17 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="kh_ten">Họ tên</label>
-                                <?php if (isset($kh_ten_err)) : ?>
-                                    <span style="color:red">
-                                        <?= $kh_ten_err ?>
-                                    </span>
-                                <?php endif ?>
+                                
                                 <input type="text" class="form-control" name="kh_ten" id="kh_ten">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_diachi">Địa chỉ</label>
-                                <?php if (isset($kh_diachi_err)) : ?>
-                                    <span style="color:red">
-                                        <?= $kh_diachi_err ?>
-                                    </span>
-                                <?php endif ?>
+                               
                                 <input type="text" class="form-control" name="kh_diachi" id="kh_diachi">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_dienthoai">Điện thoại</label>
-                                <?php if (isset($kh_dienthoai_err)) : ?>
-                                    <span style="color:red">
-                                        <?= $kh_dienthoai_err ?>
-                                    </span>
-                                <?php endif ?>
+                                
                                 <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai">
                             </div>
 
@@ -141,8 +107,7 @@
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <button onclick="return thanhtoan()" class="btn btn-primary btn-lg btn-block" type="submit" name="btn">Đặt
-                            hàng</button>
+                        <button  class="btn btn-primary btn-lg btn-block" type="submit" name="dongydathang">Đặt hàng</button>
                     </div>
                 </div>
             </form>

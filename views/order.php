@@ -70,8 +70,11 @@
                                             <?php endif; ?>
                                         </p>
                                         <!-- xác nhận -->
-                                        <a onclick="return confirm('bạn có chắc muốn hủy ?')" class="btn btn-primary px-3 ms-2" data-mdb-toggle="tooltip" title="hủy" href="http://localhost/da1/?url=delete-order&id=<?= $listcart['id'] ?>">hủy đơn hàng</i></a>
-                                        <a class="btn btn-primary px-3 ms-2" href="http://localhost/da1/?url=edit-order&id=<?= $listcart['id'] ?>">sửa thông tin</a>
+                                        <?php if($listcart['status'] === "Đang chờ duyệt"):?>
+                                            <a onclick="return confirm('bạn có chắc muốn hủy ?')" class="btn btn-primary px-3 ms-2" data-mdb-toggle="tooltip" title="hủy" href="http://localhost/da1/?url=delete-order&id=<?= $listcart['id'] ?>">hủy đơn hàng</i></a>
+                                            <a class="btn btn-primary px-3 ms-2" href="http://localhost/da1/?url=edit-order&id=<?= $listcart['id'] ?>">sửa thông tin</a>
+                                        <?php endif;?>
+                                        
                                     </div>
                                 </div>
                             <?php endforeach ?>
